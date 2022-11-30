@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "prettier"
+  ],
+  "overrides": [],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["tsconfig.json"]
+  },
+  "plugins": ["react"],
+  "rules": {
+    "max-len": [1, {"code": 2000, "ignoreUrls": true}],
+    "linebreak-style": 2,
+    "indent": "error",
+    "react/prefer-stateless-function": [2, { "ignorePureComponents": false }],
+    "react/require-default-props": [2, {
+        "forbidDefaultForRequired": false,
+        "classes": "defaultProps",
+        "functions": "defaultProps",
+        "ignoreFunctionalComponents": false
+      }]
+  }
+}
