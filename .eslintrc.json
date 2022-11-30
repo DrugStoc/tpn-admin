@@ -6,10 +6,12 @@
   },
   "extends": [
     "plugin:react/recommended",
+    "airbnb-typescript",
     "standard-with-typescript",
     "prettier"
   ],
-  "overrides": [],
+  "overrides": [
+  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -18,7 +20,7 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": ["tsconfig.json"]
+    "project": ["./tsconfig.json"]
   },
   "plugins": ["react"],
   "rules": {
