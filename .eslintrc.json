@@ -10,8 +10,7 @@
     "standard-with-typescript",
     "prettier"
   ],
-  "overrides": [
-  ],
+  "overrides": [],
   "settings": {
     "react": {
       "version": "detect"
@@ -24,15 +23,18 @@
   },
   "plugins": ["react"],
   "rules": {
-    "max-len": [1, {"code": 2000, "ignoreUrls": true}],
+    "max-len": [1, { "code": 2000, "ignoreUrls": true }],
     "linebreak-style": 2,
     "indent": "error",
     "react/prefer-stateless-function": [2, { "ignorePureComponents": false }],
-    "react/require-default-props": [2, {
+    "react/require-default-props": [
+      2,
+      {
         "forbidDefaultForRequired": false,
         "classes": "defaultProps",
         "functions": "defaultProps",
         "ignoreFunctionalComponents": false
-      }]
+      }
+    ]
   }
 }
