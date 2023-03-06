@@ -1,0 +1,13 @@
+.login {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+@media (max-width: 814px) {
+  .login {
+    justify-content: center;
+    width: 100%;
+  }
+}
