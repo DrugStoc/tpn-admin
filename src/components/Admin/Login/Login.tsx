@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import React, { useContext, useState } from 'react'
 import { HandleChangeFunc } from './LoginInterface'
 import Motion from '../../shared/Motion/Motion'
@@ -90,6 +91,7 @@ const Login = (): JSX.Element => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
+              {/* @ts-ignore */}
             <Heading
               color="brand.50"
               fontSize="30px"
