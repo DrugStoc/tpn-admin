@@ -65,7 +65,6 @@ const Login = (): JSX.Element => {
   }
 
   const cardStyles = useBreakpointValue({
-    base: {},
     md: {
       width: '70%',
       height: '90vh',
@@ -79,8 +78,7 @@ const Login = (): JSX.Element => {
     },
   })
 
-  const add = {
-    // marginInline: 'auto',
+  const cardLogin = {
     display: 'block',
     alignItems: 'center',
     justifyContent: 'center',
@@ -90,11 +88,13 @@ const Login = (): JSX.Element => {
     padding: '40px 60px',
   }
 
+  const fontSize = useBreakpointValue({ base: '16px', md: '24px' })
+
   return (
     <Motion>
       <Box className="login-body">
         {/* @ts-ignore */}
-        <Card sx={{ cardStyles, ...add }}>
+        <Card sx={{ cardStyles, ...cardLogin }}>
           <Box
             sx={{
               display: 'flex',
@@ -171,8 +171,8 @@ const Login = (): JSX.Element => {
                 textIndent="15px"
                 outline="none"
                 padding="8px"
-                fontSize="16px"
                 mb="2"
+                fontSize={fontSize}
               />
 
               <FormLabel htmlFor="password" visibility="hidden">
