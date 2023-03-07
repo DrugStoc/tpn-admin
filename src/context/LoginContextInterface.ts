@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 interface LoginContextInterface {
   email: string
   password: string
