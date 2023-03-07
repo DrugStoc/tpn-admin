@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/react-in-jsx-scope */
 import React, { useState, createContext, ChangeEvent, FormEvent } from 'react'
 
 import { LoginContextInterface } from './LoginContextInterface'
