@@ -1,15 +1,6 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
-/* eslint-disable @typescript-eslint/no-misused-promises */
-/* eslint-disable indent */
-/* eslint-disable react/react-in-jsx-scope */
-
-import { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { HandleChangeFunc } from './LoginInterface'
 import Motion from '../../shared/Motion/Motion'
-// import './Login.css'
-// import Card from '../../shared/Card/Card'
-// import Button from '../../shared/Button/Button'
 import { Navigate, useNavigate } from 'react-router-dom'
 import LoginContext from '../../../context/LoginContext'
 import {
@@ -21,12 +12,10 @@ import {
   Box,
   Button,
   useBreakpointValue,
-  Card,
 } from '@chakra-ui/react'
 
 const Login = (): JSX.Element => {
-  const { error, loggedIn, validationMessage, err /* handleSubmit */ } =
-    useContext(LoginContext)
+  const { error, loggedIn, validationMessage, err } = useContext(LoginContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState<string>('')
   const [showTextPassword, setShowTextPassword] = useState<boolean>(false)
@@ -55,7 +44,6 @@ const Login = (): JSX.Element => {
 
   const navigate = useNavigate()
 
-  // testing purpose
   const handleClick = (): void => {
     if (email === '' || password === '') {
       navigate('/admin/login')
@@ -86,6 +74,7 @@ const Login = (): JSX.Element => {
     boxShadow: '2px 8px 35px rgba(0, 0, 0, 0.05) !important',
     borderRadius: '10px !important',
     padding: '40px 60px',
+    backgroundColor: '#fff',
   }
 
   const fontSize = useBreakpointValue({ base: '14px', md: '16px' })
@@ -93,8 +82,7 @@ const Login = (): JSX.Element => {
   return (
     <Motion>
       <Box className="login-body">
-        {/* @ts-ignore */}
-        <Card sx={{ cardStyles, ...cardLogin }}>
+        <Box sx={{ cardStyles, ...cardLogin }}>
           <Box
             sx={{
               display: 'flex',
@@ -104,7 +92,6 @@ const Login = (): JSX.Element => {
             }}>
             <Heading
               color="brand.50"
-              // className="heading"
               fontSize="30px"
               justifyContent="flex-start"
               fontWeight="700"
@@ -118,7 +105,6 @@ const Login = (): JSX.Element => {
             <Box display="block" w="90%">
               <Text
                 color="brand.100"
-                // className="firstText"
                 mb="4"
                 fontWeight="500"
                 lineHeight="1.7"
@@ -127,7 +113,6 @@ const Login = (): JSX.Element => {
               </Text>
               <Text
                 color="brand.100"
-                // className="secondText"
                 fontWeight="500"
                 lineHeight="1.7"
                 mt="4"
@@ -137,10 +122,7 @@ const Login = (): JSX.Element => {
               </Text>
             </Box>
 
-            <FormControl
-              w="90%" /* onSubmit={handleSubmit} */
-              /* className="formControl" */
-            >
+            <FormControl w="90%">
               {email === '' ? (
                 <FormLabel htmlFor="email">{validationMessage}</FormLabel>
               ) : null}
@@ -149,10 +131,10 @@ const Login = (): JSX.Element => {
                 email.includes('.') &&
                 email.includes(emailIndex) &&
                 email.trim().length > 12) ? null : (
-                <Box color="brand.300" w="90%">
+                <Box color="brand.300" w="90%" position="relative" top={6}>
                   Email is invalid
                 </Box>
-              )}
+                )}
               <FormLabel htmlFor="email" visibility="hidden">
                 Email address
               </FormLabel>
@@ -235,16 +217,8 @@ const Login = (): JSX.Element => {
                   fontFamily="Poppins">
                   Login
                 </Button>
-                {/* </Button>
-              <Button
-                text="Login"
-                buttonWidth="100%"
-                buttonHeight="44px"
-                linkText={undefined}
-              /> */}
               </Box>
               <Text
-                // className="lastText"
                 mt="4"
                 fontSize="10px"
                 textAlign="center">
@@ -252,7 +226,7 @@ const Login = (): JSX.Element => {
               </Text>
             </FormControl>
           </Box>
-        </Card>
+        </Box>
       </Box>
     </Motion>
   )
