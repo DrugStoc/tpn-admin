@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable indent */
 /* eslint-disable react/react-in-jsx-scope */
@@ -11,6 +12,14 @@ import Card from '../../shared/Card/Card'
 import Button from '../../shared/Button/Button'
 import { Navigate, useNavigate } from 'react-router-dom'
 import LoginContext from '../../../context/LoginContext'
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Text,
+  Heading,
+  Box,
+} from '@chakra-ui/react'
 
 const Login = (): JSX.Element => {
   const { error, loggedIn, validationMessage, err /* handleSubmit */ } =
@@ -54,27 +63,30 @@ const Login = (): JSX.Element => {
 
   return (
     <Motion>
-      <div className="login-body">
+      <Box className="login-body">
         <Card className="card">
-          <h1 className="heading">Welcome back</h1>
-          <p className="firstText">
+          {/* @ts-ignore */}
+          <Heading className="heading">Welcome back</Heading>
+          <Text className="firstText">
             Enter your email address or password to sign in to your account.
-          </p>
-          <p className="secondText">Enter your email address or password</p>
+          </Text>
+          <Text className="secondText">
+            Enter your email address or password
+          </Text>
 
-          <form className="formControl" /* onSubmit={handleSubmit} */>
+          <FormControl className="formControl" /* onSubmit={handleSubmit} */>
             {email === '' ? (
-              <label htmlFor="email">{validationMessage}</label>
+              <FormLabel htmlFor="email">{validationMessage}</FormLabel>
             ) : null}
             {email === '' ||
             (email.includes('@') &&
               email.includes('.') &&
               email.includes(emailIndex) &&
               email.trim().length > 12) ? null : (
-              <div className={'errorCheck'}>Email is invalid</div>
+              <Box className={'errorCheck'}>Email is invalid</Box>
             )}
-            <label htmlFor="email">Email address</label>
-            <input
+            <FormLabel htmlFor="email">Email address</FormLabel>
+            <Input
               type="email"
               onChange={handleEmailChange}
               placeholder="email or phone number"
@@ -82,16 +94,16 @@ const Login = (): JSX.Element => {
               id="email"
             />
 
-            <label htmlFor="password">Password</label>
-            <div className="password">
-              <input
+            <FormLabel htmlFor="password">Password</FormLabel>
+            <Box className="password">
+              <Input
                 onChange={handlePasswordChange}
                 value={password}
                 type={textPasswordType}
                 placeholder="password"
                 id="password"
               />
-              <div onClick={showPassword}>
+              <Box onClick={showPassword}>
                 {showTextPassword ? (
                   <img
                     src="https://res.cloudinary.com/bizstak/image/upload/v1678128269/opened-eye_cfytw0.svg"
@@ -107,24 +119,24 @@ const Login = (): JSX.Element => {
                     alt="eye closed"
                   />
                 )}
-              </div>
-            </div>
-            <div onClick={handleClick}>
+              </Box>
+            </Box>
+            <Box onClick={handleClick}>
               {email !== '' && password !== '' ? null : <label>{error}</label>}
-              {err !== '' ? <label>Bad Request. Try again</label> : null}
+              {err !== '' ? <FormLabel>Bad Request. Try again</FormLabel> : null}
               <Button
                 text="Login"
                 buttonWidth="100%"
                 buttonHeight="44px"
                 linkText={undefined}
               />
-            </div>
-            <p className="lastText">
+            </Box>
+            <Text className="lastText">
               THE PHARMACY NETWORK (TPN) is Powered By DrugStoc.
-            </p>
-          </form>
+            </Text>
+          </FormControl>
         </Card>
-      </div>
+      </Box>
     </Motion>
   )
 }
