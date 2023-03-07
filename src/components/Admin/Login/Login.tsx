@@ -185,7 +185,16 @@ const Login = (): JSX.Element => {
                   type={textPasswordType}
                   placeholder="password"
                   id="password"
-                  bgColor="brand.200"
+                  bg="brand.200"
+                  fontFamily="Poppins"
+                  display="block"
+                  borderRadius="4px"
+                  border="1px solid #f7f8f9"
+                  height="44px"
+                  textIndent="15px"
+                  outline="none"
+                  padding="8px"
+                  mb="2"
                   fontSize={fontSize}
                 />
                 <Box onClick={showPassword}>
@@ -222,7 +231,7 @@ const Login = (): JSX.Element => {
                   bg="#d9d9d9"
                   color="#000"
                   h="44px"
-                  _hover={{ bg: 'brand.600', color: 'black' }}
+                  _hover={{ bg: 'brand.50', color: '#fff' }}
                   fontFamily="Poppins">
                   Login
                 </Button>
