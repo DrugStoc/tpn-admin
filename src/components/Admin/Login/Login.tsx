@@ -88,7 +88,7 @@ const Login = (): JSX.Element => {
     padding: '40px 60px',
   }
 
-  const fontSize = useBreakpointValue({ base: '16px', md: '24px' })
+  const fontSize = useBreakpointValue({ base: '14px', md: '16px' })
 
   return (
     <Motion>
@@ -178,7 +178,7 @@ const Login = (): JSX.Element => {
               <FormLabel htmlFor="password" visibility="hidden">
                 Password
               </FormLabel>
-              <Box className="password" position="relative" mb={7} mt={-3}>
+              <Box position="relative" mb={7} mt={-3}>
                 <Input
                   onChange={handlePasswordChange}
                   value={password}
@@ -186,6 +186,7 @@ const Login = (): JSX.Element => {
                   placeholder="password"
                   id="password"
                   bgColor="brand.200"
+                  fontSize={fontSize}
                 />
                 <Box onClick={showPassword}>
                   {showTextPassword ? (
