@@ -12,7 +12,6 @@ import {
   Heading,
   Box,
   Button,
-  useBreakpointValue,
 } from '@chakra-ui/react'
 
 const Login = (): JSX.Element => {
@@ -53,20 +52,6 @@ const Login = (): JSX.Element => {
     }
   }
 
-  const cardStyles = useBreakpointValue({
-    md: {
-      width: '70%',
-      height: '90vh',
-      borderRadius: '0',
-      boxShadow: 'none',
-    },
-    sm: {
-      height: '100vh',
-      width: '100%',
-      borderRadius: '0',
-    },
-  })
-
   const cardLogin = {
     display: 'block',
     alignItems: 'center',
@@ -78,12 +63,10 @@ const Login = (): JSX.Element => {
     backgroundColor: '#fff',
   }
 
-  const fontSize = useBreakpointValue({ base: '14px', md: '16px' })
-
   return (
     <Motion>
       <Box className="login-body">
-        <Box sx={{ cardStyles, ...cardLogin }}>
+        <Box sx={{ ...cardLogin }}>
           <Box
             sx={{
               display: 'flex',
@@ -91,7 +74,7 @@ const Login = (): JSX.Element => {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-              {/* @ts-ignore */}
+            {/* @ts-ignore */}
             <Heading
               color="brand.50"
               fontSize="30px"
@@ -156,7 +139,6 @@ const Login = (): JSX.Element => {
                 outline="none"
                 padding="8px"
                 mb="2"
-                fontSize={fontSize}
               />
 
               <FormLabel htmlFor="password" visibility="hidden">
@@ -179,7 +161,6 @@ const Login = (): JSX.Element => {
                   outline="none"
                   padding="8px"
                   mb="2"
-                  fontSize={fontSize}
                 />
                 <Box onClick={showPassword}>
                   {showTextPassword ? (
@@ -220,10 +201,7 @@ const Login = (): JSX.Element => {
                   Login
                 </Button>
               </Box>
-              <Text
-                mt="4"
-                fontSize="10px"
-                textAlign="center">
+              <Text mt="4" fontSize="10px" textAlign="center">
                 THE PHARMACY NETWORK (TPN) is Powered By DrugStoc.
               </Text>
             </FormControl>
