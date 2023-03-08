@@ -1,3 +1,6 @@
+const color = '#979797'
+const fontFamily = "'Be Vietnam Pro', sans-serif"
+
 export const general = {
   '*': {
     margin: '0',
@@ -18,7 +21,7 @@ export const general = {
     marginInline: 'auto',
   },
   h1: {
-    fontSize: '2em !important',
+    fontSize: '2em',
   },
   '.admin-body': {
     position: 'fixed',
@@ -33,12 +36,12 @@ export const general = {
     overflowY: 'auto',
   },
   'input::-moz-placeholder, textarea::-moz-placeholder': {
-    color: '#979797',
-    fontFamily: "'Be Vietnam Pro', sans-serif",
+    color,
+    fontFamily,
   },
   'input::placeholder, textarea::placeholder': {
-    color: '#979797',
-    fontFamily: "'Be Vietnam Pro', sans-serif",
+    color,
+    fontFamily,
   },
   '.visibility-hidden': {
     visibility: 'hidden',
