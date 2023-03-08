@@ -1,7 +1,9 @@
 import { extendTheme } from '@chakra-ui/react'
-import { responsiveness } from './responsive'
+import { responsive } from './responsive'
 import { general } from './general'
 import { login } from './login'
+
+const defaultFont = 'Poppins, sans-serif'
 
 const theme = extendTheme({
   breakpoints: {
@@ -18,23 +20,23 @@ const theme = extendTheme({
       200: '#f7f8f9',
       300: '#f00',
       400: '#000',
-      500: 'd9d9d9',
-      600: '#006d6d',
+      500: '#d9d9d9',
+      600: '#fff',
       700: '#004f4f',
       800: '#003131',
       900: '#001313',
     },
   },
   fonts: {
-    body: 'Poppins, sans-serif',
-    heading: 'Poppins, sans-serif',
-    input: 'Poppins, sans-serif',
+    body: defaultFont,
+    heading: defaultFont,
+    input: defaultFont,
   },
   styles: {
     global: {
       ...general,
       ...login,
-      ...responsiveness,
+      ...responsive,
     },
   },
   components: {
