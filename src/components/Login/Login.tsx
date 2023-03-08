@@ -41,6 +41,8 @@ const Login = (): JSX.Element => {
     }
   }
 
+  const checkEmailPassword = email.trim().length >= 12 && password !== ''
+
   return (
     <Motion>
       <Box className="login-body">
@@ -97,7 +99,7 @@ const Login = (): JSX.Element => {
                 />
                 {eyeWatchIcon}
               </Box>
-              <Box onClick={handleClick}>
+              <Box onClick={checkEmailPassword ? handleClick : undefined}>
                 {err !== '' ? (
                   <FormLabel sx={{ color: 'brand.300' }}>
                     Bad Request. Try again
@@ -106,12 +108,13 @@ const Login = (): JSX.Element => {
                 <Button
                   type="submit"
                   width="100%"
-                  mt="4"
-                  bg="#d9d9d9"
-                  color="#000"
+                  mt={4}
+                  bg={checkEmailPassword ? 'brand.50' : 'brand.500'}
+                  color={checkEmailPassword ? 'brand.600' : '#000'}
+                  cursor={checkEmailPassword ? 'pointer' : 'not-allowed'}
                   h="44px"
                   fontFamily="Poppins"
-                  _hover={{ bg: 'brand.50', color: '#fff' }}>
+                  _hover={{ bg: 'brand.50', color: 'brand.600' }}>
                   Login
                 </Button>
               </Box>
