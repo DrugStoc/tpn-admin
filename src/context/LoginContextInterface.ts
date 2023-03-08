@@ -9,7 +9,7 @@ interface LoginContextInterface {
   validationMessage: string
   handleEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   handlePasswordChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>
+  handleSubmit: (e: React.FormEvent<HTMLFormElement> | any) => Promise<void>
   handleLogoutClick: () => void
   showPassword: () => void
   eyeWatchIcon: JSX.Element
