@@ -1,5 +1,4 @@
 import React, { useState, createContext, ChangeEvent, FormEvent } from 'react'
-
 import { LoginContextInterface } from './LoginContextInterface'
 
 const LoginContext = createContext<LoginContextInterface>({
@@ -30,8 +29,7 @@ const LoginProvider = ({
 }: {
   children: React.ReactNode
 }): JSX.Element => {
-  // web app login
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [error, setError] = useState<string>('')
   const [showTextPassword, setShowTextPassword] = useState<boolean>(false)
@@ -41,7 +39,7 @@ const LoginProvider = ({
   const [err, setErr] = useState('')
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    setEmail(e.target.value)
+    setEmail(e.currentTarget.value)
   }
 
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -58,7 +56,6 @@ const LoginProvider = ({
     }
   }
 
-  // testing purpose
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
 
@@ -73,7 +70,6 @@ const LoginProvider = ({
           email.trim().length === 0) ||
         (document.querySelectorAll('input')[1].value === '' &&
           password.trim().length === 0) ||
-        // !validator.isEmail(email)
         (!email.includes('@') && !email.includes('.'))
       ) {
         if (document.querySelectorAll('input')[0].value === '') {
@@ -92,9 +88,6 @@ const LoginProvider = ({
       })
 
       if (response.status === 400) {
-        // throw new Error('Invalid username or password')
-        // const { statusText } = response
-        // setErr(`${statusText}. Try again`)
         setErr('Bad Request. Try again')
       }
 
@@ -125,6 +118,7 @@ const LoginProvider = ({
     <div onClick={showPassword}>
       {showTextPassword ? (
         <img
+          className="login-input-show-hide-img"
           src="https://res.cloudinary.com/bizstak/image/upload/v1678128269/opened-eye_cfytw0.svg"
           width={24}
           height={24}
@@ -132,6 +126,7 @@ const LoginProvider = ({
         />
       ) : (
         <img
+          className="login-input-show-hide-img"
           src="https://res.cloudinary.com/bizstak/image/upload/v1678128224/closed-eye_giryen.svg"
           width={24}
           height={24}
@@ -141,7 +136,6 @@ const LoginProvider = ({
     </div>
   )
 
-  // date
   const date = new Date()
   const datetoString = date.toString()
   const datetoArr = datetoString.split(' ')
