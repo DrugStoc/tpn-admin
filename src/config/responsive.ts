@@ -1,8 +1,7 @@
-export const responsiveness = {
+export const responsive = {
   '@media (max-width: 679px)': {
     '.login-card': {
       width: '90%',
-      height: '90vh',
     },
   },
   '@media (max-width: 575px)': {
@@ -12,7 +11,7 @@ export const responsiveness = {
       borderRadius: 0,
       boxShadow: 'none',
     },
-    '.box': {
+    '.login-box': {
       height: '90vh',
     },
   },
