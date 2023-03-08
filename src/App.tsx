@@ -7,7 +7,7 @@ function App(): JSX.Element {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/admin/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>
