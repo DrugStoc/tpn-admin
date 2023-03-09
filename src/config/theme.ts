@@ -1,9 +1,7 @@
 import { extendTheme } from '@chakra-ui/react'
-import { responsive } from './responsive'
-import { general } from './general'
-import { login } from './login'
+import { modules as global } from './modules'
 
-const defaultFont = 'Poppins, sans-serif'
+const defaultFontFamily = 'Poppins, sans-serif'
 
 const theme = extendTheme({
   breakpoints: {
@@ -28,16 +26,13 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    body: defaultFont,
-    heading: defaultFont,
-    input: defaultFont,
+    body: defaultFontFamily,
+    heading: defaultFontFamily,
+    input: defaultFontFamily,
+    button: defaultFontFamily,
   },
   styles: {
-    global: {
-      ...general,
-      ...login,
-      ...responsive,
-    },
+    global,
   },
   components: {
     Button: {
