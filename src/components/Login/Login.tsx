@@ -32,7 +32,6 @@ const Login = (): JSX.Element => {
   const emailDotIndex = +email.indexOf('.') + 1
   const emailIndex = email[emailDotIndex]
   const navigate = useNavigate()
-
   const handleClick = (): void => {
     if (email === '' || password === '') {
       navigate('/login')
@@ -40,12 +39,12 @@ const Login = (): JSX.Element => {
       navigate('/dashboard/overview')
     }
   }
-
+  const afterLastDot = email.lastIndexOf('.') + 1
   const checkEmailPassword =
     email.trim().length >= 12 &&
     password !== '' &&
     email.includes('@') &&
-    email.includes('.') 
+    email.includes(email[afterLastDot])
 
   return (
     <Motion>
