@@ -29,7 +29,8 @@ const Login = (): JSX.Element => {
   if (loggedIn === true) {
     return <Navigate to="/dashboard" />
   }
-  const emailDotIndex = +email.indexOf('.') + 1
+  const afterLastDot = email.lastIndexOf('.') + 1
+  const emailDotIndex = afterLastDot
   const emailIndex = email[emailDotIndex]
   const navigate = useNavigate()
   const handleClick = (): void => {
@@ -39,7 +40,7 @@ const Login = (): JSX.Element => {
       navigate('/dashboard/overview')
     }
   }
-  const afterLastDot = email.lastIndexOf('.') + 1
+  
   const checkEmailPassword =
     email.trim().length >= 12 &&
     password !== '' &&
