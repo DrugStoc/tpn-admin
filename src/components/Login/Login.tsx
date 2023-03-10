@@ -41,7 +41,11 @@ const Login = (): JSX.Element => {
     }
   }
 
-  const checkEmailPassword = email.trim().length >= 12 && password !== ''
+  const checkEmailPassword =
+    email.trim().length >= 12 &&
+    password !== '' &&
+    email.includes('@') &&
+    email.includes('.') 
 
   return (
     <Motion>
@@ -116,7 +120,7 @@ const Login = (): JSX.Element => {
                   fontFamily="Poppins"
                   _hover={{
                     opacity: checkEmailPassword ? undefined : 0.5,
-                    bgColor: 'brand.900',
+                    bgColor: checkEmailPassword ? 'brand.900' : undefined,
                   }}>
                   Login
                 </Button>
