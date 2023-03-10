@@ -40,7 +40,7 @@ const Login = (): JSX.Element => {
       navigate('/dashboard/overview')
     }
   }
-  
+
   const checkEmailPassword =
     email.trim().length >= 12 &&
     password !== '' &&
@@ -87,6 +87,7 @@ const Login = (): JSX.Element => {
                 onChange={handleEmailChange}
                 placeholder="email or phone number"
                 value={email}
+                autoComplete="new-password"
                 id="email"
               />
               <FormLabel className="visibility-hidden" htmlFor="password">
