@@ -26,9 +26,6 @@ const Login = (): JSX.Element => {
     password,
     eyeWatchIcon,
   } = useContext(LoginContext)
-  if (loggedIn === true) {
-    return <Navigate to="/dashboard" />
-  }
   const afterLastDot = email.lastIndexOf('.') + 1
   const emailDotIndex = afterLastDot
   const emailIndex = email[emailDotIndex]
@@ -40,12 +37,17 @@ const Login = (): JSX.Element => {
       navigate('/dashboard/overview')
     }
   }
-
+  const supportsAutoComplete = 'autofill' in document.createElement('input')
+  const autoCompleteValue = supportsAutoComplete ? 'new-password' : 'off'
   const checkEmailPassword =
     email.trim().length >= 12 &&
     password !== '' &&
     email.includes('@') &&
     email.includes(email[afterLastDot])
+
+  if (loggedIn === true) {
+    return <Navigate to="/dashboard" />
+  }
 
   return (
     <Motion>
@@ -87,7 +89,7 @@ const Login = (): JSX.Element => {
                 onChange={handleEmailChange}
                 placeholder="email or phone number"
                 value={email}
-                autoComplete="new-password"
+                autoComplete={autoCompleteValue}
                 id="email"
               />
               <FormLabel className="visibility-hidden" htmlFor="password">
@@ -112,9 +114,9 @@ const Login = (): JSX.Element => {
                 ) : null}
                 <Button
                   type="submit"
-                  width="100%"
+                  w="100%"
                   mt={4}
-                  bg={checkEmailPassword ? 'brand.50' : 'brand.500'}
+                  bgColor={checkEmailPassword ? 'brand.50' : 'brand.500'}
                   color={checkEmailPassword ? 'brand.600' : '#000'}
                   cursor={checkEmailPassword ? 'pointer' : 'not-allowed'}
                   h="44px"
