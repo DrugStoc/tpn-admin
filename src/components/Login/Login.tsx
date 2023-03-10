@@ -26,9 +26,7 @@ const Login = (): JSX.Element => {
     password,
     eyeWatchIcon,
   } = useContext(LoginContext)
-  const afterLastDot = email.lastIndexOf('.') + 1
-  const emailDotIndex = afterLastDot
-  const emailIndex = email[emailDotIndex]
+  const afterLastDot = email.lastIndexOf('.') + 2
   const navigate = useNavigate()
   const handleClick = (): void => {
     if (email === '' || password === '') {
@@ -39,20 +37,16 @@ const Login = (): JSX.Element => {
   }
   const supportsAutoComplete = 'autofill' in document.createElement('input')
   const autoCompleteValue = supportsAutoComplete ? 'new-password' : 'off'
-  const checkEmailPassword =
-    email.trim().length >= 12 &&
-    password !== '' &&
+  const checkEmail =
     email.includes('@') &&
-    email.includes(email[afterLastDot])
+    email.includes('.') &&
+    email.includes(email[afterLastDot]) &&
+    email.trim().length > 12
+  const checkEmailPassword = checkEmail && password !== ''
 
   if (loggedIn === true) {
     return <Navigate to="/dashboard" />
   }
-  const checkEmail =
-    email.includes('@') &&
-    email.includes('.') &&
-    email.includes(emailIndex) &&
-    email.trim().length > 12
 
   return (
     <Motion>
