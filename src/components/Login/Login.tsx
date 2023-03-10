@@ -48,6 +48,11 @@ const Login = (): JSX.Element => {
   if (loggedIn === true) {
     return <Navigate to="/dashboard" />
   }
+  const checkEmail =
+    email.includes('@') &&
+    email.includes('.') &&
+    email.includes(emailIndex) &&
+    email.trim().length > 12
 
   return (
     <Motion>
@@ -55,7 +60,9 @@ const Login = (): JSX.Element => {
         <Box className="login-card">
           <Box className="login-box">
             {/* @ts-ignore */}
-            <Heading className="login-heading">Welcome back</Heading>
+            <Heading className="login-heading" fontFamily="defaultFontFamily">
+              Welcome back
+            </Heading>
             <Box className="login-text">
               <Text className="login-firstText">
                 Enter your email address or password to sign in to your account.
@@ -73,13 +80,9 @@ const Login = (): JSX.Element => {
               {email !== '' && password !== '' ? null : (
                 <FormLabel className="login-email-error">{error}</FormLabel>
               )}
-              {email === '' ||
-              (email.includes('@') &&
-                email.includes('.') &&
-                email.includes(emailIndex) &&
-                email.trim().length > 12) ? null : (
+              {email === '' || checkEmail ? null : (
                 <Box className="login-email-error">Email is invalid</Box>
-                )}
+              )}
               <FormLabel className="visibility-hidden" htmlFor="email">
                 Email address
               </FormLabel>
