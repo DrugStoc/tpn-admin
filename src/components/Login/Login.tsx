@@ -114,7 +114,10 @@ const Login = (): JSX.Element => {
                   cursor={checkEmailPassword ? 'pointer' : 'not-allowed'}
                   h="44px"
                   fontFamily="Poppins"
-                  _hover={{ opacity: checkEmailPassword ? undefined : 0.5 }}>
+                  _hover={{
+                    opacity: checkEmailPassword ? undefined : 0.5,
+                    bgColor: 'brand.900',
+                  }}>
                   Login
                 </Button>
               </Box>
