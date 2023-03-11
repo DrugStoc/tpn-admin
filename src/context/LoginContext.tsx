@@ -125,7 +125,7 @@ const LoginProvider = ({
         body: JSON.stringify(credential),
       })
 
-      if (response.status === 400) {
+      if (response.status === 400 || response.status === 404) {
         setErr('Bad Request. Try again')
       }
 
