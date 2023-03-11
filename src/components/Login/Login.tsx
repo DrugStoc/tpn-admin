@@ -41,7 +41,7 @@ const Login = (): JSX.Element => {
     email.includes('@') &&
     email.includes('.') &&
     email.includes(email[afterLastDot]) &&
-    email.trim().length > 12
+    email.trim().length >= 12
   const checkEmailPassword = checkEmail && password !== ''
 
   if (loggedIn === true) {
