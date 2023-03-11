@@ -20,7 +20,7 @@ const theme = extendTheme({
       600: '#fff',
       700: '#e9e9e9',
       800: '#979797',
-      900: '#556ab0ee',
+      900: '#556ab0dd',
     },
   },
   fonts: {
