@@ -1,4 +1,10 @@
-import React, { useState, createContext, ChangeEvent, FormEvent } from 'react'
+import React, {
+  useState,
+  createContext,
+  ChangeEvent,
+  FormEvent,
+  useEffect,
+} from 'react'
 import { LoginContextInterface } from './LoginContextInterface'
 
 const LoginContext = createContext<LoginContextInterface>({
@@ -37,6 +43,18 @@ const LoginProvider = ({
   const [loggedIn, setLoggedIn] = useState<boolean | undefined>(false)
   const [validationMessage, setValidationMessage] = useState<string>('')
   const [err, setErr] = useState('')
+
+  useEffect(() => {
+    if (err !== '') {
+      const timeoutId = setTimeout(() => {
+        setErr('')
+      }, 5000)
+
+      return () => {
+        clearTimeout(timeoutId)
+      }
+    }
+  }, [err])
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.currentTarget.value)
@@ -104,7 +122,9 @@ const LoginProvider = ({
         setLoggedIn(true)
       }
     } catch (event) {
-      setError('Email or Password is Incorrect')
+      if (email.trim().length > 0) {
+        setError('Email or Password is Incorrect')
+      }
     }
   }
 
