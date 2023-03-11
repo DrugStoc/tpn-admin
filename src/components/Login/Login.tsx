@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import React, { useContext } from 'react'
 import Motion from '../shared/Motion/Motion'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Navigate , useNavigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
 import {
   FormControl,
@@ -59,26 +59,18 @@ const Login = (): JSX.Element => {
             </Heading>
             <Box className="login-text">
               <Text className="login-firstText">
-                Enter your email address or password to sign in to your account.
+                Enter your email address and password to sign in to your
+                account.
               </Text>
               <Text className="login-secondText">
-                Enter your email address or password
+                Enter your email address and password
               </Text>
             </Box>
 
             <FormControl as="form">
-              {email === '' ? (
-                <FormLabel htmlFor="email">{validationMessage}</FormLabel>
-              ) : null}
-
-              {email !== '' && password !== '' ? null : (
-                <FormLabel className="login-email-error">{error}</FormLabel>
-              )}
-              {email === '' || checkEmail ? null : (
-                <Box className="login-email-error">Email is invalid</Box>
-              )}
-              <FormLabel className="visibility-hidden" htmlFor="email">
-                Email address
+              <FormLabel htmlFor="email" color="brand.300">
+                {email.length !== 0 && !checkEmail ? 'Email is invalid' : 
+                  email === '' ? validationMessage : error}
               </FormLabel>
               <Input
                 className="login-input"
@@ -88,10 +80,20 @@ const Login = (): JSX.Element => {
                 value={email}
                 autoComplete={autoCompleteValue}
                 id="email"
+                mb={7}
               />
-              <FormLabel className="visibility-hidden" htmlFor="password">
-                Password
-              </FormLabel>
+              {password === '' ? (
+                <FormLabel
+                  htmlFor="password"
+                  color="brand.300"
+                  style={{
+                    visibility: password === '' ? 'visible' : 'hidden',
+                    position: 'relative',
+                    bottom: 10,
+                  }}>
+                  {validationMessage.replace('Email', 'Password')}
+                </FormLabel>
+              ) : null}
               <Box className="login-email-box">
                 <Input
                   className="login-input"
@@ -112,7 +114,6 @@ const Login = (): JSX.Element => {
                 <Button
                   type="submit"
                   w="100%"
-                  mt={4}
                   bgColor={checkEmailPassword ? 'brand.50' : 'brand.500'}
                   color={checkEmailPassword ? 'brand.600' : '#000'}
                   cursor={checkEmailPassword ? 'pointer' : 'not-allowed'}
