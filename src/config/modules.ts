@@ -1,6 +1,6 @@
-import { responsive } from './responsive'
 import { general } from './general'
-import { login } from './login'
+import login from './login'
+import responsive from './responsive'
 
 const modules = {
   ...general,

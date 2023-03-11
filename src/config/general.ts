@@ -1,49 +1,47 @@
-const color = '#979797'
-const fontFamily = "'Be Vietnam Pro', sans-serif"
-
-export const general = {
+const color = 'brand.800'
+const fixedBody = {
+  pos: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  bgColor: 'brand.700',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
+const general = {
   '*': {
-    margin: '0',
-    padding: '0',
-    boxSizing: 'border-box',
+    p: 0,
   },
   body: {
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
   },
   img: {
-    OObjectFit: 'contain',
     objectFit: 'contain',
   },
   section: {
-    marginTop: '100px',
-    width: '90%',
-    marginInline: 'auto',
+    mt: '100px',
+    w: '90%',
+    mx: 'auto',
   },
   h1: {
     fontSize: '2em',
   },
   '.admin-body': {
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    right: '0',
-    bottom: '0',
-    backgroundColor: '#e9e9e9',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
     overflowY: 'auto',
-  },
-  'input::-moz-placeholder, textarea::-moz-placeholder': {
-    color,
-    fontFamily,
+    ...fixedBody,
   },
   'input::placeholder, textarea::placeholder': {
     color,
-    fontFamily,
+  },
+  'input[type="password"]::-ms-reveal, input[type="password"]::-ms-clear': {
+    display: 'none',
   },
   '.visibility-hidden': {
     visibility: 'hidden',
   },
 }
+
+export { general, fixedBody }

@@ -1,8 +1,6 @@
 import { extendTheme } from '@chakra-ui/react'
 import { modules as global } from './modules'
 
-const defaultFontFamily = 'Poppins, sans-serif'
-
 const theme = extendTheme({
   breakpoints: {
     sm: '320px',
@@ -20,16 +18,14 @@ const theme = extendTheme({
       400: '#000',
       500: '#d9d9d9',
       600: '#fff',
-      700: '#004f4f',
-      800: '#003131',
-      900: '#001313',
+      700: '#e9e9e9',
+      800: '#979797',
+      900: '#556ab0dd',
     },
   },
   fonts: {
-    body: defaultFontFamily,
-    heading: defaultFontFamily,
-    input: defaultFontFamily,
-    button: defaultFontFamily,
+    defaultFontFamily: 'Poppins, sans-serif',
+    fontFamily: "'Be Vietnam Pro', sans-serif",
   },
   styles: {
     global,
@@ -43,9 +39,9 @@ const theme = extendTheme({
           _hover: { bg: 'brand.600' },
         },
         secondary: {
-          bg: 'gray.500',
-          color: 'white',
-          _hover: { bg: 'gray.600' },
+          bg: 'brand.50',
+          color: 'brand.600',
+          _hover: { bg: 'brand.900' },
         },
       },
     },

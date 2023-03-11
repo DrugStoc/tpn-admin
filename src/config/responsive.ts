@@ -1,34 +1,20 @@
-export const responsive = {
+const responsive = {
   '@media (max-width: 679px)': {
     '.login-card': {
-      width: '90%',
+      w: '90%',
     },
   },
   '@media (max-width: 575px)': {
     '.login-card': {
-      width: '100%',
-      height: '100vh',
+      w: '100%',
       borderRadius: 0,
       boxShadow: 'none',
+      p: '0 10px',
     },
     '.login-box': {
-      height: '90vh',
-    },
-  },
-  '.login-box': {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-  },
-  '@media (min-width: 531px)': {
-    'input[type="password"]::-ms-reveal, input[type="password"]::-ms-clear': {
-      display: 'none',
-    },
-  },
-  '@media (max-width: 480px)': {
-    '.card': {
-      padding: '20px',
+      h: '100vh',
     },
   },
 }
+
+export default responsive
