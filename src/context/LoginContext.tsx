@@ -43,6 +43,26 @@ const LoginProvider = ({
   const [loggedIn, setLoggedIn] = useState<boolean | undefined>(false)
   const [validationMessage, setValidationMessage] = useState<string>('')
   const [err, setErr] = useState('')
+  const { pathname } = window.location
+  const pathArr = pathname.split('/')
+  const initialUpperCase = pathArr.map((path: string) => {
+    let firstWord: string = path[0]
+    if (firstWord !== undefined) {
+      firstWord = firstWord.toUpperCase()
+    } else {
+      firstWord = ''
+    }
+    return `${firstWord}${path.slice(1)}`
+  })
+  const title = initialUpperCase.join('')
+
+  useEffect(() => {
+    if (title === '') {
+      document.title = 'DrugStoc TPN Admin | Home'
+    } else {
+      document.title = `${title} | DrugStoc TPN Admin`
+    }
+  }, [pathname])
 
   useEffect(() => {
     if (err !== '') {
