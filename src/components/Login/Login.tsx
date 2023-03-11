@@ -115,7 +115,7 @@ const Login = (): JSX.Element => {
                   type="submit"
                   w="100%"
                   bgColor={checkEmailPassword ? 'brand.50' : 'brand.500'}
-                  color={checkEmailPassword ? 'brand.600' : '#000'}
+                  color={checkEmailPassword ? 'brand.600' : 'brand.400'}
                   cursor={checkEmailPassword ? 'pointer' : 'not-allowed'}
                   h="44px"
                   fontFamily="Poppins"
