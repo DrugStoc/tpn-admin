@@ -13,7 +13,10 @@ const merchants = {
     width: 'calc(100% - 200px)',
     marginLeft: 'auto',
   },
-  '.merchantTable': { position: 'absolute', top: '54px' },
+  '.merchantTable': {
+    position: 'absolute',
+    top: '54px',
+  },
 }
 
 export default merchants

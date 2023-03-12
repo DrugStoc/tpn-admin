@@ -77,7 +77,6 @@ const responsive = {
   },
   '@media (max-width: 700px) and (min-width: 557px)': {
     '.sidebar': { marginLeft: '4px' },
-    '.orderSection': { width: 'auto', marginLeft: '46px' },
   },
   '@media (max-width: 785px)': {
     '.inputButton': {
