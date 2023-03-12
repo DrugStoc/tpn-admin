@@ -1,5 +1,5 @@
-const customers = {
-  '.customerSection': {
+const merchants = {
+  '.merchantSection': {
     position: 'fixed',
     top: '0',
     left: '0',
@@ -13,10 +13,7 @@ const customers = {
     width: 'calc(100% - 200px)',
     marginLeft: 'auto',
   },
-  '.customersTable': {
-    position: 'absolute',
-    top: '54px',
-  },
+  '.merchantTable': { position: 'absolute', top: '54px' },
 }
 
-export default customers
+export default merchants

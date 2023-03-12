@@ -11,6 +11,7 @@ import overview from './overview'
 import sidebar from './sidebar'
 import orders from './orders'
 import customers from './customers'
+import merchants from './merchants'
 
 const modules = {
   ...general,
@@ -25,6 +26,7 @@ const modules = {
   ...overview,
   ...orders,
   ...customers,
+  ...merchants,
   ...responsive,
 }
 
