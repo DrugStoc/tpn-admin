@@ -12,6 +12,7 @@ import sidebar from './sidebar'
 import orders from './orders'
 import customers from './customers'
 import merchants from './merchants'
+import products from './products'
 
 const modules = {
   ...general,
@@ -27,6 +28,7 @@ const modules = {
   ...orders,
   ...customers,
   ...merchants,
+  ...products,
   ...responsive,
 }
 
