@@ -4,6 +4,7 @@ import { LoginProvider } from './context/LoginContext'
 import Overview from './pages/Overview'
 import Orders from './pages/Orders'
 import Customers from './pages/Customers'
+import Merchants from './pages/Merchants'
 
 function App(): JSX.Element {
   return (
@@ -14,6 +15,7 @@ function App(): JSX.Element {
           <Route path="/dashboard/overview" element={<Overview />} />
           <Route path="/dashboard/Orders" element={<Orders />} />
           <Route path="/dashboard/customers" element={<Customers />} />
+          <Route path="/dashboard/merchants" element={<Merchants />} />
         </Routes>
       </BrowserRouter>
     </LoginProvider>
