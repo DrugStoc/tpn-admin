@@ -15,7 +15,7 @@ const customers = {
   },
   '.customersTable': {
     position: 'absolute',
-    top: '94px',
+    top: '54px',
   },
 }
 
