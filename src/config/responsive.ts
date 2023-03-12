@@ -14,7 +14,7 @@ const responsive = {
         right: '0',
       },
     },
-    '.customersTable, .merchantTable, .productTable': {
+    '.customersTable, .merchantTable, .productTable, .shippingTable': {
       top: '94px !important',
     },
     '.inputSearch': {
@@ -72,10 +72,11 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { marginTop: 'auto', marginLeft: 'initial !important' },
     '.box': { marginInline: 'auto !important' },
-    '.orderSection, .customerSection, .merchantSection, .productSection': {
-      width: 'auto',
-      marginLeft: '46px',
-    },
+    '.orderSection, .customerSection, .merchantSection, .productSection, .shippingSection':
+      {
+        width: 'auto',
+        marginLeft: '46px',
+      },
   },
   '@media (max-width: 700px) and (min-width: 557px)': {
     '.sidebar': { marginLeft: '4px' },
