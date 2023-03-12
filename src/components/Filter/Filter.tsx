@@ -56,7 +56,7 @@ const Filter = ({
         />
         <div style={{ display: column === undefined ? 'none' : 'block' }}>
           <div className="inputImg" onClick={handleButtonClick}>
-            <Card className="card">
+            <Card className="cardDropdown">
               <span>Filter</span>
               {showList ? (
                 <Card className="dropdown">

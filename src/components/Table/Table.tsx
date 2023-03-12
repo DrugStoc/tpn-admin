@@ -78,7 +78,7 @@ const Table = ({
       } else if (column['column 9'] === 0 && slug === 'customers') {
         column['column 9'] = (
           <Link
-            to={`/admin/customer/${tableItem.id}`}
+            to={`/customer/${tableItem.id}`}
             style={{ position: 'relative', display: 'block' }}>
             <img
               src="https://res.cloudinary.com/bizstak/image/upload/v1678576503/vertical-menu_t5swd1.svg"
@@ -117,7 +117,7 @@ const Table = ({
             height={20}
             src={
               isSelected
-                ? 'https://res.cloudinary.com/bizstak/image/upload/v1678576466/toggle-on_yjtyea.svg'
+                ? 'https://res.cloudinary.com/bizstak/image/upload/v1678576453/box-filled_pyagqq.svg'
                 : 'https://res.cloudinary.com/bizstak/image/upload/v1678576442/box-empty_pkab1e.svg'
             }
             alt={isSelected ? 'checked box' : 'unchecked box'}
