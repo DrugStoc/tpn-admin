@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
-import React, { useContext } from 'react'
-import Motion from '../shared/Motion/Motion'
-import { Navigate , useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import Motion from '../shared/Motion'
+import { Navigate, useNavigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
 import {
   FormControl,
@@ -69,8 +69,11 @@ const Login = (): JSX.Element => {
 
             <FormControl as="form">
               <FormLabel htmlFor="email" color="brand.300">
-                {email.length !== 0 && !checkEmail ? 'Email is invalid' : 
-                  email === '' ? validationMessage : error}
+                {email.length !== 0 && !checkEmail
+                  ? 'Email is invalid'
+                  : email === ''
+                  ? validationMessage
+                  : error}
               </FormLabel>
               <Input
                 className="login-input"
