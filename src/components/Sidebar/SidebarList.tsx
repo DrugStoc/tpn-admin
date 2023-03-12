@@ -11,9 +11,14 @@ const SidebarList = ({ sidebarItem, pathArr }: sidebarType): JSX.Element => {
   const navigate = useNavigate()
   const slug = pathArr[pathArr.length - 1]
   const textLowerCase: string = sidebarItem.toLowerCase()
+  console.log(textLowerCase)
   const altText = `${textLowerCase} Icon`
   const handleButtonClick = (): void => {
-    navigate(`/dashboard/${textLowerCase}`)
+    if (textLowerCase === 'logout') {
+      navigate(`/login`)
+    } else {
+      navigate(`/dashboard/${textLowerCase}`)
+    }
   }
 
   return (
