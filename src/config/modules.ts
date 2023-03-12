@@ -9,6 +9,7 @@ import filter from './filter'
 import navbar from './navbar'
 import overview from './overview'
 import sidebar from './sidebar'
+import orders from './orders'
 
 const modules = {
   ...general,
@@ -21,6 +22,7 @@ const modules = {
   ...table,
   ...sidebar,
   ...overview,
+  ...orders,
   ...responsive,
 }
 

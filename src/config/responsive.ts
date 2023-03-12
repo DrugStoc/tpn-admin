@@ -69,9 +69,11 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { marginTop: 'auto', marginLeft: 'initial !important' },
     '.box': { marginInline: 'auto !important' },
+    '.orderSection': { width: 'auto', marginLeft: '46px' },
   },
   '@media (max-width: 700px) and (min-width: 557px)': {
     '.sidebar': { marginLeft: '4px' },
+    '.orderSection': { width: 'auto', marginLeft: '46px' },
   },
   '@media (max-width: 785px)': {
     '.inputButton': {
@@ -125,6 +127,10 @@ const responsive = {
       position: 'relative',
       top: '0',
     },
+    // '.input': {
+    //   display: 'flex',
+    //   flexWrap: 'wrap',
+    // },
   },
   '@media (max-width: 505px)': {
     '.inputButton': {
