@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const Motion = ({ children, className }: any): JSX.Element => {
   const [opacity, setOpacity] = useState(0)
