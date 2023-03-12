@@ -1,22 +1,14 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { useLocation, useNavigate } from 'react-router-dom'
-import { navbarInterface } from './NavbarInterface'
+// import { navbarInterface } from './NavbarInterface'
 
-const Nav = ({
-  text,
-  dayTimed,
-  dayTimer,
-  nav,
-}: navbarInterface): JSX.Element => {
+const Nav = ({ text, dayTimed, dayTimer, nav }: any): JSX.Element => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const pathArr = pathname.split('/')
   const slug = pathArr[pathArr.length - 1]
   const handleButtonClick: any = () => {
-    if (nav !== undefined) {
-      navigate(`/dashboard/${nav.toLowerCase()}s`)
-    } else {
-      navigate('/')
-    }
+    navigate(`/dashboard/${nav.toLowerCase()}s`)
   }
 
   return (
@@ -53,7 +45,9 @@ const Nav = ({
           {text}
         </h2>
       </div>
-      <div className="clock" style={{ fontWeight: 700, color: '#787579' }}>
+      <div
+        className="clock"
+        style={{ fontWeight: 700, color: '#787579', gap: 10, display: 'flex' }}>
         <span>{dayTimed}</span>
         <span className="dayTim">{dayTimer}</span>
       </div>

@@ -19,7 +19,7 @@ const Button = ({
   const navigate = useNavigate()
   const handleButtonClick = (): any => {
     if (text !== undefined) {
-      navigate(`/admin/${linkText?.toLowerCase()}/new`)
+      navigate(`/${linkText?.toLowerCase()}/new`)
     } else {
       navigate('/')
     }

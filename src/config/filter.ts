@@ -22,7 +22,7 @@ const filter = {
           left: '30px',
           cursor: 'pointer',
         },
-        '.card': {
+        '.cardDropdown': {
           width: '130px',
           height: '44px',
           display: 'flex',
