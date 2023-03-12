@@ -1,4 +1,11 @@
 const responsive = {
+  '@media (min-width: 1339px)': {
+    '.chat1, .chat2': {
+      marginLeft: '11px',
+      width: '56.7% !important',
+      boxShadow: '0 0 2px #f0f2f5',
+    },
+  },
   '@media (max-width: 1088px)': {
     '.inputButton': {
       flexWrap: 'wrap',
@@ -7,6 +14,7 @@ const responsive = {
         right: '0',
       },
     },
+    '.customerTable': { top: '94px !important' },
     '.inputSearch': {
       width: '100% !important',
     },
@@ -28,13 +36,6 @@ const responsive = {
     '.section .chat1': { top: '630px' },
     '.section .chat2': { top: '870px' },
     '.ground': { top: '1773px !important' },
-  },
-  '@media (min-width: 1339px)': {
-    '.chat1, .chat2': {
-      marginLeft: '11px',
-      width: '56.7% !important',
-      boxShadow: '0 0 2px #f0f2f5',
-    },
   },
   '@media (max-width: 963px)': {
     '.inputButton': {
@@ -70,6 +71,7 @@ const responsive = {
     '.settingLogout': { marginTop: 'auto', marginLeft: 'initial !important' },
     '.box': { marginInline: 'auto !important' },
     '.orderSection': { width: 'auto', marginLeft: '46px' },
+    '.customerSection': { width: 'auto', marginLeft: '46px' },
   },
   '@media (max-width: 700px) and (min-width: 557px)': {
     '.sidebar': { marginLeft: '4px' },
