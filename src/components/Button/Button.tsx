@@ -43,6 +43,7 @@ const Button = ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    gap: 8,
   }
   return (
     <button

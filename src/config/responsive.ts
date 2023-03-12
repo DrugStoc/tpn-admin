@@ -14,7 +14,7 @@ const responsive = {
         right: '0',
       },
     },
-    '.customerTable, .merchantTable': { top: '94px !important' },
+    '.customersTable, .merchantTable': { top: '94px !important' },
     '.inputSearch': {
       width: '100% !important',
     },
@@ -70,7 +70,7 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { marginTop: 'auto', marginLeft: 'initial !important' },
     '.box': { marginInline: 'auto !important' },
-    '.customerSection, .orderSection, .merchantSection': {
+    '.orderSection, .customerSection, .merchantSection': {
       width: 'auto',
       marginLeft: '46px',
     },
