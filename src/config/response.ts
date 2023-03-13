@@ -47,7 +47,16 @@ const responsive = {
       },
     },
   },
+  '@media (max-width: 900px)': {
+    '.errorSection section': { width: '70% !important' },
+  },
   '@media (max-width: 700px)': {
+    '.errorSection section': { width: '80% !important' },
+    '.errorSection section .errorCard': {
+      left: '21px !important',
+      height: '70vh',
+      marginTop: '65px',
+    },
     '.navbar .dayTime': {
       marginLeft: '8px !important',
     },
