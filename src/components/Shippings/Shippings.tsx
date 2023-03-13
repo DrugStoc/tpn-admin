@@ -4,12 +4,12 @@ import { useContext } from 'react'
 import LoginContext from '../../context/LoginContext'
 import Table from '../Table/Table'
 import {
-  MerchantsTableData,
-  MerchantTableHeadingData,
-} from './MerchantsTableData'
+  ShippingsTableData,
+  ShippingTableHeadingData,
+} from './ShippingsTableData'
 import Motion from '../shared/Motion'
 
-const Merchants = (): JSX.Element => {
+const Shippings = (): JSX.Element => {
   const { day, dateNum, month, pmAM, timer } = useContext(LoginContext)
 
   const dayTimer = `${day} ${dateNum} ${month}`
@@ -17,18 +17,18 @@ const Merchants = (): JSX.Element => {
 
   return (
     <Motion>
-      <div className="merchantSection">
-        <Nav text="Merchants" dayTimed={dayTimer} dayTimer={dayTime} />
+      <div className="shippingSection">
+        <Nav text="Shippings" dayTimed={dayTimer} dayTimer={dayTime} />
         <Filter
-          linkText="merchants"
-          column={MerchantTableHeadingData}
+          linkText="shippings"
+          column={ShippingTableHeadingData}
           buttonText
-          text="Add Merchant"
+          text="Add Shipping Location"
         />
-        <section className="merchantTable">
+        <section className="shippingTable">
           <Table
-            columnData={MerchantTableHeadingData}
-            TableData={MerchantsTableData}
+            columnData={ShippingTableHeadingData}
+            TableData={ShippingsTableData}
           />
         </section>
       </div>
@@ -36,4 +36,4 @@ const Merchants = (): JSX.Element => {
   )
 }
 
-export default Merchants
+export default Shippings
