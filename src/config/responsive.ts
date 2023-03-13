@@ -20,17 +20,17 @@ const responsive = {
     '.inputSearch': {
       width: '100% !important',
     },
-    '.section section:nth-of-type(3)': { flexDirection: 'column' },
-    '.section section:nth-of-type(3) .chatSearchProducts': {
+    '.section section:nth-child(3)': { flexDirection: 'column' },
+    '.section section:nth-child(3) .chatSearchProducts': {
       width: '100%',
       maxWidth: 'initial',
       marginTop: '-25px',
     },
-    '.section section:nth-of-type(3) .searchProducts': {
+    '.section section:nth-child(3) .searchProducts': {
       width: '100%',
       marginTop: '791px',
     },
-    '.section section:nth-of-type(3) .chatSearchProducts .positionVertical': {
+    '.section section:nth-child(3) .chatSearchProducts .positionVertical': {
       width: '100%',
       marginTop: '29px',
     },
