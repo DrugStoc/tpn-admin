@@ -13,7 +13,7 @@ const Error = (): JSX.Element => {
     <Motion>
       <div className="errorSection">
         <section>
-          <Card>
+          <Card className="errorCard">
             <Nav
               nav="Out in Space"
               arrow={null}

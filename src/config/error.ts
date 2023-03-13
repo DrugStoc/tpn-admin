@@ -11,8 +11,8 @@ const error = {
     justifyContent: 'center',
   },
   '.errorSection section': { position: 'absolute', top: '-65px', width: '76%' },
-  '.errorSection section .errorCard': {
-    display: 'flex',
+  '.errorSection section .card': {
+    display:  'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
@@ -22,8 +22,8 @@ const error = {
     left: '100px',
     fontFamily: "'Be Vietnam Pro', sans-serif",
   },
-  '.errorSection section .errorCard h1': { fontWeight: 500, fontSize: '40px' },
-  '.errorSection section .errorCard img': {
+  '.errorSection section .card h1': { fontWeight: 500, fontSize: '40px' },
+  '.errorSection section .card img': {
     marginBlock: '40px',
     width: '70%',
     height: 'auto',
