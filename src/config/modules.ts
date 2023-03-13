@@ -15,6 +15,7 @@ import merchants from './merchants'
 import products from './products'
 import shippings from './shippings'
 import error from './error'
+import addCustomer from './addCustomer'
 
 const modules = {
   ...general,
@@ -33,6 +34,7 @@ const modules = {
   ...products,
   ...shippings,
   ...error,
+  ...addCustomer,
   ...responsive,
 }
 
