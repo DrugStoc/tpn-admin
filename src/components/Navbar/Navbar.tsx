@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
+import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 // import { navbarInterface } from './NavbarInterface'
 
@@ -10,6 +11,24 @@ const Nav = ({ text, dayTimed, dayTimer, nav }: any): JSX.Element => {
   const handleButtonClick: any = () => {
     navigate(`/dashboard/${nav.toLowerCase()}s`)
   }
+  const initialUpperCase = pathArr.map((path: string) => {
+    let firstWord: string = path[0]
+    if (firstWord !== undefined) {
+      firstWord = firstWord.toUpperCase()
+    } else {
+      firstWord = ''
+    }
+    return `${firstWord}${path.slice(1)}`
+  })
+  const title = initialUpperCase.join(' ')
+
+  useEffect(() => {
+    if (title === '') {
+      document.title = 'DrugStoc TPN Admin | Home'
+    } else {
+      document.title = `${title} | DrugStoc TPN Admin`
+    }
+  }, [pathname])
 
   return (
     <nav className="navbar">
