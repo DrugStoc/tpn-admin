@@ -88,7 +88,7 @@ const responsive = {
       },
   },
   '@media (max-width: 700px) and (min-width: 557px)': {
-    '.sidebar': { marginLeft: '4px' },
+    '.sidebar': { marginLeft: 0 },
   },
   '@media (max-width: 785px)': {
     '.inputButton': {
