@@ -7,6 +7,7 @@ import Customers from './pages/Customers'
 import Merchants from './pages/Merchants'
 import Products from './pages/Products'
 import Shippings from './pages/Shippings'
+import Error from './pages/Error'
 
 function App(): JSX.Element {
   return (
@@ -20,6 +21,7 @@ function App(): JSX.Element {
           <Route path="/dashboard/merchants" element={<Merchants />} />
           <Route path="/dashboard/products" element={<Products />} />
           <Route path="/dashboard/shippings" element={<Shippings />} />
+          <Route path="/*" element={<Error />} />
         </Routes>
       </BrowserRouter>
     </LoginProvider>
