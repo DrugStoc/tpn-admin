@@ -9,7 +9,7 @@ const Nav = ({ text, dayTimed, dayTimer, nav }: any): JSX.Element => {
   const pathArr = pathname.split('/')
   const slug = pathArr[pathArr.length - 1]
   const handleButtonClick: any = () => {
-    navigate(`/dashboard/${nav.toLowerCase()}s`)
+    navigate(`/dashboard/${nav.toLowerCase()}`)
   }
   const initialUpperCase = pathArr.map((path: string) => {
     let firstWord: string = path[0]
