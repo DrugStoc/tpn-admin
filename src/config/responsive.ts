@@ -39,6 +39,9 @@ const responsive = {
     '.section .chat2': { top: '870px' },
     '.ground': { top: '1773px !important' },
   },
+  '@media (max-width: 1068px)': {
+    '.inputLabel': { marginBottom: '36px', width: '100%' },
+  },
   '@media (max-width: 963px)': {
     '.inputButton': {
       flexWrap: 'wrap',
@@ -49,6 +52,17 @@ const responsive = {
   },
   '@media (max-width: 900px)': {
     '.errorSection section': { width: '70% !important' },
+  },
+
+  '@media (max-width: 756px)': {
+    '.inputLabel': { minWidth: 'auto !important' },
+  },
+  '@media (max-width: 785px)': {
+    '.inputButton': {
+      button: {
+        width: '50% !important',
+      },
+    },
   },
   '@media (max-width: 700px)': {
     '.errorSection section': { width: '80% !important' },
@@ -81,21 +95,15 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { marginTop: 'auto', marginLeft: 'initial !important' },
     '.box': { marginInline: 'auto !important' },
-    '.orderSection, .customerSection, .merchantSection, .productSection, .shippingSection':
+    '.orderSection, .customerSection, .merchantSection, .productSection, .shippingSection, .addCustomer':
       {
         width: 'auto',
         marginLeft: '46px',
       },
+    '.addCustomer-cardBody': { padding: '20px !important' },
   },
   '@media (max-width: 700px) and (min-width: 557px)': {
     '.sidebar': { marginLeft: '4px' },
-  },
-  '@media (max-width: 785px)': {
-    '.inputButton': {
-      button: {
-        width: '50% !important',
-      },
-    },
   },
   '@media (max-width: 679px)': {
     '.login-card': {
