@@ -23,11 +23,12 @@ const error = {
     fontFamily: "'Be Vietnam Pro', sans-serif",
   },
   '.errorSection section .card h1': { fontWeight: 500, fontSize: '40px' },
+  '.errorSection section .card h2': { fontWeight: 500, fontSize: '18px' },
   '.errorSection section .card img': {
     marginBlock: '40px',
     width: '70%',
     height: 'auto',
   },
 }
-
+  
 export default error

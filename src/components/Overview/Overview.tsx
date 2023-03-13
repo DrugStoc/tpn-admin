@@ -132,7 +132,7 @@ const AnalyticChat = (): JSX.Element => {
           nav={undefined}
         />
         <Filter />
-        <section>
+        <section className='fillSearch'>
           <div className="chatSearchProducts">
             <Card className="positionVertical">
               <div className="title">

@@ -13,7 +13,7 @@ const overview = {
     width: 'calc(100% - 200px)',
     marginLeft: 'auto',
   },
-  '.section section:nth-child(3)': {
+  '.section .fillSearch': {
     position: 'absolute',
     fontFamily: "'Be Vietnam Pro', sans-serif",
     top: '50px',
@@ -22,14 +22,14 @@ const overview = {
     justifyContent: 'space-between',
     lineHeight: 2.2,
   },
-  '.section section:nth-child(3) .chatSearchProducts': {
+  '.section .fillSearch .chatSearchProducts': {
     width: '65%',
     maxWidth: '650px',
     flexWrap: 'wrap',
     display: 'flex',
     justifyContent: 'space-between',
   },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical': {
+  '.section .fillSearch .chatSearchProducts .positionVertical': {
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'wrap',
@@ -41,94 +41,94 @@ const overview = {
     paddingInline: '15px',
     fontSize: '12px',
   },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .title':
+  '.section .fillSearch .chatSearchProducts .positionVertical .title':
     {
       display: 'flex',
       gap: '10px',
       alignItems: 'center',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .title span':
+  '.section .fillSearch .chatSearchProducts .positionVertical .title span':
     {
       fontWeight: 500,
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .title img':
+  '.section .fillSearch .chatSearchProducts .positionVertical .title img':
     {
       width: '20px',
       height: '20px',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .positionHorizontal':
+  '.section .fillSearch .chatSearchProducts .positionVertical .positionHorizontal':
     {
       display: 'flex',
       justifyContent: 'space-between',
       height: '61px',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .positionHorizontal .data':
+  '.section .fillSearch .chatSearchProducts .positionVertical .positionHorizontal .data':
     {
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'column',
       height: '70px',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .positionHorizontal .data span':
+  '.section .fillSearch .chatSearchProducts .positionVertical .positionHorizontal .data span':
     {
       color: '#21a560',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .positionHorizontal .data img':
+  '.section .fillSearch .chatSearchProducts .positionVertical .positionHorizontal .data img':
     {
       width: '16px',
       height: '16px',
       marginLeft: '10px',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .positionHorizontal .data h2':
+  '.section .fillSearch .chatSearchProducts .positionVertical .positionHorizontal .data h2':
     {
       fontSize: '20px',
       fontWeight: 600,
       margin: '0',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .positionHorizontal .data .trends':
+  '.section .fillSearch .chatSearchProducts .positionVertical .positionHorizontal .data .trends':
     {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .positionHorizontal .view':
+  '.section .fillSearch .chatSearchProducts .positionVertical .positionHorizontal .view':
     {
       display: 'flex',
       alignItems: 'flex-end',
       gap: '10px',
       cursor: 'pointer',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .positionHorizontal .view span':
+  '.section .fillSearch .chatSearchProducts .positionVertical .positionHorizontal .view span':
     {
       color: '#4b70d6',
     },
-  '.section section:nth-child(3) .chatSearchProducts .positionVertical .positionHorizontal .view img':
+  '.section .fillSearch .chatSearchProducts .positionVertical .positionHorizontal .view img':
     {
       display: 'flex',
       position: 'relative',
       bottom: '8px',
     },
-  '.section section:nth-child(3) .searchProducts': {
+  '.section .fillSearch .searchProducts': {
     width: '33%',
     marginBottom: '50px',
     height: '913px',
     overflowY: 'auto',
   },
-  '.section section:nth-child(3) .searchProducts .title': {
+  '.section .fillSearch .searchProducts .title': {
     margin: '20px',
     fontSize: '14px',
     position: 'relative',
     fontWeight: 500,
     marginBottom: '30px',
   },
-  '.section section:nth-child(3) .searchProducts .title::before': {
+  '.section .fillSearch .searchProducts .title::before': {
     position: 'absolute',
     content: "''",
     borderBottom: '1px solid #e6e1e5',
     width: '100%',
     top: '30px',
   },
-  '.section section:nth-child(3) .searchProducts .productList': {
+  '.section .fillSearch .searchProducts .productList': {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -137,7 +137,7 @@ const overview = {
     marginBlock: '20px',
     flexWrap: 'wrap',
   },
-  '.section section:nth-child(3) .searchProducts .productList img:first-child':
+  '.section .fillSearch .searchProducts .productList img:first-of-type':
     {
       width: '48px',
       height: '48px',
@@ -146,7 +146,7 @@ const overview = {
       backgroundColor: '#d9d9d9',
       overflow: 'hidden',
     },
-  '.section section:nth-child(3) .searchProducts::-webkit-scrollbar': {
+  '.section .fillSearch .searchProducts::-webkit-scrollbar': {
     display: 'none',
   },
   '.section .chat1, .section .chat2': {

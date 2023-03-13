@@ -20,17 +20,17 @@ const responsive = {
     '.inputSearch': {
       width: '100% !important',
     },
-    '.section section:nth-child(3)': { flexDirection: 'column' },
-    '.section section:nth-child(3) .chatSearchProducts': {
+    '.section .fillSearch': { flexDirection: 'column' },
+    '.section .fillSearch .chatSearchProducts': {
       width: '100%',
       maxWidth: 'initial',
       marginTop: '-25px',
     },
-    '.section section:nth-child(3) .searchProducts': {
+    '.section .fillSearch .searchProducts': {
       width: '100%',
       marginTop: '791px',
     },
-    '.section section:nth-child(3) .chatSearchProducts .positionVertical': {
+    '.section .fillSearch .chatSearchProducts .positionVertical': {
       width: '100%',
       marginTop: '29px',
     },
@@ -38,6 +38,9 @@ const responsive = {
     '.section .chat1': { top: '630px' },
     '.section .chat2': { top: '870px' },
     '.ground': { top: '1773px !important' },
+  },
+  '@media (max-width: 1068px)': {
+    '.inputLabel': { marginBottom: '36px', width: '100%' },
   },
   '@media (max-width: 963px)': {
     '.inputButton': {
@@ -49,6 +52,17 @@ const responsive = {
   },
   '@media (max-width: 900px)': {
     '.errorSection section': { width: '70% !important' },
+  },
+
+  '@media (max-width: 756px)': {
+    '.inputLabel': { minWidth: 'auto !important' },
+  },
+  '@media (max-width: 785px)': {
+    '.inputButton': {
+      button: {
+        width: '50% !important',
+      },
+    },
   },
   '@media (max-width: 700px)': {
     '.errorSection section': { width: '80% !important' },
@@ -81,21 +95,15 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { marginTop: 'auto', marginLeft: 'initial !important' },
     '.box': { marginInline: 'auto !important' },
-    '.orderSection, .customerSection, .merchantSection, .productSection, .shippingSection':
+    '.orderSection, .customerSection, .merchantSection, .productSection, .shippingSection, .addCustomer':
       {
         width: 'auto',
         marginLeft: '46px',
       },
+    '.addCustomer-cardBody': { padding: '20px !important' },
   },
   '@media (max-width: 700px) and (min-width: 557px)': {
     '.sidebar': { marginLeft: '4px' },
-  },
-  '@media (max-width: 785px)': {
-    '.inputButton': {
-      button: {
-        width: '50% !important',
-      },
-    },
   },
   '@media (max-width: 679px)': {
     '.login-card': {

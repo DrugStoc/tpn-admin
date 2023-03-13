@@ -16,7 +16,7 @@ const table = {
   '.overflow .table thead th': { fontSize: '15px', fontWeight: 500 },
   '.overflow .table tbody tr:last-child': { borderBottom: 'none' },
   '.overflow .table tbody td': { fontSize: '14px', borderCollapse: 'collapse' },
-  '.overflow .table tbody td:first-child': {
+  '.overflow .table tbody td:first-of-type': {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -27,7 +27,7 @@ const table = {
     height: '16px',
     cursor: 'pointer',
   },
-  '.overflow .table tbody th:first-child, .overflow .table thead th:first-child':
+  '.overflow .table tbody th:first-of-type, .overflow .table thead th:first-of-type':
     {
       visibility: 'hidden',
     },

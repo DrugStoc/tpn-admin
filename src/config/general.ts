@@ -26,6 +26,9 @@ const general = {
     w: '90%',
     mx: 'auto',
   },
+  'section::-webkit-scrollbar': {
+    display: 'none',
+  },
   h1: {
     fontSize: '2em',
   },
