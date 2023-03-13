@@ -54,7 +54,7 @@ const LoginProvider = ({
     }
     return `${firstWord}${path.slice(1)}`
   })
-  const title = initialUpperCase.join('')
+  const title = initialUpperCase.join(' ')
 
   useEffect(() => {
     if (title === '') {
