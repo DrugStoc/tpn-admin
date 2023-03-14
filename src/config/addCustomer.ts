@@ -1,86 +1,79 @@
+import { fixedBody } from './general'
+
 const addCustomer = {
   '.addCustomer': {
     position: 'fixed',
-    top: '0',
-    left: '0',
-    right: '0',
-    bottom: '0',
-    backgroundColor: '#e9e9e9',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    ...fixedBody,
     overflowY: 'auto',
-    fontFamily: "'Be Vietnam Pro'",
-    width: 'calc(100% - 200px)',
-    marginLeft: 'auto',
+    fontFamily: 'fontFamily',
+    w: 'calc(100% - 200px)',
+    ml: 'auto',
   },
-  '.addCustomer .addCustomer-card': { marginBottom: '50px' },
-  '.addCustomer .addCustomer-section': { width: '90%' },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody': {
-    paddingBlock: '40px',
-    paddingInline: '55px',
+  '.addCustomer .card': { mb: '50px' },
+  '.addCustomer .addCustomer-section': { w: '90%' },
+  '.addCustomer .addCustomer-section .cardBody': {
+    py: '40px',
+    px: '55px',
   },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody h1': {
+  '.addCustomer .addCustomer-section .cardBody h1': {
     fontSize: '24px',
   },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody .buttonHeading': {
+  '.addCustomer .addCustomer-section .cardBody .buttonHeading': {
     display: 'flex',
     justifyContent: 'space-between',
-    marginTop: '45px',
+    mt: '45px',
   },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody .buttonHeading button':
+  '.addCustomer .addCustomer-section .cardBody .buttonHeading button': {
+    color: '#514f6d',
+    fontSize: '14px',
+  },
+  '.addCustomer .addCustomer-section .cardBody .buttonHeading .buttonImage': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: '8px',
+    cursor: 'pointer',
+  },
+  '.addCustomer .addCustomer-section .cardBody form,\n.addCustomer .addCustomer-section .cardBody .deliveryForm':
     {
-      color: '#514f6d',
-      fontSize: '14px',
+      mt: '60px',
     },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody .buttonHeading .buttonImage':
-    {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      gap: '8px',
-      cursor: 'pointer',
-    },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody form,\n.addCustomer .addCustomer-section .addCustomer-cardBody .deliveryForm':
-    {
-      marginTop: '60px',
-    },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody form .form,\n.addCustomer .addCustomer-section .addCustomer-cardBody .deliveryForm .form':
+  '.addCustomer .addCustomer-section .cardBody form .form,\n.addCustomer .addCustomer-section .cardBody .deliveryForm .form':
     {
       display: 'flex',
       justifyContent: 'space-between',
       flexWrap: 'wrap',
-      marginTop: '-20px',
-      marginBottom: '-20px',
+      mt: '-20px',
+      mb: '-20px',
     },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody form :where(.inputLabel),\n.addCustomer .addCustomer-section .addCustomer-cardBody .deliveryForm :where(.inputLabel)':
+  '.addCustomer .addCustomer-section .cardBody form :where(.inputLabel),\n.addCustomer .addCustomer-section .cardBody .deliveryForm :where(.inputLabel)':
     {
-      marginBottom: '30px',
-      minWidth: '405.922px',
-      position: 'relative',
+      mb: '30px',
+      minW: '405.922px',
+      pos: 'relative',
     },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody form :where(.inputLabel) :where(img),\n.addCustomer .addCustomer-section .addCustomer-cardBody .deliveryForm :where(.inputLabel) :where(img)':
+  '.addCustomer .addCustomer-section .cardBody form :where(.inputLabel) :where(img),\n.addCustomer .addCustomer-section .cardBody .deliveryForm :where(.inputLabel) :where(img)':
     {
-      position: 'absolute',
-      top: '56px',
-      left: '22px',
+      pos: 'absolute',
+      top: '53px',
+      right: '17px',
     },
-  '.addCustomer .addCustomer-section .addCustomer-cardBody form :where(.inputLabel) label,\n.addCustomer .addCustomer-section .addCustomer-cardBody .deliveryForm :where(.inputLabel) label':
+  '.addCustomer .addCustomer-section .cardBody form :where(.inputLabel) label,\n.addCustomer .addCustomer-section .cardBody .deliveryForm :where(.inputLabel) label':
     {
       fontSize: '14px',
       color: '#1f1c19',
       fontWeight: 500,
     },
   '.addCustomer input': {
-    background: '#f9f9fc',
+    bgColor: '#f9f9fc',
     borderRadius: '4px',
     border: '1px solid #f9f9fc',
-    marginTop: '20px',
-    height: '30px',
-    textIndent: '40px',
-    width: '100%',
+    mt: '20px',
+    h: '30px',
+    // textIndent: '40px',
+    w: '100%',
     outline: 'none',
-    padding: '20px',
+    p: '20px',
   },
   '.addCustomer .addDelivery': { marginTop: '45px' },
   '.addCustomer .addDelivery button': {
@@ -88,26 +81,16 @@ const addCustomer = {
     justifyContent: 'space-between',
     border: '2px solid #514f6d',
     alignItems: 'center',
-    padding: '8px 24px',
+    p: '8px 24px',
     gap: '8px',
     borderRadius: '4px',
   },
-  '.addCustomer .inputLabel': { position: 'relative' },
-  // '.addCustomer .inputDelivery': { textIndent: '3px' },
+  '.addCustomer .inputLabel': { pos: 'relative' },
+  '.addMerchant .inputLabel .inputDelivery': { textIndent: '3px !important' },
   '.addCustomer .inputLabel img.arrow': {
-    position: 'absolute !important',
+    pos: 'absolute !important',
     right: '15px !important',
     left: 'auto !important',
-  },
-  '@media (max-width: 1068px)': {
-    '.inputLabel': { marginBottom: '36px', width: '100%' },
-  },
-  '@media (max-width: 700px)': {
-    '.addCustomer': { width: 'auto', marginLeft: '46px' },
-    '.addCustomer-cardBody': { padding: '20px !important' },
-  },
-  '@media (max-width: 756px)': {
-    '.inputLabel': { minWidth: 'auto !important' },
   },
 }
 
