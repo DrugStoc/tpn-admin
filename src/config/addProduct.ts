@@ -58,7 +58,7 @@ const addProduct = {
   '.addProduct .addProduct-section .cardBody form :where(.inputLabel) :where(img),\n.addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel) :where(img)':
     {
       position: 'absolute',
-      top: '53px',
+      top: '56px',
       left: '22px',
     },
   '.addProduct .addProduct-section .cardBody form :where(.inputLabel) label,\n.addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel) label':
