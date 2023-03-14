@@ -1,6 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable linebreak-style */
 import SidebarAside from '../components/Sidebar/Sidebar'
 import AddCustomerView from '../components/AddCustomer/AddCustomer'
 
