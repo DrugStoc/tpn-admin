@@ -39,7 +39,7 @@ const responsive = {
     '.section .chat2': { top: '870px' },
     '.ground': { top: '1773px !important' },
   },
-  '@media (max-width: 1068px)': {
+  '@media (max-width: 1253px)': {
     '.inputLabel': { marginBottom: '36px', width: '100%' },
   },
   '@media (max-width: 963px)': {

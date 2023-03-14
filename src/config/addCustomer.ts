@@ -62,7 +62,7 @@ const addCustomer = {
   '.addCustomer .addCustomer-section .addCustomer-cardBody form :where(.inputLabel) :where(img),\n.addCustomer .addCustomer-section .addCustomer-cardBody .deliveryForm :where(.inputLabel) :where(img)':
     {
       position: 'absolute',
-      top: '56px',
+      top: '53px',
       left: '22px',
     },
   '.addCustomer .addCustomer-section .addCustomer-cardBody form :where(.inputLabel) label,\n.addCustomer .addCustomer-section .addCustomer-cardBody .deliveryForm :where(.inputLabel) label':
@@ -93,21 +93,10 @@ const addCustomer = {
     borderRadius: '4px',
   },
   '.addCustomer .inputLabel': { position: 'relative' },
-  // '.addCustomer .inputDelivery': { textIndent: '3px' },
   '.addCustomer .inputLabel img.arrow': {
     position: 'absolute !important',
     right: '15px !important',
     left: 'auto !important',
-  },
-  '@media (max-width: 1068px)': {
-    '.inputLabel': { marginBottom: '36px', width: '100%' },
-  },
-  '@media (max-width: 700px)': {
-    '.addCustomer': { width: 'auto', marginLeft: '46px' },
-    '.addCustomer-cardBody': { padding: '20px !important' },
-  },
-  '@media (max-width: 756px)': {
-    '.inputLabel': { minWidth: 'auto !important' },
   },
 }
 
