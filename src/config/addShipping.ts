@@ -58,7 +58,7 @@ const addShipping = {
   '.addShipping .addShipping-section .cardBody form :where(.inputLabel) :where(img),\n.addShipping .addShipping-section .cardBody .deliveryForm :where(.inputLabel) :where(img)':
     {
       position: 'absolute',
-      top: '56px',
+      top: '53px',
       left: '22px',
     },
   '.addShipping .addShipping-section .cardBody form :where(.inputLabel) label,\n.addShipping .addShipping-section .cardBody .deliveryForm :where(.inputLabel) label':
