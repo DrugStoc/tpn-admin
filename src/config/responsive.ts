@@ -69,8 +69,6 @@ const responsive = {
     },
   },
   '@media (max-width: 700px)': {
-    '.addShipping': { width: 'auto', marginLeft: '46px' },
-    '.addShipping .cardBody': { padding: '20px !important' },
     '.addProduct': { width: 'auto', marginLeft: '46px' },
     '.addMerchant': { width: 'auto', marginLeft: '46px', padding: '20px' },
     '.addMerchant .cardBody': { padding: '20px !important' },
