@@ -65,6 +65,8 @@ const responsive = {
     },
   },
   '@media (max-width: 700px)': {
+    '.addMerchant': { width: 'auto', marginLeft: '46px', padding: '20px' },
+    '.addMerchant .cardBody': { padding: '20px !important' },
     '.errorSection section': { width: '80% !important' },
     '.errorSection section .errorCard': {
       left: '21px !important',
@@ -100,7 +102,7 @@ const responsive = {
         width: 'auto',
         marginLeft: '46px',
       },
-    '.addCustomer-cardBody': { padding: '20px !important' },
+    '.cardBody': { padding: '20px !important' },
   },
   '@media (max-width: 700px) and (min-width: 557px)': {
     '.sidebar': { marginLeft: '4px' },
