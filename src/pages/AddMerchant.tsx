@@ -1,13 +1,13 @@
 import SidebarAside from '../components/Sidebar/Sidebar'
-import AddCustomerView from '../components/AddCustomer/AddCustomer'
+import AddMerchantView from '../components/AddMerchant/AddMerchant'
 
-const AddCustomer = (): JSX.Element => {
+const AddMerchant = (): JSX.Element => {
   return (
     <main style={{ display: 'flex', justifyContent: 'space-between' }}>
       <SidebarAside />
-      <AddCustomerView />
+      <AddMerchantView />
     </main>
   )
 }
 
-export default AddCustomer
+export default AddMerchant

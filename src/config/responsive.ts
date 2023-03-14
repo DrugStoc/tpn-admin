@@ -6,6 +6,20 @@ const responsive = {
       boxShadow: '0 0 2px #f0f2f5',
     },
   },
+  // ...
+  '@media (max-width: 1227px)': { '.inputLabel': { width: '100%' } },
+  // ...
+  '@media (max-width: 1253px)': {
+    '.inputLabel': { marginBottom: '36px', width: '100%' },
+  },
+  '@media (max-width: 963px)': {
+    '.inputButton': {
+      flexWrap: 'wrap',
+      button: {
+        width: '40% !important',
+      },
+    },
+  },
   '@media (max-width: 1088px)': {
     '.inputButton': {
       flexWrap: 'wrap',
@@ -39,17 +53,7 @@ const responsive = {
     '.section .chat2': { top: '870px' },
     '.ground': { top: '1773px !important' },
   },
-  '@media (max-width: 1068px)': {
-    '.inputLabel': { marginBottom: '36px', width: '100%' },
-  },
-  '@media (max-width: 963px)': {
-    '.inputButton': {
-      flexWrap: 'wrap',
-      button: {
-        width: '40% !important',
-      },
-    },
-  },
+  '@media (max-width: 1053px)': { '.discount': { width: '100% !important' } },
   '@media (max-width: 900px)': {
     '.errorSection section': { width: '70% !important' },
   },
@@ -65,6 +69,9 @@ const responsive = {
     },
   },
   '@media (max-width: 700px)': {
+    '.addProduct': { width: 'auto', marginLeft: '46px' },
+    '.addMerchant': { width: 'auto', marginLeft: '46px', padding: '20px' },
+    '.addMerchant .cardBody': { padding: '20px !important' },
     '.errorSection section': { width: '80% !important' },
     '.errorSection section .errorCard': {
       left: '21px !important',
@@ -100,7 +107,7 @@ const responsive = {
         width: 'auto',
         marginLeft: '46px',
       },
-    '.addCustomer-cardBody': { padding: '20px !important' },
+    '.cardBody': { padding: '20px !important' },
   },
   '@media (max-width: 700px) and (min-width: 557px)': {
     '.sidebar': { marginLeft: '4px' },
