@@ -31,8 +31,8 @@ const AddCustomer = ({ arrow }: any): JSX.Element => {
           text="Add Customers"
         />
         <section className="addCustomer-section">
-          <Card className="addCustomer-card">
-            <div className="addCustomer-cardBody">
+          <Card className="card">
+            <div className="cardBody">
               <h1>Add New Customer</h1>
               <h2
                 style={{
@@ -184,7 +184,7 @@ const AddCustomer = ({ arrow }: any): JSX.Element => {
                         <div className="inputLabel">
                           <label htmlFor="address1">Address &mdash; 1</label>
                           <input
-                            style={{ textIndent: 3 }}
+                            // style={{ textIndent: 3 }}
                             className="inputDelivery"
                             type="text"
                             placeholder="Ex. No9, Street name"
@@ -196,7 +196,7 @@ const AddCustomer = ({ arrow }: any): JSX.Element => {
                             Address &mdash; 2 (optional)
                           </label>
                           <input
-                            style={{ textIndent: 3 }}
+                            // style={{ textIndent: 3 }}
                             className="inputDelivery"
                             type="text"
                             placeholder="Ex. No9, Street name"
