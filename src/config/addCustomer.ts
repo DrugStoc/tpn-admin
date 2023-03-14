@@ -70,7 +70,6 @@ const addCustomer = {
     border: '1px solid #f9f9fc',
     mt: '20px',
     h: '30px',
-    // textIndent: '40px',
     w: '100%',
     outline: 'none',
     p: '20px',
