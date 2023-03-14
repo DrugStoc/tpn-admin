@@ -9,7 +9,6 @@ import Products from './pages/Products'
 import Shippings from './pages/Shippings'
 import Error from './pages/Error'
 import AddCustomer from './pages/AddCustomer'
-import AddMerchant from './pages/AddMerchant'
 
 function App(): JSX.Element {
   return (
@@ -24,7 +23,6 @@ function App(): JSX.Element {
           <Route path="/dashboard/products" element={<Products />} />
           <Route path="/dashboard/shippings" element={<Shippings />} />
           <Route path="/customers/new" element={<AddCustomer />} />
-          <Route path="/merchants/new" element={<AddMerchant />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       </BrowserRouter>
