@@ -1,4 +1,4 @@
-import { fixedBody } from './general'
+import { fixedBody, verticalCenter } from './general'
 
 const fontFamily = 'defaultFontFamily'
 const paraText = {
@@ -7,9 +7,8 @@ const paraText = {
   lineHeight: '1.7',
 }
 const w = '100%'
-const position = 'relative'
+const pos = 'relative'
 const login = {
-
   '.login-body': {
     fontFamily,
     ...fixedBody,
@@ -23,10 +22,7 @@ const login = {
   '.login-box': {
     w: '90%',
     mx: 'auto',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
+    ...verticalCenter,
   },
   '.login-heading': {
     fontFamily,
@@ -39,14 +35,13 @@ const login = {
     ...paraText,
   },
   '.login-secondText': {
-    mt: 4,
-    mb: 4,
+    my: 4,
     ...paraText,
   },
   '.login-email-error': {
     color: 'brand.300',
     w: '90%',
-    position,
+    pos,
     top: 6,
   },
   '.login-input': {
@@ -59,7 +54,7 @@ const login = {
     mb: 2,
   },
   '.login-email-box': {
-    position,
+    pos,
     mb: 7,
     mt: -3,
   },

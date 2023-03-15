@@ -10,6 +10,12 @@ const fixedBody = {
   alignItems: 'center',
   justifyContent: 'center',
 }
+const verticalCenter = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+}
 const general = {
   '*': {
     p: 0,
@@ -44,4 +50,4 @@ const general = {
   },
 }
 
-export { general, fixedBody }
+export { general, fixedBody, verticalCenter }
