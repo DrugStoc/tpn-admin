@@ -84,8 +84,8 @@ const Navbar = ({ nav }: NavArrowInterface): JSX.Element => {
         ) : null}
         <h2
           style={{
-            fontSize: slug === '/' ? 32 : 24,
-            cursor: 'pointer',
+            fontSize: slug === '' ? 24 : 16,
+            cursor: slug === '' ? 'default' : 'pointer',
           }}>
           {text}
         </h2>
