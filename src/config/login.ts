@@ -12,6 +12,7 @@ const login = {
   '.login-body': {
     fontFamily,
     ...fixedBody,
+    color: 'brand.100',
     '.login-card': {
       boxShadow: '2px 8px 35px rgba(0, 0, 0, 0.05)',
       borderRadius: 10,
