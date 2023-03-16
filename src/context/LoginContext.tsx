@@ -1,9 +1,11 @@
-import React, {
+/* eslint-disable react/react-in-jsx-scope */
+import {
   useState,
   createContext,
   ChangeEvent,
   FormEvent,
   useEffect,
+  useRef,
 } from 'react'
 import { LoginContextInterface } from './LoginContextInterface'
 
@@ -28,6 +30,9 @@ const LoginContext = createContext<LoginContextInterface>({
   month: '',
   pmAM: '',
   timer: '',
+  daytimer: '',
+  dayTimer: '',
+  dayTime: '',
 })
 
 const LoginProvider = ({
@@ -43,26 +48,6 @@ const LoginProvider = ({
   const [loggedIn, setLoggedIn] = useState<boolean | undefined>(false)
   const [validationMessage, setValidationMessage] = useState<string>('')
   const [err, setErr] = useState('')
-  const { pathname } = window.location
-  const pathArr = pathname.split('/')
-  const initialUpperCase = pathArr.map((path: string) => {
-    let firstWord: string = path[0]
-    if (firstWord !== undefined) {
-      firstWord = firstWord.toUpperCase()
-    } else {
-      firstWord = ''
-    }
-    return `${firstWord}${path.slice(1)}`
-  })
-  const title = initialUpperCase.join('')
-
-  useEffect(() => {
-    if (title === '') {
-      document.title = 'DrugStoc TPN Admin | Home'
-    } else {
-      document.title = `${title} | DrugStoc TPN Admin`
-    }
-  }, [pathname])
 
   useEffect(() => {
     if (err !== '') {
@@ -213,6 +198,10 @@ const LoginProvider = ({
   timeLocaleArr.join('')
   const timer = timeLocaleArr.join(':')
 
+  const daytimer = useRef(`Good ${dayHr} Bello`)
+  const dayTimer = useRef(`${day} ${dateNum} ${month}`)
+  const dayTime = useRef(`${timer} ${pmAM}`)
+
   return (
     <LoginContext.Provider
       value={{
@@ -236,6 +225,9 @@ const LoginProvider = ({
         month,
         pmAM,
         timer,
+        daytimer,
+        dayTimer,
+        dayTime,
       }}>
       {children}
     </LoginContext.Provider>
