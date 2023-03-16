@@ -1,12 +1,14 @@
-import { general } from './general'
 import login from './login'
+import navbar from './navbar'
+import overview from './overview'
 import responsive from './responsive'
 import sidebar from './sidebar'
 
 const modules = {
-  ...general,
   ...login,
   ...sidebar,
+  ...navbar,
+  ...overview,
   ...responsive,
 }
 

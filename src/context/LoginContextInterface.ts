@@ -19,6 +19,9 @@ interface LoginContextInterface {
   month: string
   pmAM: string
   timer: string
+  daytimer: any
+  dayTimer: any
+  dayTime: any
 }
 
 export type { LoginContextInterface }

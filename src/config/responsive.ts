@@ -1,10 +1,13 @@
 const responsive = {
   '@media (max-width: 700px)': {
     '.sidebar': {
-      py: 7.5,
+      py: '30px',
       justifyContent: 'center',
       alignItems: 'center',
-      w: 'auto',
+      w: '44px',
+    },
+    '.section': {
+      w: 'calc(100% - 44px)',
     },
     '.sidebar a': { display: 'none' },
     '.sidebar li': {
@@ -21,12 +24,13 @@ const responsive = {
     '.settingLogout': { mt: 'auto', ml: 'initial !important' },
     '.sidebar-box': { mx: 'auto !important' },
   },
-  '@media (max-width: 700px) and (min-width: 557px)': {
-    '.sidebar': { ml: 1 },
-  },
   '@media (max-width: 679px)': {
     '.login-card': {
       w: '90%',
+    },
+    '.sidebar li': {
+      height: 'auto',
+      p: '10px',
     },
   },
   '@media (max-width: 575px)': {
@@ -38,6 +42,26 @@ const responsive = {
     },
     '.login-box': {
       h: '100vh',
+    },
+  },
+  '@media (max-width: 556px)': {
+    '.navbar .clock': {
+      pos: 'relative',
+      top: 0,
+    },
+  },
+  '@media (max-width: 480px)': {
+    '.sidebar': {
+      w: '40px',
+    },
+    '.section': {
+      w: 'calc(100% - 40px)',
+    },
+    '.sidebar li': {
+      p: '7px',
+    },
+    html: {
+      fontSize: '14px',
     },
   },
 }
