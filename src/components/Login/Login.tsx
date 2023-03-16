@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import React, { useContext } from 'react'
-import Motion from '../shared/Motion/Motion'
+import Motion from '../shared/Motion'
 import { Navigate, useNavigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
 import {
@@ -32,7 +32,7 @@ const Login = (): JSX.Element => {
     if (email === '' || password === '') {
       navigate('/login')
     } else {
-      navigate('/admin/overview')
+      navigate('/')
     }
   }
   const supportsAutoComplete = 'autofill' in document.createElement('input')
@@ -45,7 +45,7 @@ const Login = (): JSX.Element => {
   const checkEmailPassword = checkEmail && password !== ''
 
   if (loggedIn === true) {
-    return <Navigate to="/dashboard" />
+    return <Navigate to="/" />
   }
 
   return (
