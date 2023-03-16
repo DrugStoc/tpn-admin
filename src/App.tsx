@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/Login'
 import { LoginProvider } from './context/LoginContext'
-import Sidebar from './pages/Sidebar'
+import Home from './pages/Home/Overview'
 
 function App(): JSX.Element {
   return (
@@ -11,7 +11,7 @@ function App(): JSX.Element {
         <main style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Sidebar />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </main>
       </BrowserRouter>
