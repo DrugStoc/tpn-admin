@@ -16,8 +16,10 @@ const SidebarList = ({ sidebarItem, pathArr }: sidebarType): JSX.Element => {
   const handleButtonClick = (): void => {
     if (textLowerCase === 'logout') {
       navigate(`/login`)
+    } else if (textLowerCase === 'overview') {
+      navigate(`/`)
     } else {
-      navigate(`/admin/${textLowerCase}`)
+      navigate(`/${textLowerCase}`)
     }
   }
 
@@ -42,7 +44,10 @@ const SidebarList = ({ sidebarItem, pathArr }: sidebarType): JSX.Element => {
         <ListItem
           role="button"
           className={
-            textLowerCase === slug || pathArr.includes(textLowerCase)
+            textLowerCase === slug ||
+            pathArr.includes(textLowerCase) ||
+            textLowerCase === 'overview' ||
+            slug === '/'
               ? 'active'
               : undefined
           }
