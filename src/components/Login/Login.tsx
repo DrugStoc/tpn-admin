@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import React, { useContext } from 'react'
 import Motion from '../shared/Motion/Motion'
-import { Navigate , useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
 import {
   FormControl,
@@ -32,7 +32,7 @@ const Login = (): JSX.Element => {
     if (email === '' || password === '') {
       navigate('/login')
     } else {
-      navigate('/dashboard/overview')
+      navigate('/admin/overview')
     }
   }
   const supportsAutoComplete = 'autofill' in document.createElement('input')
@@ -69,8 +69,11 @@ const Login = (): JSX.Element => {
 
             <FormControl as="form">
               <FormLabel htmlFor="email" color="brand.300">
-                {email.length !== 0 && !checkEmail ? 'Email is invalid' : 
-                  email === '' ? validationMessage : error}
+                {email.length !== 0 && !checkEmail
+                  ? 'Email is invalid'
+                  : email === ''
+                    ? validationMessage
+                    : error}
               </FormLabel>
               <Input
                 className="login-input"
@@ -113,12 +116,12 @@ const Login = (): JSX.Element => {
                 ) : null}
                 <Button
                   type="submit"
-                  w="100%"
+                  w="full"
                   bgColor={checkEmailPassword ? 'brand.50' : 'brand.500'}
                   color={checkEmailPassword ? 'brand.600' : 'brand.400'}
                   cursor={checkEmailPassword ? 'pointer' : 'not-allowed'}
                   h="44px"
-                  fontFamily="Poppins"
+                  fontFamily="defaultFontFamily"
                   _hover={{
                     opacity: checkEmailPassword ? undefined : 0.5,
                     bgColor: checkEmailPassword ? 'brand.900' : undefined,
