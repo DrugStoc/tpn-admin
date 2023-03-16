@@ -17,7 +17,7 @@ const verticalCenter = {
   flexDirection: 'column',
 }
 const general = {
-  '*': {
+  '*, *::before, *::after': {
     p: 0,
   },
   body: {
@@ -28,12 +28,12 @@ const general = {
     objectFit: 'contain',
   },
   section: {
-    mt: '100px',
+    mt: 6.25,
     w: '90%',
     mx: 'auto',
   },
   h1: {
-    fontSize: '2em',
+    fontSize: 8,
   },
   '.admin-body': {
     overflowY: 'auto',
@@ -42,9 +42,10 @@ const general = {
   'input::placeholder, textarea::placeholder': {
     color,
   },
-  'input[type="password"]::-ms-reveal, input[type="password"]::-ms-clear': {
-    display: 'none',
-  },
+  'input[type="password"]::-webkit-reveal, input[type="password"]::-webkit-clear-button, input[type="password"]::-ms-reveal, input[type="password"]::-ms-clear':
+    {
+      display: 'none !important',
+    },
   '.visibility-hidden': {
     visibility: 'hidden',
   },
