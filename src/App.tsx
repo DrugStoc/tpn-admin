@@ -11,7 +11,7 @@ function App(): JSX.Element {
         <main style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/admin/overview" element={<Sidebar />} />
+            <Route path="/" element={<Sidebar />} />
           </Routes>
         </main>
       </BrowserRouter>
