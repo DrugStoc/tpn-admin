@@ -44,7 +44,7 @@ const Sidebar = (): JSX.Element => {
         </Box>
         <Box className="settingLogout" display="flex" mb={8}>
           {/* @ts-ignore */}
-          <List spacing={3}>{sidearBottomItems}</List>
+          <List className='listItemBottom' spacing={3}>{sidearBottomItems}</List>
         </Box>
       </Box>
     </aside>
