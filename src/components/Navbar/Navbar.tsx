@@ -58,10 +58,10 @@ const Navbar = ({ nav }: NavArrowInterface): JSX.Element => {
 
   return (
     <nav className="navbar">
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div className="navbar-split">
         <h2
           style={{
-            color: '#787579',
+            color: 'brand.350',
             marginRight: nav !== undefined ? 3 : undefined,
             display: 'flex',
             cursor: 'pointer',
