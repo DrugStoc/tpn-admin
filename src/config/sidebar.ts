@@ -9,7 +9,7 @@ const sidebar = {
     justifyContent: 'space-between',
     fontFamily: 'fontFamily',
     overflowY: 'auto',
-    color: 'brand.150',
+    color: 'brand.100',
     zIndex: 1,
     li: {
       display: 'flex',
