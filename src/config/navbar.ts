@@ -14,23 +14,16 @@ const navbar = {
     '.navbar-split': {
       display: 'flex',
       alignItems: 'center',
+      h2: {
+        fontSize: '16px',
+        fontWeight: '600',
+      },
+      '.img': {
+        pos,
+        top: '14px',
+        left: '10px',
+      },
     },
-  },
-  '.navbar + section': {
-    pos,
-    top: '-25px',
-  },
-  '.navbar + section img.img': {
-    pos,
-    top: '14px',
-    left: '10px',
-  },
-  '.navbar h2': {
-    fontSize: '16px',
-    fontWeight: '600',
-  },
-  '.navbar .dayTime': {
-    ml: '24px',
   },
 }
 
