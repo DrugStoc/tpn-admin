@@ -46,7 +46,6 @@ const login = {
           '.login-input': {
             bgColor: 'brand.200',
             borderRadius: 4,
-            border: '1px solid brand.200',
             h: '44px',
             textIndent: 15,
             p: 2,
