@@ -37,6 +37,11 @@ const SidebarList = ({ sidebarItem, pathArr }: sidebarType): JSX.Element => {
                 color: #fff !important;
               }
           }
+          @media (min-width: 701px) {
+            .listItemBottom {
+              width: 95%;
+            }
+          }
           `}
       </style>
       <div className="listItem" onClick={handleButtonClick} key={sidebarItem}>
