@@ -15,7 +15,7 @@ const navbar = {
       display: 'flex',
       alignItems: 'center',
       h2: {
-        fontSize: '16px',
+        fontSize: '1rem',
         fontWeight: '600',
       },
       '.img': {
