@@ -94,7 +94,7 @@ const Navbar = ({ nav }: NavArrowInterface): JSX.Element => {
         className="clock"
         style={{ fontWeight: 700, color: '#787579', gap: 10, display: 'flex' }}>
         <span>{dayTimed}</span>
-        <span className="dayTim">{daysTimer}</span>
+        <span>{daysTimer}</span>
       </div>
     </nav>
   )
