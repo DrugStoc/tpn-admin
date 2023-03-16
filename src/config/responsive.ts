@@ -60,6 +60,9 @@ const responsive = {
     '.sidebar li': {
       p: '7px',
     },
+    html: {
+      fontSize: '14px',
+    },
   },
 }
 
