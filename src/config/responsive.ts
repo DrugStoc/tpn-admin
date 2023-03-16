@@ -23,9 +23,6 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { mt: 'auto', ml: 'initial !important' },
     '.sidebar-box': { mx: 'auto !important' },
-    '.navbar .dayTime': {
-      ml: '8px !important',
-    },
   },
   '@media (max-width: 679px)': {
     '.login-card': {
