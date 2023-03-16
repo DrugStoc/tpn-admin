@@ -1,4 +1,9 @@
 const color = 'brand.800'
+const dflexCenter = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
 const fixedBody = {
   pos: 'fixed',
   top: 0,
@@ -6,19 +11,33 @@ const fixedBody = {
   right: 0,
   bottom: 0,
   bgColor: 'brand.700',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  ...dflexCenter,
 }
+
+const navbarPos = {
+  ...fixedBody,
+  overflowY: 'auto',
+  w: 'calc(100% - 200px)',
+  ml: 'auto',
+}
+
 const verticalCenter = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
 }
+
+const horizontalBtwFlex = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  flexWrap: 'wrap',
+}
 const general = {
-  '*, *::before, *::after': {
+  '*': {
     p: 0,
+    m: 0,
   },
   body: {
     WebkitFontSmoothing: 'antialiased',
@@ -28,12 +47,16 @@ const general = {
     objectFit: 'contain',
   },
   section: {
-    mt: 6.25,
+    mt: '100px',
     w: '90%',
     mx: 'auto',
   },
+
+  'section::-webkit-scrollbar': {
+    display: 'none',
+  },
   h1: {
-    fontSize: 8,
+    fontSize: '2rem',
   },
   '.admin-body': {
     overflowY: 'auto',
@@ -51,4 +74,4 @@ const general = {
   },
 }
 
-export { general, fixedBody, verticalCenter }
+export { general, fixedBody, verticalCenter, navbarPos, horizontalBtwFlex }
