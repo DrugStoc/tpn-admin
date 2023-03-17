@@ -43,6 +43,21 @@ const general = {
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
   },
+  '::-webkit-scrollbar': {
+    w: '0.625rem',
+    WebkitBoxShadow: 'inset 0 0 6px rgba(0, 0, 0, 0.3)',
+    boxShadow: 'inset 0 0 6px rgba(0, 0, 0, 0.3)',
+    WebkitBorderRadius: '0.3125rem',
+    borderRadius: '0.3125rem',
+  },
+  '::-webkit-scrollbar-thumb': {
+    bgColor: '#c1c1c1',
+    WebkitBorderRadius: '0.3125rem',
+    borderRadius: '0.3125rem',
+  },
+  '::-webkit-scrollbar-thumb:hover': {
+    bgColor: '#a8a8a8',
+  },
   img: {
     objectFit: 'contain',
   },
