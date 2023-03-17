@@ -1,6 +1,6 @@
 const searched = {
   '.section .fillSearch .searchProducts': {
-    w: '35%',
+    w: '33%',
     mb: '50px',
     h: '913px',
     overflowY: 'auto',
