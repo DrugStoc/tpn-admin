@@ -17,7 +17,7 @@ const responsive = {
       marginTop: '-25px',
     },
     '.section .fillSearch .searchProducts': {
-      width: '100%',
+      width: '100% !important',
       marginTop: '791px',
     },
     '.section .fillSearch .chatSearchProducts .positionVertical': {

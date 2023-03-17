@@ -7,6 +7,7 @@ import login from './login'
 import navbar from './navbar'
 import overview from './overview'
 import responsive from './responsive'
+import searched from './searched'
 import sidebar from './sidebar'
 import summary from './summary'
 
@@ -21,6 +22,7 @@ const modules = {
   ...filter,
   ...button,
   ...summary,
+  ...searched,
   ...responsive,
 }
 
