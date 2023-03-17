@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
-import { NavbarInterface } from './NavbarInterface'
+import { NavArrowInterface } from './NavArrowInterface'
 
-const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
+const Navbar = ({ nav }: NavArrowInterface): JSX.Element => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const pathArr = pathname.split('/')
