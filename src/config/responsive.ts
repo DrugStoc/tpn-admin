@@ -8,21 +8,35 @@ const responsive = {
       },
     },
     '.inputSearch': {
-      w: '100% !important',
+      width: '100% !important',
+    },
+    '.section .fillSearch': { flexDirection: 'column' },
+    '.section .fillSearch .chatSearchProducts': {
+      width: '100%',
+      maxWidth: 'initial',
+      marginTop: '-25px',
+    },
+    '.section .fillSearch .searchProducts': {
+      width: '100%',
+      marginTop: '791px',
+    },
+    '.section .fillSearch .chatSearchProducts .positionVertical': {
+      width: '100%',
+      marginTop: '29px',
     },
   },
   '@media (max-width: 963px)': {
     '.inputButton': {
       flexWrap: 'wrap',
       button: {
-        w: '40% !important',
+        width: '40% !important',
       },
     },
   },
   '@media (max-width: 785px)': {
     '.inputButton': {
       button: {
-        w: '50% !important',
+        width: '50% !important',
       },
     },
   },
@@ -63,14 +77,14 @@ const responsive = {
   '@media (max-width: 675px)': {
     '.inputButton': {
       button: {
-        w: '60% !important',
+        width: '60% !important',
       },
     },
   },
   '@media (max-width: 600px)': {
     '.inputButton': {
       button: {
-        w: '80% !important',
+        width: '80% !important',
       },
     },
   },
@@ -95,7 +109,7 @@ const responsive = {
     '.inputButton': {
       top: '-12px !important',
       button: {
-        mt: '13px',
+        marginTop: '13px',
       },
     },
     '.navbar .clock': {
@@ -106,7 +120,7 @@ const responsive = {
   '@media (max-width: 505px)': {
     '.inputButton': {
       button: {
-        w: '100% !important',
+        width: '100% !important',
       },
     },
   },
