@@ -8,6 +8,7 @@ import navbar from './navbar'
 import overview from './overview'
 import responsive from './responsive'
 import sidebar from './sidebar'
+import summary from './summary'
 
 const modules = {
   ...general,
@@ -19,6 +20,7 @@ const modules = {
   ...card,
   ...filter,
   ...button,
+  ...summary,
   ...responsive,
 }
 
