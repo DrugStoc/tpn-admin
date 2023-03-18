@@ -58,6 +58,18 @@ const general = {
   '::-webkit-scrollbar-thumb:hover': {
     bgColor: '#a8a8a8',
   },
+  'input[type="search"]::-webkit-search-cancel-button': {
+    WebkitAppearance: 'none !important',
+    width: '1.25rem  !important',
+    height: '1.25rem  !important',
+    fontWeight: '900',
+    backgroundImage:
+      "url('https://res.cloudinary.com/bizstak/image/upload/v1679136935/icons8-close-94_byt6gu.png')  !important",
+    backgroundRepeat: 'no-repeat  !important',
+    backgroundPosition: 'right  !important',
+    backgroundSize: '100%  !important',
+    cursor: 'pointer  !important',
+  },
   img: {
     objectFit: 'contain',
   },
