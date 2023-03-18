@@ -60,20 +60,20 @@ const general = {
   },
   'input[type="search"]::-webkit-search-cancel-button': {
     WebkitAppearance: 'none !important',
-    width: '1.25rem  !important',
-    height: '1.25rem  !important',
+    w: '1.25rem  !important',
+    h: '1.25rem  !important',
     fontWeight: '900',
-    backgroundImage:
+    bgImage:
       "url('https://res.cloudinary.com/bizstak/image/upload/v1679136935/icons8-close-94_byt6gu.png')  !important",
-    backgroundRepeat: 'no-repeat  !important',
-    backgroundPosition: 'right  !important',
-    backgroundSize: '80%  !important',
+    bgRepeat: 'no-repeat  !important',
+    bgPosition: 'right  !important',
+    bgSize: '80%  !important',
     cursor: 'pointer  !important',
   },
   img: {
     objectFit: 'contain',
   },
-  section: {
+  'section, footer': {
     mt: '6.25rem',
     w: '90%',
     mx: 'auto',
