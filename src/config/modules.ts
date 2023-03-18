@@ -1,5 +1,6 @@
 import button from './button'
 import card from './card'
+import chart from './chart'
 import filter from './filter'
 import { general } from './general'
 import input from './input'
@@ -23,6 +24,7 @@ const modules = {
   ...button,
   ...summary,
   ...searched,
+  ...chart,
   ...responsive,
 }
 
