@@ -25,6 +25,9 @@ const Login = (): JSX.Element => {
     handlePasswordChange,
     password,
     eyeWatchIcon,
+    showPasswordIcon,
+    handleFocus,
+    handleBlur,
   } = useContext(LoginContext)
   const afterLastDot = email.lastIndexOf('.') + 2
   const navigate = useNavigate()
@@ -105,8 +108,12 @@ const Login = (): JSX.Element => {
                   type={textPasswordType}
                   placeholder="password"
                   id="password"
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
                 />
-                {eyeWatchIcon}
+                {showPasswordIcon !== undefined && password.trim().length > 0
+                  ? eyeWatchIcon
+                  : null}
               </Box>
               <Box onClick={checkEmailPassword ? handleClick : undefined}>
                 {err !== '' ? (
