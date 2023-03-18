@@ -22,6 +22,9 @@ interface LoginContextInterface {
   daytimer: any
   dayTimer: any
   dayTime: any
+  showPasswordIcon: boolean | undefined
+  handleFocus: () => void
+  handleBlur: () => void
 }
 
 export type { LoginContextInterface }
