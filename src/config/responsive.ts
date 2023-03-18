@@ -2,7 +2,7 @@ const responsive = {
   '@media (min-width: 1339px)': {
     '.firstChart, .secondChart': {
       marginLeft: '0.6875rem',
-      width: '56.4% !important',
+      width: '56.3% !important',
       boxShadow: '0 0 0.125rem #f0f2f5',
     },
   },
