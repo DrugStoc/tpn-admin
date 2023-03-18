@@ -1,4 +1,11 @@
 const responsive = {
+  '@media (min-width: 1339px)': {
+    '.firstChart, .secondChart': {
+      marginLeft: '0.6875rem',
+      width: '56.4% !important',
+      boxShadow: '0 0 0.125rem #f0f2f5',
+    },
+  },
   '@media (max-width: 1088px)': {
     '.inputButton': {
       flexWrap: 'wrap',
@@ -24,6 +31,13 @@ const responsive = {
       width: '100%',
       marginTop: '1.8125rem',
     },
+    '.section .firstChart, .section .secondChart': {
+      width: '90%',
+      left: 'auto',
+    },
+    '.section .firstChart': { top: '39.375rem' },
+    '.section .secondChart': { top: '54.375rem' },
+    '.ground': { top: '110.8125rem !important' },
   },
   '@media (max-width: 963px)': {
     '.inputButton': {
