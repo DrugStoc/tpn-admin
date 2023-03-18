@@ -6,7 +6,8 @@ const input = {
     outline: 'none',
     textIndent: '25px',
     fontFamily: 'fontFamily',
-    bgColor: 'brand.600'
+    bgColor: 'brand.600',
+    color: 'brand.100',
   },
 }
 
