@@ -111,7 +111,7 @@ const Login = (): JSX.Element => {
                   onFocus={handleFocus}
                   onBlur={handleBlur}
                 />
-                {showPasswordIcon !== undefined && password.trim().length > 0
+                {(showPasswordIcon === true) && password.trim().length > 0
                   ? eyeWatchIcon
                   : null}
               </Box>
