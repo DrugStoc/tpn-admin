@@ -67,7 +67,7 @@ const general = {
       "url('https://res.cloudinary.com/bizstak/image/upload/v1679136935/icons8-close-94_byt6gu.png')  !important",
     backgroundRepeat: 'no-repeat  !important',
     backgroundPosition: 'right  !important',
-    backgroundSize: '100%  !important',
+    backgroundSize: '80%  !important',
     cursor: 'pointer  !important',
   },
   img: {
