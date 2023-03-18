@@ -2,7 +2,7 @@ const searched = {
   '.section .fillSearch .searchProducts': {
     w: '33%',
     mb: '3.125rem',
-    h: '57.0625rem',
+    h: '57.375rem',
     overflowY: 'auto',
     '&::-webkit-scrollbar': {
       display: 'none',
