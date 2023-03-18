@@ -33,6 +33,9 @@ const LoginContext = createContext<LoginContextInterface>({
   daytimer: '',
   dayTimer: '',
   dayTime: '',
+  showPasswordIcon: false,
+  handleFocus: () => {},
+  handleBlur: () => {},
 })
 
 const LoginProvider = ({
@@ -48,6 +51,9 @@ const LoginProvider = ({
   const [loggedIn, setLoggedIn] = useState<boolean | undefined>(false)
   const [validationMessage, setValidationMessage] = useState<string>('')
   const [err, setErr] = useState('')
+  const [showPasswordIcon, setShowPasswordIcon] = useState<boolean>(false)
+  const handleFocus = (): void => setShowPasswordIcon(true)
+  const handleBlur = (): void => setShowPasswordIcon(false)
 
   useEffect(() => {
     if (err !== '') {
@@ -228,6 +234,9 @@ const LoginProvider = ({
         daytimer,
         dayTimer,
         dayTime,
+        showPasswordIcon,
+        handleFocus,
+        handleBlur,
       }}>
       {children}
     </LoginContext.Provider>
