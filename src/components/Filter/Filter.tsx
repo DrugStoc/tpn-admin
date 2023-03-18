@@ -36,7 +36,7 @@ const Filter = ({
         {`
           @media(max-width: 1088px) {
             button {
-              margin-top: 18px
+              margin-top: 1.125rem
             }
           }
 

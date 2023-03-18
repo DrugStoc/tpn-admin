@@ -76,7 +76,7 @@ Button.defaultProps = {
   buttonBorderRadius: 4,
   textColor: '#000',
   bgColor: '#D9D9D9',
-  buttonBorder: '1px solid #D9D9D9',
+  buttonBorder: '0.0625rem solid #D9D9D9',
   fontSize: 14,
   fontWeight: 600,
   fontFamily: 'Poppins',

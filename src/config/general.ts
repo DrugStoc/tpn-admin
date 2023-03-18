@@ -17,7 +17,7 @@ const fixedBody = {
 const navbarPos = {
   ...fixedBody,
   overflowY: 'auto',
-  w: 'calc(100% - 200px)',
+  w: 'calc(100% - 12.5rem)',
   ml: 'auto',
 }
 
@@ -45,8 +45,8 @@ const general = {
   },
   '::-webkit-scrollbar': {
     w: '0.625rem',
-    WebkitBoxShadow: 'inset 0 0 6px rgba(0, 0, 0, 0.3)',
-    boxShadow: 'inset 0 0 6px rgba(0, 0, 0, 0.3)',
+    WebkitBoxShadow: 'inset 0 0 0.375rem rgba(0, 0, 0, 0.3)',
+    boxShadow: 'inset 0 0 0.375rem rgba(0, 0, 0, 0.3)',
     WebkitBorderRadius: '0.3125rem',
     borderRadius: '0.3125rem',
   },
@@ -74,7 +74,7 @@ const general = {
     objectFit: 'contain',
   },
   section: {
-    mt: '100px',
+    mt: '6.25rem',
     w: '90%',
     mx: 'auto',
   },

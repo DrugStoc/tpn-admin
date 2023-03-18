@@ -127,7 +127,7 @@ const Login = (): JSX.Element => {
                   bgColor={checkEmailPassword ? 'brand.50' : 'brand.500'}
                   color={checkEmailPassword ? 'brand.600' : 'brand.400'}
                   cursor={checkEmailPassword ? 'pointer' : 'not-allowed'}
-                  h="44px"
+                  h="2.75rem"
                   fontFamily="defaultFontFamily"
                   _hover={{
                     opacity: checkEmailPassword ? undefined : 0.5,

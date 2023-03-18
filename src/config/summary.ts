@@ -2,7 +2,7 @@ const summary = {
   '.fillSearch': {
     pos: 'absolute',
     fontFamily: 'fontFamily',
-    top: '50px',
+    top: '3.125rem',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
@@ -10,7 +10,7 @@ const summary = {
     color: 'brand.100',
     '.chatSearchProducts': {
       w: '65%',
-      maxW: '650px',
+      maxW: '40.625rem',
       flexWrap: 'wrap',
       display: 'flex',
       justifyContent: 'space-between',
@@ -21,39 +21,39 @@ const summary = {
       flexWrap: 'wrap',
       justifyContent: 'space-between',
       bgColor: 'brand.600',
-      h: '161px',
+      h: '10.0625rem',
       w: '31%',
-      py: '15px',
-      px: '15px',
+      py: '0.9375rem',
+      px: '0.9375rem',
       fontSize: '0.75rem',
       '.title': {
         display: 'flex',
-        gap: '10px',
+        gap: '0.625rem',
         alignItems: 'center',
         span: {
           fontWeight: 500,
         },
         img: {
-          w: '20px',
-          h: '20px',
+          w: '1.25rem',
+          h: '1.25rem',
         },
       },
       '.positionHorizontal': {
         display: 'flex',
         justifyContent: 'space-between',
-        h: '61px',
+        h: '3.8125rem',
         '.data': {
           display: 'flex',
           justifyContent: 'space-between',
           flexDirection: 'column',
-          h: '70px',
+          h: '4.375rem',
           span: {
             color: 'brand.450',
           },
           img: {
-            w: '16px',
-            h: '16px',
-            ml: '10px',
+            w: '1rem',
+            h: '1rem',
+            ml: '0.625rem',
           },
           h2: {
             fontSize: '1.25rem',
@@ -69,7 +69,7 @@ const summary = {
         '.view': {
           display: 'flex',
           alignItems: 'flex-end',
-          gap: '10px',
+          gap: '0.625rem',
           cursor: 'pointer',
           span: {
             color: '#4b70d6',
@@ -77,7 +77,7 @@ const summary = {
           img: {
             display: 'flex',
             pos: 'relative',
-            bottom: '8px',
+            bottom: '0.5rem',
           },
         },
       },

@@ -3,7 +3,7 @@ const button = {
     pos: 'relative !important',
     top: 'initial !important',
     left: 'initial !important',
-    mr: '8px',
+    mr: '0.5rem',
   },
 }
 

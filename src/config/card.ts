@@ -1,6 +1,6 @@
 const card = {
   '.card': {
-    borderRadius: '8px',
+    borderRadius: '0.5rem',
     bgColor: 'brand.600',
   },
 }

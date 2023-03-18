@@ -1,10 +1,10 @@
 const input = {
   '.inputSearch': {
-    p: '10px',
-    borderRadius: '8px',
+    p: '0.625rem',
+    borderRadius: '0.5rem',
     minW: '40%',
     outline: 'none',
-    textIndent: '25px',
+    textIndent: '1.5625rem',
     fontFamily: 'fontFamily',
     bgColor: 'brand.600',
     color: 'brand.100',
