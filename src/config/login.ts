@@ -14,9 +14,9 @@ const login = {
     ...fixedBody,
     color: 'brand.100',
     '.login-card': {
-      boxShadow: '2px 8px 35px rgba(0, 0, 0, 0.05)',
+      boxShadow: '0.125rem 0.5rem 2.1875rem rgba(0, 0, 0, 0.05)',
       borderRadius: 10,
-      p: '40px 60px',
+      p: '2.5rem 3.75rem',
       bgColor: 'brand.600',
       '.login-box': {
         w: '90%',
@@ -46,7 +46,7 @@ const login = {
           '.login-input': {
             bgColor: 'brand.200',
             borderRadius: 4,
-            h: '44px',
+            h: '2.75rem',
             textIndent: 15,
             p: 2,
             mb: 7,

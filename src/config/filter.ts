@@ -1,7 +1,7 @@
 const filter = {
   '.inputButton': {
     pos: 'absolute',
-    top: '-20px',
+    top: '-1.25rem',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -10,7 +10,7 @@ const filter = {
       justifyContent: 'flex-start',
       alignItems: 'center',
       w: 'full',
-      gap: '8px',
+      gap: '0.5rem',
       '.inputImg': {
         display: 'flex',
         alignItems: 'center',
@@ -20,42 +20,42 @@ const filter = {
           pos: 'absolute',
           content:
             "url('https://res.cloudinary.com/bizstak/image/upload/v1678569929/filter_crvuek.svg')",
-          top: '13px',
-          left: '30px',
+          top: '0.8125rem',
+          left: '1.875rem',
           cursor: 'pointer',
         },
         '.cardDropdown': {
-          w: '130px',
-          h: '44px',
+          w: '8.125rem',
+          h: '2.75rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
           pos: 'relative',
           span: {
-            ml: '27px',
+            ml: '1.6875rem',
           },
           '.dropdown': {
             pos: 'absolute',
             left: '0',
-            top: '55px',
+            top: '3.4375rem',
             bgColor: 'brand.600',
-            w: '200px',
+            w: '12.5rem',
             zIndex: '2',
             boxShadow:
-              'rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px',
+              'rgba(0, 0, 0, 0.2) 0 0.3125rem 0.3125rem -0.1875rem, rgba(0, 0, 0, 0.14) 0 0.5rem 0.625rem 0.0625, rgba(0, 0, 0, 0.12) 0 0.1875rem 0.875rem 0.125rem',
             ul: {
               p: {
                 color: 'brand.350',
-                p: '10px 15px',
+                p: '0.625rem 0.9375rem',
               },
               li: {
                 listStyleType: 'none',
-                p: '10px 15px',
+                p: '0.625rem 0.9375rem',
                 w: '100%',
                 '&:last-child': {
-                  borderBottomRightRadius: '8px',
-                  borderBottomLeftRadius: '8px',
+                  borderBottomRightRadius: '0.5rem',
+                  borderBottomLeftRadius: '0.5rem',
                 },
                 '&:hover': {
                   bgColor: '#f9f9f9',

@@ -1,4 +1,11 @@
 const responsive = {
+  '@media (min-width: 1339px)': {
+    '.firstChart, .secondChart': {
+      marginLeft: '0.6875rem',
+      width: '56.3% !important',
+      boxShadow: '0 0 0.125rem #f0f2f5',
+    },
+  },
   '@media (max-width: 1088px)': {
     '.inputButton': {
       flexWrap: 'wrap',
@@ -14,16 +21,23 @@ const responsive = {
     '.section .fillSearch .chatSearchProducts': {
       width: '100%',
       maxWidth: 'initial',
-      marginTop: '-25px',
+      marginTop: '-1.5625rem',
     },
     '.section .fillSearch .searchProducts': {
       width: '100% !important',
-      marginTop: '791px',
+      marginTop: '49.4375rem',
     },
     '.section .fillSearch .chatSearchProducts .positionVertical': {
       width: '100%',
-      marginTop: '29px',
+      marginTop: '1.8125rem',
     },
+    '.section .firstChart, .section .secondChart': {
+      width: '90%',
+      left: 'auto',
+    },
+    '.section .firstChart': { top: '39.375rem' },
+    '.section .secondChart': { top: '54.375rem' },
+    '.ground': { top: '110.8125rem !important' },
   },
   '@media (max-width: 963px)': {
     '.inputButton': {
@@ -42,18 +56,18 @@ const responsive = {
   },
   '@media (max-width: 700px)': {
     '.sidebar': {
-      py: '30px',
+      py: '1.875rem',
       justifyContent: 'center',
       alignItems: 'center',
-      w: '44px',
+      w: '2.75rem',
     },
     '.section': {
-      w: 'calc(100% - 44px)',
+      w: 'calc(100% - 2.75rem)',
     },
     '.sidebar a': { display: 'none' },
     '.sidebar li': {
       w: 'auto',
-      p: '0 10px 0 10px',
+      p: '0 0.625rem 0 0.625rem',
       ml: 'initial',
     },
     '.sidebar li img': {
@@ -71,7 +85,7 @@ const responsive = {
     },
     '.sidebar li': {
       height: 'auto',
-      p: '10px',
+      p: '0.625rem',
     },
   },
   '@media (max-width: 675px)': {
@@ -93,7 +107,7 @@ const responsive = {
       w: 'full',
       borderRadius: 0,
       boxShadow: 'none',
-      p: '0 10px',
+      p: '0 0.625rem',
     },
     '.login-box': {
       h: '100vh',
@@ -107,9 +121,9 @@ const responsive = {
   },
   '@media (max-width: 525px)': {
     '.inputButton': {
-      top: '-12px !important',
+      top: '-0.75rem !important',
       button: {
-        marginTop: '13px',
+        marginTop: '0.8125rem',
       },
     },
     '.navbar .clock': {
@@ -126,13 +140,13 @@ const responsive = {
   },
   '@media (max-width: 480px)': {
     '.sidebar': {
-      w: '40px',
+      w: '2.5rem',
     },
     '.section': {
-      w: 'calc(100% - 40px)',
+      w: 'calc(100% - 2.5rem)',
     },
     '.sidebar li': {
-      p: '7px',
+      p: '0.4375rem',
     },
     html: {
       fontSize: '14px',

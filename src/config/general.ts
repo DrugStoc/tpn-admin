@@ -17,7 +17,7 @@ const fixedBody = {
 const navbarPos = {
   ...fixedBody,
   overflowY: 'auto',
-  w: 'calc(100% - 200px)',
+  w: 'calc(100% - 12.5rem)',
   ml: 'auto',
 }
 
@@ -43,11 +43,38 @@ const general = {
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
   },
+  '::-webkit-scrollbar': {
+    w: '0.625rem',
+    WebkitBoxShadow: 'inset 0 0 0.375rem rgba(0, 0, 0, 0.3)',
+    boxShadow: 'inset 0 0 0.375rem rgba(0, 0, 0, 0.3)',
+    WebkitBorderRadius: '0.3125rem',
+    borderRadius: '0.3125rem',
+  },
+  '::-webkit-scrollbar-thumb': {
+    bgColor: '#c1c1c1',
+    WebkitBorderRadius: '0.3125rem',
+    borderRadius: '0.3125rem',
+  },
+  '::-webkit-scrollbar-thumb:hover': {
+    bgColor: '#a8a8a8',
+  },
+  'input[type="search"]::-webkit-search-cancel-button': {
+    WebkitAppearance: 'none !important',
+    w: '1.25rem  !important',
+    h: '1.25rem  !important',
+    fontWeight: '900',
+    bgImage:
+      "url('https://res.cloudinary.com/bizstak/image/upload/v1679136935/icons8-close-94_byt6gu.png')  !important",
+    bgRepeat: 'no-repeat  !important',
+    bgPosition: 'right  !important',
+    bgSize: '80%  !important',
+    cursor: 'pointer  !important',
+  },
   img: {
     objectFit: 'contain',
   },
-  section: {
-    mt: '100px',
+  'section, footer': {
+    mt: '6.25rem',
     w: '90%',
     mx: 'auto',
   },

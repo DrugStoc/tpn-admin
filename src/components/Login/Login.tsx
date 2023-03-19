@@ -25,6 +25,9 @@ const Login = (): JSX.Element => {
     handlePasswordChange,
     password,
     eyeWatchIcon,
+    showPasswordIcon,
+    handleFocus,
+    handleBlur,
   } = useContext(LoginContext)
   const afterLastDot = email.lastIndexOf('.') + 2
   const navigate = useNavigate()
@@ -105,8 +108,12 @@ const Login = (): JSX.Element => {
                   type={textPasswordType}
                   placeholder="password"
                   id="password"
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
                 />
-                {eyeWatchIcon}
+                {(showPasswordIcon === true) && password.trim().length > 0
+                  ? eyeWatchIcon
+                  : null}
               </Box>
               <Box onClick={checkEmailPassword ? handleClick : undefined}>
                 {err !== '' ? (
@@ -120,7 +127,7 @@ const Login = (): JSX.Element => {
                   bgColor={checkEmailPassword ? 'brand.50' : 'brand.500'}
                   color={checkEmailPassword ? 'brand.600' : 'brand.400'}
                   cursor={checkEmailPassword ? 'pointer' : 'not-allowed'}
-                  h="44px"
+                  h="2.75rem"
                   fontFamily="defaultFontFamily"
                   _hover={{
                     opacity: checkEmailPassword ? undefined : 0.5,

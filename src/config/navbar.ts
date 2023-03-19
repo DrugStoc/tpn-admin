@@ -5,10 +5,10 @@ const navbar = {
   '.navbar': {
     ...horizontalBtwFlex,
     pos,
-    top: '-80px',
+    top: '-5rem',
     fontFamily: 'fontFamily',
     color: 'brand.150',
-    mt: '100px',
+    mt: '6.25rem',
     w: '90%',
     mx: 'auto',
     '.navbar-split': {
@@ -20,8 +20,8 @@ const navbar = {
       },
       '.img': {
         pos,
-        top: '14px',
-        left: '10px',
+        top: '0.875rem',
+        left: '0.625rem',
       },
     },
   },

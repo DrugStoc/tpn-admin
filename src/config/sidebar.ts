@@ -1,7 +1,7 @@
 const sidebar = {
   '.sidebar': {
     pos: 'fixed',
-    w: '200px',
+    w: '12.5rem',
     h: '100vh',
     bgColor: 'brand.600',
     display: 'flex',
@@ -15,16 +15,16 @@ const sidebar = {
     li: {
       display: 'flex',
       alignItems: 'center',
-      p: '0px 40px 0px 30px',
-      ml: '-10px',
-      h: '40px',
+      p: '0 2.5rem 0 1.875rem',
+      ml: '-0.625rem',
+      h: '2.5rem',
       '&:hover, &.active': {
         bgColor: 'brand.250',
         cursor: 'pointer',
         borderRadius: 4,
       },
       img: {
-        mr: '10px',
+        mr: '0.625rem',
       },
     },
     '.settingLogout': {
