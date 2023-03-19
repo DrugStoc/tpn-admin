@@ -1,6 +1,13 @@
 import { TableInterface } from './TableInterface'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+
+interface TableItem {
+  id: number
+  row: Array<{
+    [key: string]: string | number
+  }>
+}
 
 const Table = ({
   TableData,
@@ -21,8 +28,8 @@ const Table = ({
     if (selectedId === id) {
       TableData.forEach((item: any) => {
         if (item.id === selectedId) {
-          item.row.forEach((column: any, index: any) => {
-            if (editedData.hasOwnProperty(index)) {
+          item.row.forEach((column: any, index: number) => {
+            if (Object.prototype.hasOwnProperty.call(editedData, index)) {
               column[`column ${index + 2}`] = editedData[index]
             }
           })
@@ -49,12 +56,12 @@ const Table = ({
     return findIndex
   }
 
-  const tableRow = TableData.map((tableItem: any) => {
-    const isSelected = selectedId === tableItem.id
+  const tableRow = TableData.map((tableItem: TableItem) => {
+    const isSelected = Number(selectedId) === tableItem.id
     const tableRowstyles: any = {
       backgroundColor: isSelected ? '#F9F9FC' : null,
     }
-    const tableRowContent = tableItem.row.map((column: any, index: any) => {
+    const tableRowContent = tableItem.row.map((column: any, index: number) => {
       if (column['column 7'] === 0 && slug === 'products') {
         column['column 7'] = (
           <img
