@@ -6,11 +6,13 @@ import { general } from './general'
 import input from './input'
 import login from './login'
 import navbar from './navbar'
+import orders from './orders'
 import overview from './overview'
 import responsive from './responsive'
 import searched from './searched'
 import sidebar from './sidebar'
 import summary from './summary'
+import table from './table'
 
 const modules = {
   ...general,
@@ -25,6 +27,8 @@ const modules = {
   ...summary,
   ...searched,
   ...chart,
+  ...table,
+  ...orders,
   ...responsive,
 }
 
