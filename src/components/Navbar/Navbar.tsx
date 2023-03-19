@@ -88,6 +88,7 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
             marginRight: nav !== undefined ? 3 : undefined,
             display: 'flex',
             cursor: 'pointer',
+            fontSize: slug !== 'new' ? '1.5rem' : '1rem',
           }}
           onClick={handleButtonClick}>
           {nav}
@@ -107,10 +108,10 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
         ) : null}
         <h2
           style={{
-            fontSize: slug === '' ? '1.5rem' : '1rem',
-            cursor: slug === '' ? 'default' : 'pointer',
+            fontSize: slug !== 'new' ? '1.5rem' : '1rem',
+            cursor: slug !== 'new' ? 'default' : 'pointer',
           }}>
-          {text}
+          {slug === '' ? text : null}
         </h2>
       </div>
       <div

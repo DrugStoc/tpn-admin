@@ -10,7 +10,7 @@ const Orders = (): JSX.Element => {
   return (
     <Motion>
       <div className="orderSection">
-        <Navbar arrow="" text="Orders" nav={undefined} />
+        <Navbar arrow="" nav="Orders" />
         <Filter
           linkText="orders"
           text="Place Orders"
