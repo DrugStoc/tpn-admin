@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
-import React from 'react'
+/* eslint-disable react/react-in-jsx-scope */
 import { useNavigate } from 'react-router-dom'
 import { ListItem } from '@chakra-ui/react'
 
@@ -51,8 +51,7 @@ const SidebarList = ({ sidebarItem, pathArr }: sidebarType): JSX.Element => {
           className={
             textLowerCase === slug ||
             pathArr.includes(textLowerCase) ||
-            textLowerCase === 'overview' ||
-            slug === '/'
+            (textLowerCase === 'overview' && slug.length === 0)
               ? 'active'
               : undefined
           }

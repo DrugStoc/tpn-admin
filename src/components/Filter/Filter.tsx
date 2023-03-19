@@ -1,5 +1,7 @@
+/* eslint-disable indent */
+/* eslint-disable react/react-in-jsx-scope */
 import { useLocation } from 'react-router-dom'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
 import { intputInterface } from '../Input/InputInterface'
@@ -72,6 +74,7 @@ const Filter = ({
       </div>
       {buttonText === undefined ? null : slug === 'customers' ||
         slug === 'merchants' ||
+        slug === 'orders' ||
         slug === 'products' ||
         slug === 'shippings' ? (
         <Button
@@ -80,9 +83,9 @@ const Filter = ({
           textColor="#fff"
           text={text}
         />
-          ) : (
+      ) : (
         <Button linkText={linkText} text="Create Customer" />
-          )}
+      )}
     </section>
   )
 }

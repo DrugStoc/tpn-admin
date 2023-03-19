@@ -1,4 +1,6 @@
-import React, { useContext, useEffect } from 'react'
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+/* eslint-disable react/react-in-jsx-scope */
+import { useContext, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
 import { NavbarInterface } from './NavbarInterface'
@@ -10,7 +12,7 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
   const slug = pathArr[pathArr.length - 1]
   const handleButtonClick: any = () => {
     if (nav !== undefined) {
-      navigate(`/${nav.toLowerCase()}`)
+      navigate(`/${nav?.toLowerCase()}`)
     } else {
       navigate('/')
     }
@@ -34,6 +36,29 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
     }
   }, [pathname, title])
 
+  const [dateTime, setDateTime] = useState('')
+  const [dateMonth, setDateMonth] = useState('')
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const date = new Date()
+      const day = date.toLocaleDateString('en-US', { weekday: 'short' })
+      const dateNum = date.getDate()
+      const month = date.toLocaleDateString('en-US', { month: 'short' })
+      const hour = date.getHours()
+      const minute = date.getMinutes()
+      const ampm = hour >= 12 ? 'PM' : 'AM'
+      const hour12 = hour % 12 || 12
+      const time = `${hour12}:${minute.toString().padStart(2, '0')} ${ampm}`
+      setDateTime(`${day} ${dateNum} ${month}`)
+      setDateMonth(time)
+    }, 1000)
+
+    return () => {
+      clearInterval(intervalId)
+    }
+  }, [])
+
   const {
     daytimer,
     dayTimer,
@@ -53,8 +78,6 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
   }, [pathname])
 
   const text = daytimer.current
-  const dayTimed = dayTimer.current
-  const daysTimer = dayTime.current
 
   return (
     <nav className="navbar">
@@ -92,9 +115,9 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
       </div>
       <div
         className="clock"
-        style={{ fontWeight: 700, color: '#787579', gap: 10, display: 'flex' }}>
-        <span>{dayTimed}</span>
-        <span>{daysTimer}</span>
+        style={{ fontWeight: 700, color: '#787579', gap: 12, display: 'flex' }}>
+        <span>{dateTime}</span>
+        <span>{dateMonth}</span>
       </div>
     </nav>
   )

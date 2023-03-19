@@ -1,8 +1,7 @@
-/* eslint-disable linebreak-style */
 const sidebarTopList: string[] = [
   'Overview',
-  'Customers',
   'Orders',
+  'Customers',
   'Merchants',
   'Products',
   'Shippings',

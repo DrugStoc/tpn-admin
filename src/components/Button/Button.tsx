@@ -1,5 +1,6 @@
+/* eslint-disable indent */
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { buttonInterface } from './ButtonInterface'
 
@@ -58,13 +59,18 @@ const Button = ({
           src="https://res.cloudinary.com/bizstak/image/upload/v1678557170/add-product_vcm0hk.svg"
           alt="button"
         />
-          ) : (
+      ) : slug === 'orders' ? (
+        <img
+          src="https://res.cloudinary.com/bizstak/image/upload/v1679248641/place-orders_qt3bad.svg"
+          alt=""
+        />
+      ) : (
         <img
           className="personImage"
           src="https://res.cloudinary.com/bizstak/image/upload/v1678557226/person_almamy.svg"
           alt="button"
         />
-          )}
+      )}
       <span style={{ color: textColor }}>{text}</span>
     </button>
   )
@@ -74,8 +80,8 @@ Button.defaultProps = {
   buttonWidth: '30%',
   buttonHeight: 38,
   buttonBorderRadius: 4,
-  textColor: 'brand.400',
-  bgColor: 'brand.650',
+  textColor: '#000',
+  bgColor: '#D9D9D9',
   buttonBorder: '0.0625rem solid #D9D9D9',
   fontSize: 14,
   fontWeight: 600,
