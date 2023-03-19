@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable linebreak-style */
+/* eslint-disable react/react-in-jsx-scope */
 import Filter from '../Filter/Filter'
 import Navbar from '../Navbar/Navbar'
 import Table from '../Table/Table'
@@ -9,7 +10,7 @@ const Orders = (): JSX.Element => {
   return (
     <Motion>
       <div className="orderSection">
-        <Navbar arrow="" text="Orders" nav={undefined} />
+        <Navbar arrow="" nav="Orders" />
         <Filter
           linkText="orders"
           text="Place Orders"
