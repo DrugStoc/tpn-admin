@@ -1,13 +1,6 @@
-import { TableInterface } from './TableInterface'
+import { TableInterface, tableItemInterface } from './TableInterface'
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-
-interface TableItem {
-  id: number
-  row: Array<{
-    [key: string]: string | number
-  }>
-}
 
 const Table = ({
   TableData,
@@ -56,7 +49,7 @@ const Table = ({
     return findIndex
   }
 
-  const tableRow = TableData.map((tableItem: TableItem) => {
+  const tableRow = TableData.map((tableItem: tableItemInterface) => {
     const isSelected = Number(selectedId) === tableItem.id
     const tableRowstyles: any = {
       backgroundColor: isSelected ? '#F9F9FC' : null,
