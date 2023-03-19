@@ -2,7 +2,7 @@ const responsive = {
   '@media (min-width: 1339px)': {
     '.firstChart, .secondChart': {
       marginLeft: '0.6875rem',
-      width: '56.3% !important',
+      width: '56.4% !important',
       boxShadow: '0 0 0.125rem #f0f2f5',
     },
   },
@@ -38,6 +38,9 @@ const responsive = {
     '.section .firstChart': { top: '39.375rem' },
     '.section .secondChart': { top: '54.375rem' },
     '.ground': { top: '110.8125rem !important' },
+    '.tableSection': {
+      top: '5.875rem',
+    },
   },
   '@media (max-width: 963px)': {
     '.inputButton': {
@@ -78,6 +81,10 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { mt: 'auto', ml: 'initial !important' },
     '.sidebar-box': { mx: 'auto !important' },
+    '.orderSection': {
+      width: 'auto',
+      marginLeft: '46px',
+    },
   },
   '@media (max-width: 679px)': {
     '.login-card': {
@@ -149,7 +156,7 @@ const responsive = {
       p: '0.4375rem',
     },
     html: {
-      fontSize: '14px',
+      fontSize: '15px',
     },
   },
 }
