@@ -1,8 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-/* eslint-disable no-prototype-builtins */
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { TableInterface } from './TableInterface'
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
