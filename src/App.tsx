@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import { LoginProvider } from './context/LoginContext'
 import Home from './pages/Home/Overview'
 import Orders from './pages/Orders'
+import Customers from './pages/Customers'
 
 function App(): JSX.Element {
   return (
@@ -14,6 +15,7 @@ function App(): JSX.Element {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Home />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="/customers" element={<Customers />} />
           </Routes>
         </main>
       </BrowserRouter>

@@ -1,9 +1,9 @@
 import { sections } from './general'
 
-const overview = {
-  '.section': {
+const section = {
+  '.mainSection': {
     ...sections,
   },
 }
 
-export default overview
+export default section

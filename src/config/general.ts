@@ -14,7 +14,7 @@ const fixedBody = {
   ...dflexCenter,
 }
 
-const navbarPos = {
+const sections = {
   ...fixedBody,
   overflowY: 'auto',
   w: 'calc(100% - 12.5rem)',
@@ -101,4 +101,4 @@ const general = {
   },
 }
 
-export { general, fixedBody, verticalCenter, navbarPos, horizontalBtwFlex }
+export { general, fixedBody, verticalCenter, sections, horizontalBtwFlex }

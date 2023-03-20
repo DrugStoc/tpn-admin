@@ -3,25 +3,28 @@
 import Filter from '../Filter/Filter'
 import Navbar from '../Navbar/Navbar'
 import Table from '../Table/Table'
-import { OrdersTableData, OrderTableHeadingData } from './OrdersTableData'
-import Motion from '../shared/Motion'
+import {
+  CustomersTableData,
+  CustomersTableHeadingData,
+} from './CustomersTableData'
 import Pagination from '../Pagination/Pagination'
+import Motion from '../shared/Motion'
 
-const Orders = (): JSX.Element => {
+const Customers = (): JSX.Element => {
   return (
     <Motion>
       <div className="mainSection">
-        <Navbar arrow="" nav="Orders" />
+        <Navbar arrow="" nav="Customers" />
         <Filter
-          linkText="orders"
-          text="Place Orders"
+          linkText="customers"
+          text="Add Customers"
           buttonText
-          column={OrderTableHeadingData}
+          column={CustomersTableHeadingData}
         />
         <section className="tableSection">
           <Table
-            columnData={OrderTableHeadingData}
-            TableData={OrdersTableData}
+            columnData={CustomersTableHeadingData}
+            TableData={CustomersTableData}
           />
         </section>
         <Pagination />
@@ -30,4 +33,4 @@ const Orders = (): JSX.Element => {
   )
 }
 
-export default Orders
+export default Customers
