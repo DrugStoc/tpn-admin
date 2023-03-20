@@ -4,4 +4,11 @@ interface TableInterface {
   minWidth: any
 }
 
-export type { TableInterface }
+interface tableItemInterface {
+  id: number
+  row: Array<{
+    [key: string]: string | number
+  }>
+}
+
+export type { TableInterface, tableItemInterface }
