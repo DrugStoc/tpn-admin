@@ -4,30 +4,30 @@ const table = {
     top: '3.375rem',
     '.overflow': {
       overflow: 'auto',
-      backgroundColor: 'brand.600',
-      maxHeight: '41.25rem',
-      fontFamily: "'Be Vietnam Pro', sans-serif",
-      marginBottom: '3.125rem',
+      bgColor: 'brand.600',
+      maxH: '41.25rem',
+      fontFamily: "fontFamily",
+      mb: '5.5rem',
       color: 'brand.750',
       '.productImage': {
-        width: '1.5625rem !important',
-        height: '1.5625rem !important',
+        w: '1.5625rem !important',
+        h: '1.5625rem !important',
       },
       '&::-webkit-scrollbar': { display: 'none' },
       '.table': {
-        paddingBottom: '0',
-        width: '66.5625rem',
-        marginInline: 'auto',
+        pb: '0',
+        w: '66.5625rem',
+        mx: 'auto',
         borderCollapse: 'collapse',
         thead: {
           tr: {
             borderBottom: '0.0625rem solid #f0f0f0',
-            height: '3.75rem',
+            h: '3.75rem',
             th: {
               fontSize: '0.9375rem',
               fontWeight: 500,
               textAlign: 'left',
-              paddingInline: '0.625rem',
+              px: '0.625rem',
               '&:first-of-type': {
                 visibility: 'hidden',
               },
@@ -37,7 +37,7 @@ const table = {
         tbody: {
           tr: {
             borderBottom: '0.0625rem solid #f0f0f0',
-            height: '3.75rem',
+            h: '3.75rem',
             '&:last-child': {
               borderBottom: 'none',
             },
@@ -45,16 +45,16 @@ const table = {
               fontSize: '0.875rem',
               borderCollapse: 'collapse',
               textAlign: 'left',
-              paddingInline: '0.625rem',
+              px: '0.625rem',
               '&:first-of-type': {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: '3.75rem',
+                h: '3.75rem',
               },
               img: {
-                width: '1rem',
-                height: '1rem',
+                w: '1rem',
+                h: '1rem',
                 cursor: 'pointer',
               },
             },

@@ -9,6 +9,7 @@ import login from './login'
 import navbar from './navbar'
 import orders from './orders'
 import overview from './overview'
+import pagination from './pagination'
 import responsive from './responsive'
 import searched from './searched'
 import sidebar from './sidebar'
@@ -31,6 +32,7 @@ const modules = {
   ...table,
   ...orders,
   ...dropdown,
+  ...pagination,
   ...responsive,
 }
 

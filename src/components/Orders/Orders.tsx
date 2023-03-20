@@ -5,6 +5,7 @@ import Navbar from '../Navbar/Navbar'
 import Table from '../Table/Table'
 import { OrdersTableData, OrderTableHeadingData } from './OrdersTableData'
 import Motion from '../shared/Motion'
+import Pagination from '../Pagination/Pagination'
 
 const Orders = (): JSX.Element => {
   return (
@@ -23,6 +24,7 @@ const Orders = (): JSX.Element => {
             TableData={OrdersTableData}
           />
         </section>
+        <Pagination />
       </div>
     </Motion>
   )

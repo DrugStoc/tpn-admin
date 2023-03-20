@@ -41,6 +41,9 @@ const responsive = {
     '.tableSection': {
       top: '5.875rem',
     },
+    '.pagination': {
+      bottom: 'calc(-7.3125rem + -22px)',
+    },
   },
   '@media (max-width: 963px)': {
     '.inputButton': {
@@ -155,8 +158,16 @@ const responsive = {
     '.sidebar li': {
       p: '0.4375rem',
     },
+    '.pagination': {
+      bottom: 'calc(-4.25rem + -22px)',
+    },
     html: {
       fontSize: '15px',
+    },
+  },
+  '@media (max-width: 350px)': {
+    '.pagination-button': {
+      display: 'none !important',
     },
   },
 }
