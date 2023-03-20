@@ -4,7 +4,10 @@ const Pagination = (): JSX.Element => {
     <div className="pagination">
       <div style={{ marginRight: '5px' }}>
         <button type="button" className="inactive">
-          <img src="https://res.cloudinary.com/bizstak/image/upload/v1679313778/pagination-arrow-left_iw4gev.svg" />
+          <img
+            src="https://res.cloudinary.com/bizstak/image/upload/v1679313778/pagination-arrow-left_iw4gev.svg"
+            alt="arrow left icon"
+          />
         </button>
       </div>
 
@@ -18,7 +21,10 @@ const Pagination = (): JSX.Element => {
 
       <div style={{ marginLeft: '5px' }}>
         <button className="active">
-          <img src="https://res.cloudinary.com/bizstak/image/upload/v1679314010/pagination-active-arrow-right_sll2cn.svg" />
+          <img
+            src="https://res.cloudinary.com/bizstak/image/upload/v1679314010/pagination-active-arrow-right_sll2cn.svg"
+            alt="arrow right icon"
+          />
         </button>
       </div>
     </div>
