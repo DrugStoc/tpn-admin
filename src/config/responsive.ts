@@ -84,7 +84,7 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { mt: 'auto', ml: 'initial !important' },
     '.sidebar-box': { mx: 'auto !important' },
-    '.orderSection': {
+    '.mainSection': {
       width: 'auto',
       marginLeft: '46px',
     },
