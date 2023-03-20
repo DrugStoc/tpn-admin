@@ -5,6 +5,7 @@ import { LoginProvider } from './context/LoginContext'
 import Home from './pages/Home/Overview'
 import Orders from './pages/Orders'
 import Customers from './pages/Customers'
+import Merchants from './pages/Merchants'
 
 function App(): JSX.Element {
   return (
@@ -16,6 +17,7 @@ function App(): JSX.Element {
             <Route path="/" element={<Home />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/customers" element={<Customers />} />
+            <Route path="/merchants" element={<Merchants />} />
           </Routes>
         </main>
       </BrowserRouter>
