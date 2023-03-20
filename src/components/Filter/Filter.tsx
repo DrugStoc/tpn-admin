@@ -1,11 +1,10 @@
 /* eslint-disable indent */
 /* eslint-disable react/react-in-jsx-scope */
 import { useLocation } from 'react-router-dom'
-import { useState } from 'react'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
 import { intputInterface } from '../Input/InputInterface'
-import Card from '../shared/Card'
+import Dropdown from '../Dropdown/Dropdown'
 
 const Filter = ({
   buttonText,
@@ -13,24 +12,9 @@ const Filter = ({
   text,
   linkText,
 }: intputInterface): JSX.Element => {
-  const [showList, setShowList] = useState(false)
   const { pathname } = useLocation()
   const pathArr = pathname.split('/')
   const slug = pathArr[pathArr.length - 1]
-
-  const handleButtonClick: any = (): any => {
-    setShowList((prev: boolean) => {
-      return !prev
-    })
-  }
-
-  const list = column?.map((item: any) => {
-    return showList ? (
-      <li style={{ display: item !== 'empty' ? 'block' : 'none' }} key={item}>
-        {item}
-      </li>
-    ) : null
-  })
 
   return (
     <section className="inputButton">
@@ -56,21 +40,7 @@ const Filter = ({
           buttonText={null}
           column={undefined}
         />
-        <div style={{ display: column === undefined ? 'none' : 'block' }}>
-          <div className="inputImg" onClick={handleButtonClick}>
-            <Card className="cardDropdown">
-              <span>Filter</span>
-              {showList ? (
-                <Card className="dropdown">
-                  <ul>
-                    <p style={{ cursor: 'default' }}>Filter By:</p>
-                    {list}
-                  </ul>
-                </Card>
-              ) : null}
-            </Card>
-          </div>
-        </div>
+        <Dropdown column={column} />
       </div>
       {buttonText === undefined ? null : slug === 'customers' ||
         slug === 'merchants' ||
