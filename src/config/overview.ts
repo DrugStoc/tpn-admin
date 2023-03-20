@@ -1,7 +1,7 @@
 import { sections } from './general'
 
 const overview = {
-  '.section': {
+  '.section, .mainSection': {
     ...sections,
   },
 }
