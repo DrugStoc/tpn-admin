@@ -10,7 +10,7 @@ import Pagination from '../Pagination/Pagination'
 const Orders = (): JSX.Element => {
   return (
     <Motion>
-      <div className="orderSection">
+      <div className="mainSection">
         <Navbar arrow="" nav="Orders" />
         <Filter
           linkText="orders"
