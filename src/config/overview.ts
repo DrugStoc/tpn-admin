@@ -1,8 +1,8 @@
-import { navbarPos } from './general'
+import { sections } from './general'
 
 const overview = {
   '.section': {
-    ...navbarPos,
+    ...sections,
   },
 }
 
