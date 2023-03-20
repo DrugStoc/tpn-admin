@@ -6,7 +6,7 @@ const table = {
       overflow: 'auto',
       bgColor: 'brand.600',
       maxH: '41.25rem',
-      fontFamily: "fontFamily",
+      fontFamily: 'fontFamily',
       mb: '5.5rem',
       color: 'brand.750',
       '.productImage': {
@@ -27,6 +27,7 @@ const table = {
               fontSize: '0.9375rem',
               fontWeight: 500,
               textAlign: 'left',
+              whiteSpace: 'nowrap',
               px: '0.625rem',
               '&:first-of-type': {
                 visibility: 'hidden',
@@ -46,6 +47,7 @@ const table = {
               borderCollapse: 'collapse',
               textAlign: 'left',
               px: '0.625rem',
+              whiteSpace: 'nowrap',
               '&:first-of-type': {
                 display: 'flex',
                 alignItems: 'center',
