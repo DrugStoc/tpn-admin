@@ -7,7 +7,7 @@ import { general } from './general'
 import input from './input'
 import login from './login'
 import navbar from './navbar'
-import orders from './orders'
+import section from './section'
 import overview from './overview'
 import pagination from './pagination'
 import responsive from './responsive'
@@ -30,7 +30,7 @@ const modules = {
   ...searched,
   ...chart,
   ...table,
-  ...orders,
+  ...section,
   ...dropdown,
   ...pagination,
   ...responsive,
