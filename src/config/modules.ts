@@ -1,6 +1,7 @@
 import button from './button'
 import card from './card'
 import chart from './chart'
+import dropdown from './dropdown'
 import filter from './filter'
 import { general } from './general'
 import input from './input'
@@ -29,6 +30,7 @@ const modules = {
   ...chart,
   ...table,
   ...orders,
+  ...dropdown,
   ...responsive,
 }
 
