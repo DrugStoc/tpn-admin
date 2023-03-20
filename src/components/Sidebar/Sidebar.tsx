@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import React from 'react'
 import { Box, Image, List } from '@chakra-ui/react'

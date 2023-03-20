@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import Motion from '../shared/Motion'
 import Navbar from '../Navbar/Navbar'

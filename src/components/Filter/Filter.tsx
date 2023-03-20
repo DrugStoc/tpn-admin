@@ -1,5 +1,4 @@
-/* eslint-disable indent */
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
@@ -53,9 +52,9 @@ const Filter = ({
           textColor="#fff"
           text={text}
         />
-      ) : (
+          ) : (
         <Button linkText={linkText} text="Create Customer" />
-      )}
+          )}
     </section>
   )
 }

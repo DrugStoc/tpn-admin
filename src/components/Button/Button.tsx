@@ -1,6 +1,4 @@
-/* eslint-disable indent */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
+import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { buttonInterface } from './ButtonInterface'
 
@@ -20,7 +18,8 @@ const Button = ({
 }: buttonInterface): JSX.Element => {
   const navigate = useNavigate()
   const handleButtonClick = (): any => {
-    if (text !== undefined) {
+    if (text !== undefined || text !== null) {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       navigate(`/${linkText?.toLowerCase()}/new`)
     } else {
       navigate('/')
@@ -59,18 +58,18 @@ const Button = ({
           src="https://res.cloudinary.com/bizstak/image/upload/v1678557170/add-product_vcm0hk.svg"
           alt="button"
         />
-      ) : slug === 'orders' ? (
+          ) : slug === 'orders' ? (
         <img
           src="https://res.cloudinary.com/bizstak/image/upload/v1679248641/place-orders_qt3bad.svg"
           alt=""
         />
-      ) : (
+          ) : (
         <img
           className="personImage"
           src="https://res.cloudinary.com/bizstak/image/upload/v1678557226/person_almamy.svg"
           alt="button"
         />
-      )}
+          )}
       <span style={{ color: textColor }}>{text}</span>
     </button>
   )

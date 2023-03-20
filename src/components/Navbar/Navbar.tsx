@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
-/* eslint-disable react/react-in-jsx-scope */
-import { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
 import { NavbarInterface } from './NavbarInterface'
@@ -48,7 +46,7 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
       const hour = date.getHours()
       const minute = date.getMinutes()
       const ampm = hour >= 12 ? 'PM' : 'AM'
-      const hour12 = hour % 12 || 12
+      const hour12 = hour % 12 !== 0 ? hour % 12 : 12
       const time = `${hour12}:${minute.toString().padStart(2, '0')} ${ampm}`
       setDateTime(`${day} ${dateNum} ${month}`)
       setDateMonth(time)

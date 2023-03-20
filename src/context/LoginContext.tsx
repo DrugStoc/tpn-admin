@@ -1,5 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
-import {
+import React, {
   useState,
   createContext,
   ChangeEvent,
