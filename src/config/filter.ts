@@ -1,21 +1,18 @@
+import { dCenter, dflexCenter, horizontalBtw } from './general'
+
 const filter = {
   '.inputButton': {
     pos: 'absolute',
     top: '-1.25rem',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    ...horizontalBtw,
     '.input': {
-      display: 'flex',
       justifyContent: 'flex-start',
-      alignItems: 'center',
+      ...dCenter,
       w: 'full',
       gap: '0.5rem',
       '.inputImg': {
-        display: 'flex',
-        alignItems: 'center',
+        ...dflexCenter,
         pos: 'relative',
-        justifyContent: 'center',
         '::after': {
           pos: 'absolute',
           content:
