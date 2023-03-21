@@ -1,8 +1,8 @@
 const responsive = {
   '@media (min-width: 1339px)': {
     '.firstChart, .secondChart': {
-      marginLeft: '0.6875rem',
-      width: '56.4% !important',
+      ml: '0.6875rem',
+      w: '56.4% !important',
       boxShadow: '0 0 0.125rem #f0f2f5',
     },
   },
@@ -15,24 +15,24 @@ const responsive = {
       },
     },
     '.inputSearch': {
-      width: '100% !important',
+      w: '100% !important',
     },
     '.section .fillSearch': { flexDirection: 'column' },
     '.section .fillSearch .chatSearchProducts': {
-      width: '100%',
-      maxWidth: 'initial',
-      marginTop: '-1.5625rem',
+      w: '100%',
+      maxW: 'initial',
+      mt: '-1.5625rem',
     },
     '.section .fillSearch .searchProducts': {
       width: '100% !important',
-      marginTop: '49.4375rem',
+      mt: '49.4375rem',
     },
     '.section .fillSearch .chatSearchProducts .positionVertical': {
-      width: '100%',
-      marginTop: '1.8125rem',
+      w: '100%',
+      mt: '1.8125rem',
     },
     '.section .firstChart, .section .secondChart': {
-      width: '90%',
+      w: '90%',
       left: 'auto',
     },
     '.section .firstChart': { top: '39.375rem' },
@@ -42,21 +42,21 @@ const responsive = {
       top: '5.875rem',
     },
     '.pagination': {
-      bottom: 'calc(-7.3125rem + -22px)',
+      bottom: '-8.6875rem',
     },
   },
   '@media (max-width: 963px)': {
     '.inputButton': {
       flexWrap: 'wrap',
       button: {
-        width: '40% !important',
+        w: '40% !important',
       },
     },
   },
   '@media (max-width: 785px)': {
     '.inputButton': {
       button: {
-        width: '50% !important',
+        w: '50% !important',
       },
     },
   },
@@ -85,8 +85,8 @@ const responsive = {
     '.settingLogout': { mt: 'auto', ml: 'initial !important' },
     '.sidebar-box': { mx: 'auto !important' },
     '.mainSection': {
-      width: 'auto',
-      marginLeft: '46px',
+      w: 'auto',
+      ml: '46px',
     },
   },
   '@media (max-width: 679px)': {
@@ -101,14 +101,14 @@ const responsive = {
   '@media (max-width: 675px)': {
     '.inputButton': {
       button: {
-        width: '60% !important',
+        w: '60% !important',
       },
     },
   },
   '@media (max-width: 600px)': {
     '.inputButton': {
       button: {
-        width: '80% !important',
+        w: '80% !important',
       },
     },
   },
@@ -133,18 +133,18 @@ const responsive = {
     '.inputButton': {
       top: '-0.75rem !important',
       button: {
-        marginTop: '0.8125rem',
+        mt: '0.8125rem',
       },
     },
     '.navbar .clock': {
-      position: 'relative',
+      pos: 'relative',
       top: '0',
     },
   },
   '@media (max-width: 505px)': {
     '.inputButton': {
       button: {
-        width: '100% !important',
+        w: '100% !important',
       },
     },
   },
@@ -159,7 +159,7 @@ const responsive = {
       p: '0.4375rem',
     },
     '.pagination': {
-      bottom: 'calc(-4.25rem + -22px)',
+      bottom: '-5.625rem',
     },
     html: {
       fontSize: '15px',
