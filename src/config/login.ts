@@ -1,4 +1,4 @@
-import { fixedBody } from './general'
+import { fixedBody, verticalCenter } from './general'
 
 const fontFamily = 'defaultFontFamily'
 const paraText = {
@@ -21,10 +21,7 @@ const login = {
       '.login-box': {
         w: '90%',
         mx: 'auto',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
+        ...verticalCenter,
         '.login-heading': {
           fontFamily,
           color: 'brand.50',
