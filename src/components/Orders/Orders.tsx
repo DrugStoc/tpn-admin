@@ -17,12 +17,10 @@ const Orders = (): JSX.Element => {
           buttonText
           column={OrderTableHeadingData}
         />
-        <section className="tableSection">
           <Table
             columnData={OrderTableHeadingData}
             TableData={OrdersTableData}
           />
-        </section>
         <Pagination />
       </div>
     </Motion>
