@@ -1,7 +1,10 @@
 const color = 'brand.800'
-const dflexCenter = {
+const dCenter = {
   display: 'flex',
   alignItems: 'center',
+}
+const dflexCenter = {
+  ...dCenter,
   justifyContent: 'center',
 }
 const fixedBody = {
@@ -22,18 +25,43 @@ const sections = {
 }
 
 const verticalCenter = {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+  ...dflexCenter,
   flexDirection: 'column',
 }
 
-const horizontalBtwFlex = {
+const dBtw = {
+  display: 'flex',
+  justifyContent: 'space-between',
+}
+
+const dVerticalBtw = {
+  ...dBtw,
+  flexDirection: 'column',
+}
+
+const dVerticalWrapBtw = {
+  ...dBtw,
+  flexDirection: 'column',
+  flexWrap: 'wrap',
+}
+
+const horizontalBtw = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+}
+
+const horizontalBtwFlex = {
+  ...horizontalBtw,
   flexWrap: 'wrap',
 }
+
+const dwrapBtw = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between',
+}
+
 const general = {
   '*': {
     p: 0,
@@ -101,4 +129,17 @@ const general = {
   },
 }
 
-export { general, fixedBody, verticalCenter, sections, horizontalBtwFlex }
+export {
+  general,
+  fixedBody,
+  dCenter,
+  dBtw,
+  verticalCenter,
+  dVerticalBtw,
+  sections,
+  horizontalBtwFlex,
+  horizontalBtw,
+  dflexCenter,
+  dwrapBtw,
+  dVerticalWrapBtw,
+}
