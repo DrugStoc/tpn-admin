@@ -1,3 +1,5 @@
+import { horizontalBtw } from "./general"
+
 const searched = {
   '.section .fillSearch .searchProducts': {
     w: '33%',
@@ -22,9 +24,7 @@ const searched = {
       },
     },
     '.productList': {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
+      ...horizontalBtw,
       mx: '1.5rem',
       fontSize: '0.875rem',
       my: '1.25rem',
