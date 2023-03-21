@@ -1,3 +1,4 @@
+import addCustomer from './addCustomers'
 import button from './button'
 import card from './card'
 import chart from './chart'
@@ -31,6 +32,7 @@ const modules = {
   ...table,
   ...dropdown,
   ...pagination,
+  ...addCustomer,
   ...responsive,
 }
 
