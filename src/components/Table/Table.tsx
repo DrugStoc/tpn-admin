@@ -125,14 +125,16 @@ const Table = ({
   })
 
   return (
-    <div className="overflow">
-      <table style={{ minWidth }} className="table">
-        <thead>
-          <tr>{columnItems}</tr>
-        </thead>
-        <tbody>{tableRow}</tbody>
-      </table>
-    </div>
+    <section className="tableSection">
+      <div className="overflow">
+        <table style={{ minWidth }} className="table">
+          <thead>
+            <tr>{columnItems}</tr>
+          </thead>
+          <tbody>{tableRow}</tbody>
+        </table>
+      </div>
+    </section>
   )
 }
 
