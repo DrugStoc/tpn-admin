@@ -20,12 +20,10 @@ const Customers = (): JSX.Element => {
           buttonText
           column={CustomersTableHeadingData}
         />
-        <section className="tableSection">
-          <Table
-            columnData={CustomersTableHeadingData}
-            TableData={CustomersTableData}
-          />
-        </section>
+        <Table
+          columnData={CustomersTableHeadingData}
+          TableData={CustomersTableData}
+        />
         <Pagination />
       </div>
     </Motion>
