@@ -19,8 +19,8 @@ const Button = ({
   const navigate = useNavigate()
   const handleButtonClick = (): any => {
     if (text !== undefined || text !== null) {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-      navigate(`/${linkText?.toLowerCase()}/new`)
+      const path = `/${(linkText ?? '').toLowerCase()}/new`
+      navigate(path)
     } else {
       navigate('/')
     }
