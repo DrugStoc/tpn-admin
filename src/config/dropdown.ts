@@ -1,10 +1,10 @@
+import { dflexCenter } from './general'
+
 const dropdown = {
   '.cardDropdown': {
     w: '8.125rem',
     h: '2.75rem',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    ...dflexCenter,
     cursor: 'pointer',
     pos: 'relative',
     span: {

@@ -1,3 +1,5 @@
+import { dflexCenter } from "./general"
+
 const table = {
   '.tableSection': {
     position: 'absolute',
@@ -49,9 +51,7 @@ const table = {
               px: '0.625rem',
               whiteSpace: 'nowrap',
               '&:first-of-type': {
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                ...dflexCenter,
                 h: '3.75rem',
               },
               img: {

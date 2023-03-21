@@ -2,27 +2,24 @@ import React from 'react'
 import Filter from '../Filter/Filter'
 import Navbar from '../Navbar/Navbar'
 import Table from '../Table/Table'
-import {
-  MerchantsTableData,
-  MerchantTableHeadingData,
-} from './MerchantsTableData'
+import { ProductsTableData, ProductTableHeadingData } from './ProductsTableData'
 import Pagination from '../Pagination/Pagination'
 import Motion from '../shared/Motion'
 
-const Merchants = (): JSX.Element => {
+const Products = (): JSX.Element => {
   return (
     <Motion>
       <div className="mainSection">
-        <Navbar arrow="" nav="Merchants" />
+        <Navbar arrow="" nav="Products" />
         <Filter
-          linkText="merchants"
-          text="Add Merchants"
+          linkText="products"
+          text="Add Products"
           buttonText
-          column={MerchantTableHeadingData}
+          column={ProductTableHeadingData}
         />
         <Table
-          columnData={MerchantTableHeadingData}
-          TableData={MerchantsTableData}
+          columnData={ProductTableHeadingData}
+          TableData={ProductsTableData}
         />
         <Pagination />
       </div>
@@ -30,4 +27,4 @@ const Merchants = (): JSX.Element => {
   )
 }
 
-export default Merchants
+export default Products

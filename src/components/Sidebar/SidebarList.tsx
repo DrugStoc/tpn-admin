@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ListItem } from '@chakra-ui/react'
 

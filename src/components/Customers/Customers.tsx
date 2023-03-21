@@ -1,5 +1,4 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react'
 import Filter from '../Filter/Filter'
 import Navbar from '../Navbar/Navbar'
 import Table from '../Table/Table'
@@ -21,12 +20,10 @@ const Customers = (): JSX.Element => {
           buttonText
           column={CustomersTableHeadingData}
         />
-        <section className="tableSection">
-          <Table
-            columnData={CustomersTableHeadingData}
-            TableData={CustomersTableData}
-          />
-        </section>
+        <Table
+          columnData={CustomersTableHeadingData}
+          TableData={CustomersTableData}
+        />
         <Pagination />
       </div>
     </Motion>

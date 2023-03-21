@@ -1,4 +1,4 @@
-import { horizontalBtwFlex } from './general'
+import { dCenter, horizontalBtwFlex } from './general'
 
 const pos = 'absolute'
 const navbar = {
@@ -12,8 +12,7 @@ const navbar = {
     w: '90%',
     mx: 'auto',
     '.navbar-split': {
-      display: 'flex',
-      alignItems: 'center',
+      ...dCenter,
       h2: {
         fontSize: '1rem',
         fontWeight: '600',

@@ -1,20 +1,19 @@
+import { dBtw, dCenter, dflexCenter } from './general'
+
 const pagination = {
   '.pagination': {
     mt: 'auto',
     pos: 'relative',
-    bottom: 'calc(-4.75rem + -22px)',
-    display: 'flex',
-    justifyContent: 'space-between',
+    bottom: '-6.125rem',
+    ...dBtw,
     fontFamily: 'Quicksand, sans-serif',
 
     button: {
-      h: '30px',
-      w: '30px',
+      h: '1.875rem',
+      w: '1.875rem',
       borderRadius: '50%',
       overflow: 'hidden',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+      ...dflexCenter,
     },
     '.active': {
       bgColor: 'brand.50',
@@ -23,10 +22,9 @@ const pagination = {
       bgColor: '#F2F3F4',
     },
     '.pagination-button': {
-      display: 'flex',
-      alignItems: 'center',
+      ...dCenter,
       button: {
-        mx: '5px',
+        mx: '0.3125rem',
         bgColor: '#F2F3F4',
         color: '#7E7E7E;',
         fontWeight: 600,

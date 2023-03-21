@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react'
 import MerchantsAside from '../components/Merchants/Merchants'
 import SidebarAside from '../components/Sidebar/Sidebar'
 

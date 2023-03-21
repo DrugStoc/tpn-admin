@@ -1,3 +1,5 @@
+import { dflexCenter } from './general'
+
 const chart = {
   '.section .firstChart, .section .secondChart': {
     w: '58%',
@@ -11,10 +13,8 @@ const chart = {
     boxShadow:
       'rgba(0, 0, 0, 0.04) 0 0.3125rem 1.375rem, rgba(0, 0, 0, 0.03) 0 0 0 0.03125rem',
     '.alignChart': {
-      display: 'flex',
+      ...dflexCenter,
       h: '21.25rem',
-      justifyContent: 'center',
-      alignItems: 'center',
       overflowY: 'auto',
       p: '1rem !important',
     },

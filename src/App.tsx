@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/Login'
 import { LoginProvider } from './context/LoginContext'
@@ -6,6 +6,7 @@ import Home from './pages/Home/Overview'
 import Orders from './pages/Orders'
 import Customers from './pages/Customers'
 import Merchants from './pages/Merchants'
+import Products from './pages/Products'
 
 function App(): JSX.Element {
   return (
@@ -18,6 +19,7 @@ function App(): JSX.Element {
             <Route path="/orders" element={<Orders />} />
             <Route path="/customers" element={<Customers />} />
             <Route path="/merchants" element={<Merchants />} />
+            <Route path="/products" element={<Products />} />
           </Routes>
         </main>
       </BrowserRouter>

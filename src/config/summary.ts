@@ -1,25 +1,20 @@
+import { dBtw, dCenter, dVerticalBtw, dVerticalWrapBtw, dwrapBtw, horizontalBtw } from './general'
+
 const summary = {
   '.fillSearch': {
     pos: 'absolute',
     fontFamily: 'fontFamily',
     top: '3.125rem',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    ...dwrapBtw,
     lineHeight: 2.2,
     color: 'brand.100',
     '.chatSearchProducts': {
       w: '65%',
       maxW: '40.625rem',
-      flexWrap: 'wrap',
-      display: 'flex',
-      justifyContent: 'space-between',
+      ...dwrapBtw,
     },
     '.positionVertical': {
-      display: 'flex',
-      flexDirection: 'column',
-      flexWrap: 'wrap',
-      justifyContent: 'space-between',
+      ...dVerticalWrapBtw,
       bgColor: 'brand.600',
       h: '10.0625rem',
       w: '31%',
@@ -27,9 +22,8 @@ const summary = {
       px: '0.9375rem',
       fontSize: '0.75rem',
       '.title': {
-        display: 'flex',
+        ...dCenter,
         gap: '0.625rem',
-        alignItems: 'center',
         span: {
           fontWeight: 500,
         },
@@ -39,13 +33,10 @@ const summary = {
         },
       },
       '.positionHorizontal': {
-        display: 'flex',
-        justifyContent: 'space-between',
+        ...dBtw,
         h: '3.8125rem',
         '.data': {
-          display: 'flex',
-          justifyContent: 'space-between',
-          flexDirection: 'column',
+          ...dVerticalBtw,
           h: '4.375rem',
           span: {
             color: 'brand.450',
@@ -61,9 +52,7 @@ const summary = {
             m: '0',
           },
           '.trends': {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
+            ...horizontalBtw,
           },
         },
         '.view': {
