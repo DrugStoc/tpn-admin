@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
 import { NavbarInterface } from './NavbarInterface'
 
-const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
+const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const pathArr = pathname.split('/')
@@ -75,14 +75,16 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
     dayTime.current = `${timer} ${pmAM}`
   }, [pathname])
 
-  const text = daytimer.current
+  const currentText = slug.length === 0 ? daytimer.current : text
+
+  console.log(text)
 
   return (
     <nav className="navbar">
       <div className="navbar-split">
         <h2
           style={{
-            color: 'brand.350',
+            color: '#787579',
             marginRight: nav !== undefined ? 3 : undefined,
             display: 'flex',
             cursor: 'pointer',
@@ -95,9 +97,9 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
           <img
             style={{
               marginInline: 10,
-              display: text === undefined ? 'none' : 'inline-block',
+              display: currentText === undefined ? 'none' : 'inline-block',
             }}
-            className="img"
+            // className="img"
             src="https://res.cloudinary.com/bizstak/image/upload/v1678568018/arrow-forward_jqsrtt.svg"
             width={18}
             height={18}
@@ -109,7 +111,7 @@ const Navbar = ({ nav }: NavbarInterface): JSX.Element => {
             fontSize: slug !== 'new' ? '1.5rem' : '1rem',
             cursor: slug !== 'new' ? 'default' : 'pointer',
           }}>
-          {slug === '' ? text : null}
+          {slug === 'new' ? currentText : null}
         </h2>
       </div>
       <div
