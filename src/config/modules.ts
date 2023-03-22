@@ -1,7 +1,6 @@
 import addCustomer from './addCustomer'
 import addMerchant from './addMerchant'
 import addProduct from './addProduct'
-import addShipping from './addShipping'
 import button from './button'
 import card from './card'
 import chart from './chart'
@@ -38,7 +37,6 @@ const modules = {
   ...addCustomer,
   ...addMerchant,
   ...addProduct,
-  ...addShipping,
   ...responsive,
 }
 
