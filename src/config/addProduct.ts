@@ -28,11 +28,11 @@ const addProduct = {
     gap: '8px',
     cursor: 'pointer',
   },
-  '.addProduct .addProduct-section .cardBody form,\n.addProduct .addProduct-section .cardBody .deliveryForm':
+  '.addProduct .addProduct-section .cardBody form, .addProduct .addProduct-section .cardBody .deliveryForm':
     {
       marginTop: '60px',
     },
-  '.addProduct .addProduct-section .cardBody form .form,\n.addProduct .addProduct-section .cardBody .deliveryForm .form':
+  '.addProduct .addProduct-section .cardBody form .form, .addProduct .addProduct-section .cardBody .deliveryForm .form':
     {
       display: 'flex',
       justifyContent: 'space-between',
@@ -40,25 +40,25 @@ const addProduct = {
       marginTop: '-20px',
       marginBottom: '-20px',
     },
-  '.addProduct .addProduct-section .cardBody form :where(.inputLabel),\n.addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel)':
+  '.addProduct .addProduct-section .cardBody form :where(.inputLabel), .addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel)':
     {
       marginBottom: '30px',
       minWidth: '405.922px',
       position: 'relative',
     },
-  '.addProduct .addProduct-section .cardBody form :where(.inputLabel) :where(img),\n.addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel) :where(img)':
+  '.addProduct .addProduct-section .cardBody form :where(.inputLabel) :where(img), .addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel) :where(img)':
     {
       position: 'absolute',
       top: '56px',
       left: '22px',
     },
-  '.addProduct .addProduct-section .cardBody form :where(.inputLabel) label,\n.addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel) label':
+  '.addProduct .addProduct-section .cardBody form :where(.inputLabel) label, .addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel) label':
     {
       fontSize: '14px',
       color: '#1f1c19',
       fontWeight: 500,
     },
-  '.addProduct .addProduct-section .cardBody form :where(.inputLabel) input,\n.addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel) input':
+  '.addProduct .addProduct-section .cardBody form :where(.inputLabel) input, .addProduct .addProduct-section .cardBody .deliveryForm :where(.inputLabel) input':
     {
       background: '#f9f9fc',
       borderRadius: '4px',
