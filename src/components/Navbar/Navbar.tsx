@@ -77,8 +77,6 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
 
   const currentText = slug.length === 0 ? daytimer.current : text
 
-  console.log(text)
-
   return (
     <nav className="navbar">
       <div className="navbar-split">
