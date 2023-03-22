@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Nav from '../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar'
 import Card from '../shared/Card'
 import Button from '../Button/Button'
 import Motion from '../shared/Motion'
@@ -18,7 +18,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
   return (
     <Motion>
       <div className="addMerchant">
-        <Nav nav="Merchants" arrow={arrow} text="Add Merchants" />
+        <Navbar nav="Merchants" arrow={arrow} text="Add Merchants" />
         <section className="addMerchant-section">
           <Card className="card">
             <div className="cardBody">
