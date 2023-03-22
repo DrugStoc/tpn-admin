@@ -6,6 +6,20 @@ const responsive = {
       boxShadow: '0 0 0.125rem #f0f2f5',
     },
   },
+
+  '@media (max-width: 1253px)': {
+    '.inputLabel': { marginBottom: '36px', width: '100%' },
+  },
+
+  '@media (max-width: 1234px)': {
+    '.form': {
+      display: 'block !important',
+    },
+    '.cardBody': {
+      mt: '450px !important',
+    },
+  },
+
   '@media (max-width: 1088px)': {
     '.inputButton': {
       flexWrap: 'wrap',
@@ -60,6 +74,9 @@ const responsive = {
       },
     },
   },
+  '@media (max-width: 756px)': {
+    '.inputLabel': { minWidth: 'auto !important' },
+  },
   '@media (max-width: 700px)': {
     '.sidebar': {
       py: '1.875rem',
@@ -84,10 +101,11 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { mt: 'auto', ml: 'initial !important' },
     '.sidebar-box': { mx: 'auto !important' },
-    '.mainSection': {
+    '.mainSection, .addCustomer': {
       w: 'auto',
       ml: '46px',
     },
+    '.cardBody': { padding: '20px !important' },
   },
   '@media (max-width: 679px)': {
     '.login-card': {
@@ -146,6 +164,12 @@ const responsive = {
       button: {
         w: '100% !important',
       },
+    },
+  },
+  '@media (max-width: 365px)': {
+    '.card': {
+      pos: 'relative',
+      top: '30px',
     },
   },
   '@media (max-width: 480px)': {
