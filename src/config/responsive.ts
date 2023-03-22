@@ -98,7 +98,7 @@ const responsive = {
     '.sidebar span': { display: 'none' },
     '.settingLogout': { mt: 'auto', ml: 'initial !important' },
     '.sidebar-box': { mx: 'auto !important' },
-    '.mainSection, .addCustomer': {
+    '.mainSection, .addCustomer, addMerchant': {
       w: 'auto',
       ml: '46px',
     },

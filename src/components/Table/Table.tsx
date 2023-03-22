@@ -127,7 +127,9 @@ const Table = ({
   return (
     <section className="tableSection">
       <div className="overflow">
-        <table style={{ minWidth }} className="table">
+        <table
+          style={{ minWidth: slug !== 'customers' ? minWidth : '1133px' }}
+          className="table">
           <thead>
             <tr>{columnItems}</tr>
           </thead>
