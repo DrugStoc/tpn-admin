@@ -86,6 +86,7 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
             display: 'flex',
             cursor: 'pointer',
             fontSize: slug !== 'new' ? '1.5rem' : '1rem',
+            color: pathArr.includes('new') ? '#787579' : undefined,
           }}
           onClick={handleButtonClick}>
           {nav}
