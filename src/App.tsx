@@ -9,7 +9,8 @@ import Merchants from './pages/Merchants'
 import Products from './pages/Products'
 import Shippings from './pages/Shippings'
 import AddCustomer from './pages/AddCustomer'
-import AddMerchant from './pages/AddMerchants'
+import AddMerchant from './pages/AddMerchant'
+import AddProduct from './pages/AddProduct'
 
 function App(): JSX.Element {
   return (
@@ -26,6 +27,7 @@ function App(): JSX.Element {
             <Route path="/shippings" element={<Shippings />} />
             <Route path="/customers/new" element={<AddCustomer />} />
             <Route path="/merchants/new" element={<AddMerchant />} />
+            <Route path="/products/new" element={<AddProduct />} />
           </Routes>
         </main>
       </BrowserRouter>
