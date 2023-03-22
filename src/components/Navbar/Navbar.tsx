@@ -84,7 +84,6 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
       <div className="navbar-split">
         <h2
           style={{
-            color: '#787579',
             marginRight: nav !== undefined ? 3 : undefined,
             display: 'flex',
             cursor: 'pointer',
