@@ -1,4 +1,5 @@
-import addCustomer from './addCustomers'
+import addCustomer from './addCustomer'
+import addMerchant from './addMerchant'
 import button from './button'
 import card from './card'
 import chart from './chart'
@@ -33,6 +34,7 @@ const modules = {
   ...dropdown,
   ...pagination,
   ...addCustomer,
+  ...addMerchant,
   ...responsive,
 }
 
