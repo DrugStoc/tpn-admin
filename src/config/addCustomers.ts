@@ -1,20 +1,19 @@
-import { fixedBody } from './general'
+import { sections } from './general'
 
 const addCustomer = {
   '.addCustomer': {
-    position: 'fixed',
-    ...fixedBody,
-    overflowY: 'auto',
     fontFamily: 'fontFamily',
-    w: 'calc(100% - 200px)',
-    ml: 'auto',
+    ...sections,
   },
   '.addCustomer .card': { mb: '50px' },
-  '.addCustomer .addCustomer-section': { w: '90%' },
+  '.addCustomer .addCustomer-section': {
+    w: '90%',
+    top: 0,
+    pos: 'absolute',
+  },
   '.addCustomer .addCustomer-section .cardBody': {
     py: '40px',
     px: '55px',
-    mt: '250px',
   },
   '.addCustomer .addCustomer-section .cardBody h1': {
     fontSize: '24px',
