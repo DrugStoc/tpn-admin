@@ -16,8 +16,12 @@ const AddCustomer = ({ arrow }: any): JSX.Element => {
   }
   return (
     <Motion>
-      <div className="mainSelector addCustomer">
-        <Navbar nav="Customers" arrow={arrow} text="Add Customers" />
+      <div className="addCustomer">
+        <Navbar
+          nav="Customers"
+          arrow={arrow}
+          text="Add Customers"
+        />
         <section className="addCustomer-section">
           <Card className="card">
             <div className="cardBody">
