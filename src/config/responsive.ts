@@ -15,9 +15,6 @@ const responsive = {
     '.form': {
       display: 'block !important',
     },
-    '.cardBody': {
-      mt: '450px !important',
-    },
   },
 
   '@media (max-width: 1088px)': {
