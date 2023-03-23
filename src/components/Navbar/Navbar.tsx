@@ -85,8 +85,9 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
             marginRight: nav !== undefined ? 3 : undefined,
             display: 'flex',
             cursor: 'pointer',
-            fontSize: slug !== 'new' ? '1.5rem' : '1rem',
-            color: pathArr.includes('new') ? '#787579' : undefined,
+            fontSize: slug !== 'new'  ? '1.5rem' : '1rem',
+            color:
+              pathArr.includes('new') || !isNaN(+slug) ? '#787579' : undefined,
           }}
           onClick={handleButtonClick}>
           {nav}
@@ -109,7 +110,7 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
             fontSize: slug !== 'new' ? '1.5rem' : '1rem',
             cursor: slug !== 'new' ? 'default' : 'pointer',
           }}>
-          {slug === 'new' ? currentText : null}
+          {slug === 'new' ? currentText : text}
         </h2>
       </div>
       <div
