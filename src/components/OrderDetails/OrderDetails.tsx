@@ -62,7 +62,7 @@ const OrdersDetail = ({ arrow }: any): JSX.Element => {
               </div>
               <div className="liner"></div>
               <div className="rowAmount">
-                <div className="amount">Total Amount</div>
+                <div className="amount">Total Amount:</div>
                 <div className="sum">NGN {700 * findId.row[5]['column 7']}</div>
               </div>
             </div>
