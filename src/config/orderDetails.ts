@@ -27,52 +27,59 @@ const orderDetails = {
       borderBottom: '1px solid #E6E1E5',
       marginBlock: '20px',
     },
-    '.row': {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'space-between',
-      justifyContent: 'center',
-      gap: '20px',
-      '.rowBtw': {
+    '.overflow': {
+      maxHeight: 500,
+      overflow: 'auto',
+      '&::-webkit-scrollbar': {
+        display: 'none',
+      },
+      '.row': {
         display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        '.rowFirst': {
+        flexDirection: 'column',
+        alignItems: 'space-between',
+        justifyContent: 'center',
+        gap: '20px',
+        '.rowBtw': {
           display: 'flex',
           justifyContent: 'space-between',
-          width: '65%',
           alignItems: 'center',
-          img: {
-            backgroundColor: '#f9f9ff',
-            marginRight: '20px',
-            height: 116,
-          },
-          '.productDetail': {
+          '.rowFirst': {
             display: 'flex',
-            flexDirection: 'column',
-            height: 116,
-            overflow: 'auto',
             justifyContent: 'space-between',
-            '&::-webkit-scrollbar': {
-              display: 'none',
+            width: '65%',
+            alignItems: 'center',
+            img: {
+              backgroundColor: '#f9f9ff',
+              marginRight: '20px',
+              height: 116,
             },
-            h3: {
-              fontSize: 20,
-            },
-            '.productDescription': {
-              marginBlock: '5px',
-              fontSize: 14,
-              color: '#484649',
-            },
-            '.productComposition': {
-              fontSize: 16,
-              color: '#484649',
-              fontWeight: 500,
+            '.productDetail': {
+              display: 'flex',
+              flexDirection: 'column',
+              height: 116,
+              overflow: 'auto',
+              justifyContent: 'space-between',
+              '&::-webkit-scrollbar': {
+                display: 'none',
+              },
+              h3: {
+                fontSize: 20,
+              },
+              '.productDescription': {
+                marginBlock: '5px',
+                fontSize: 14,
+                color: '#484649',
+              },
+              '.productComposition': {
+                fontSize: 16,
+                color: '#484649',
+                fontWeight: 500,
+              },
             },
           },
-        },
-        '.rowPrice': {
-          fontWeight: 600,
+          '.rowPrice': {
+            fontWeight: 600,
+          },
         },
       },
     },
