@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import LoginContext from '../../context/LoginContext'
 import { NavbarInterface } from './NavbarInterface'
 
 const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
   const navigate = useNavigate()
+  const [greet, setGreeting] = useState()
   const { pathname } = useLocation()
   const pathArr = pathname.split('/')
   const slug = pathArr[pathArr.length - 1]
@@ -50,6 +50,16 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
       const time = `${hour12}:${minute.toString().padStart(2, '0')} ${ampm}`
       setDateTime(`${day} ${dateNum} ${month}`)
       setDateMonth(time)
+
+      let greeting: any
+      if (hour < 12) {
+        greeting = 'Good Morning Bello'
+      } else if (hour < 18) {
+        greeting = 'Good Afternoon Bello'
+      } else {
+        greeting = 'Good Evening Bello'
+      }
+      setGreeting(greeting)
     }, 1000)
 
     return () => {
@@ -57,25 +67,10 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
     }
   }, [])
 
-  const {
-    daytimer,
-    dayTimer,
-    dayTime,
-    dayHr,
-    day,
-    dateNum,
-    month,
-    timer,
-    pmAM,
-  } = useContext(LoginContext)
+  const textDesc = text?.split(' ')
+  const checkText = textDesc?.includes('Details')
 
-  useEffect(() => {
-    daytimer.current = `Good ${dayHr} Bello`
-    dayTimer.current = `${day} ${dateNum} ${month}`
-    dayTime.current = `${timer} ${pmAM}`
-  }, [pathname])
-
-  const currentText = slug.length === 0 ? daytimer.current : text
+  const currentText = slug.length === 0 ? greet : text
 
   return (
     <nav className="navbar">
@@ -85,32 +80,42 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
             marginRight: nav !== undefined ? 3 : undefined,
             display: 'flex',
             cursor: 'pointer',
-            fontSize: slug !== 'new'  ? '1.5rem' : '1rem',
+            fontSize:
+              slug !== 'new' && !(checkText ?? false) ? '1.5rem' : '1rem',
             color:
-              pathArr.includes('new') || !isNaN(+slug) ? '#787579' : undefined,
+              pathArr.includes('new') || (checkText ?? false)
+                ? '#787579'
+                : undefined,
           }}
           onClick={handleButtonClick}>
           {nav}
         </h2>
-        {slug === 'new' || Boolean(pathArr.includes('customer')) ? (
+        {slug === 'new' ||
+        pathArr[pathArr.length - 2] === 'order' ||
+        Boolean(pathArr.includes('customer')) ? (
           <img
             style={{
               marginInline: 10,
-              display: currentText === undefined ? 'none' : 'inline-block',
+              display:
+                currentText !== undefined
+                  ? 'inline-block'
+                  : currentText === 'Order List'
+                    ? 'inline-block'
+                    : 'none',
             }}
-            // className="img"
             src="https://res.cloudinary.com/bizstak/image/upload/v1678568018/arrow-forward_jqsrtt.svg"
             width={18}
             height={18}
             alt="person add icon"
           />
-        ) : null}
+            ) : null}
         <h2
           style={{
-            fontSize: slug !== 'new' ? '1.5rem' : '1rem',
+            fontSize:
+              slug !== 'new' && !(checkText ?? false) ? '1.5rem' : '1rem',
             cursor: slug !== 'new' ? 'default' : 'pointer',
           }}>
-          {slug === 'new' ? currentText : text}
+          {text === undefined ? currentText : text}
         </h2>
       </div>
       <div
