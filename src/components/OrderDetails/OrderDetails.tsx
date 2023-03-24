@@ -36,27 +36,29 @@ const OrdersDetail = ({ arrow }: any): JSX.Element => {
                 </div>
                 <div className="liner"></div>
               </div>
-              <div className="row">
-                {[...Array(findId.row[5]['column 7'])].map((_, index) => {
-                  return (
-                    <div className="rowBtw" key={index}>
-                      <div className="rowFirst">
-                        <img src="https://res.cloudinary.com/bizstak/image/upload/v1679618063/panadol_mwgzos.png" />
-                        <div className="productDetail">
-                          <h3>Panadol</h3>
-                          <h4 className="productDescription">
-                            Acephen, Mapap, Q-Pap, and Tylenol Used for Pain and
-                            Fever
-                          </h4>
-                          <h4 className="productComposition">
-                            325mg Acetaminophen (30 tablets)
-                          </h4>
+              <div className="overflow">
+                <div className="row">
+                  {[...Array(findId.row[5]['column 7'])].map((_, index) => {
+                    return (
+                      <div className="rowBtw" key={index}>
+                        <div className="rowFirst">
+                          <img src="https://res.cloudinary.com/bizstak/image/upload/v1679618063/panadol_mwgzos.png" />
+                          <div className="productDetail">
+                            <h3>Panadol</h3>
+                            <h4 className="productDescription">
+                              Acephen, Mapap, Q-Pap, and Tylenol Used for Pain
+                              and Fever
+                            </h4>
+                            <h4 className="productComposition">
+                              325mg Acetaminophen (30 tablets)
+                            </h4>
+                          </div>
                         </div>
+                        <div className="rowPrice">NGN 700</div>
                       </div>
-                      <div className="rowPrice">NGN 700</div>
-                    </div>
-                  )
-                })}
+                    )
+                  })}
+                </div>
               </div>
               <div className="liner"></div>
               <div className="rowAmount">
