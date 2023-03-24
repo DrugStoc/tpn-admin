@@ -71,10 +71,17 @@ const Table = ({
             alt="toggle on button icon"
           />
         )
-      } else if (column['column 9'] === 0 && slug === 'customers') {
+      } else if (
+        (column['column 9'] === 0 && slug === 'customers') ||
+        slug === 'orders'
+      ) {
         column['column 9'] = (
           <Link
-            to={`/customer/${tableItem.id}`}
+            to={
+              slug === 'customers'
+                ? `/customer/${tableItem.id}`
+                : `/order/${tableItem.id}`
+            }
             style={{ position: 'relative', display: 'block' }}>
             <img
               src="https://res.cloudinary.com/bizstak/image/upload/v1678576503/vertical-menu_t5swd1.svg"
