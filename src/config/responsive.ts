@@ -163,12 +163,6 @@ const responsive = {
       },
     },
   },
-  '@media (max-width: 365px)': {
-    '.card': {
-      pos: 'relative',
-      top: '30px',
-    },
-  },
   '@media (max-width: 480px)': {
     '.sidebar': {
       w: '2.5rem',
