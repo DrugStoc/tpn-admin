@@ -7,12 +7,12 @@ const Error = (): JSX.Element => {
   return (
     <Motion>
       <div className="mainSection">
-        <Navbar arrow="" nav="Oh Snap!" />
+        <Navbar arrow="" nav="" text="Oh Snap!" />
         <Card className="error">
           <h1>Opps...</h1>
           <img
             src="https://res.cloudinary.com/bizstak/image/upload/v1678666116/404_lsr5ja.jpg"
-            alt="404 error image"
+            alt="404 error page"
             height="60vh"
             width="100%"
           />
