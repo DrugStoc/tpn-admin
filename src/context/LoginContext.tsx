@@ -4,7 +4,6 @@ import React, {
   ChangeEvent,
   FormEvent,
   useEffect,
-  useRef,
 } from 'react'
 import { LoginContextInterface } from './LoginContextInterface'
 
@@ -23,15 +22,6 @@ const LoginContext = createContext<LoginContextInterface>({
   handleLogoutClick: () => {},
   showPassword: () => {},
   eyeWatchIcon: <></>,
-  dayHr: '',
-  day: '',
-  dateNum: '',
-  month: '',
-  pmAM: '',
-  timer: '',
-  daytimer: '',
-  dayTimer: '',
-  dayTime: '',
   showPasswordIcon: false,
   handleFocus: () => {},
   handleBlur: () => {},
@@ -170,43 +160,6 @@ const LoginProvider = ({
     </div>
   )
 
-  const date = new Date()
-  const datetoString = date.toString()
-  const datetoArr = datetoString.split(' ')
-  datetoArr.splice(5)
-  const time = datetoArr[datetoArr.length - 1]
-  const timetoArr = time.split(':')
-  const hr = +timetoArr[0]
-
-  let dayHr: undefined | string
-  if (hr > 0 && hr < 12) {
-    dayHr = 'Morning'
-  } else if (hr >= 12 && hr < 17) {
-    dayHr = 'Afternoon'
-  } else if (hr >= 17 && hr <= 20) {
-    dayHr = 'Evening'
-  } else {
-    dayHr = 'Night'
-  }
-
-  const dateString: string = date.toDateString()
-  const dateArr: string[] = dateString.split(' ')
-  const dateLocale = date.toLocaleString()
-  const day: string = dateArr[0]
-  const dateNum: string = dateArr[2]
-  const month: string = dateArr[1]
-  const dateLocaleArr = dateLocale.split(' ')
-  const timeLocale = dateLocaleArr[1]
-  const pmAM = dateLocale.split(' ')[2]
-  const timeLocaleArr = timeLocale.split(':')
-  timeLocaleArr.splice(2)
-  timeLocaleArr.join('')
-  const timer = timeLocaleArr.join(':')
-
-  const daytimer = useRef(`Good ${dayHr} Bello`)
-  const dayTimer = useRef(`${day} ${dateNum} ${month}`)
-  const dayTime = useRef(`${timer} ${pmAM}`)
-
   return (
     <LoginContext.Provider
       value={{
@@ -224,15 +177,6 @@ const LoginProvider = ({
         handleLogoutClick,
         showPassword,
         eyeWatchIcon,
-        dayHr,
-        day,
-        dateNum,
-        month,
-        pmAM,
-        timer,
-        daytimer,
-        dayTimer,
-        dayTime,
         showPasswordIcon,
         handleFocus,
         handleBlur,

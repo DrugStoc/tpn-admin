@@ -13,15 +13,6 @@ interface LoginContextInterface {
   handleLogoutClick: () => void
   showPassword: () => void
   eyeWatchIcon: JSX.Element
-  dayHr: string
-  day: string
-  dateNum: string
-  month: string
-  pmAM: string
-  timer: string
-  daytimer: any
-  dayTimer: any
-  dayTime: any
   showPasswordIcon: boolean | undefined
   handleFocus: () => void
   handleBlur: () => void

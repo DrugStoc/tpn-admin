@@ -12,6 +12,7 @@ import { general } from './general'
 import input from './input'
 import login from './login'
 import navbar from './navbar'
+import orderDetails from './orderDetails'
 import overview from './overview'
 import pagination from './pagination'
 import responsive from './responsive'
@@ -41,6 +42,7 @@ const modules = {
   ...addProduct,
   ...addShipping,
   ...error,
+  ...orderDetails,
   ...responsive,
 }
 
