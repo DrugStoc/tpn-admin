@@ -2,7 +2,7 @@ import React from 'react'
 import Filter from '../Filter/Filter'
 import Navbar from '../Navbar/Navbar'
 import Table from '../Table/Table'
-import { ProductsTableData, ProductTableHeadingData } from './ProductsTableData'
+import { ProductFilterData, ProductsTableData, ProductTableHeadingData } from './ProductsTableData'
 import Pagination from '../Pagination/Pagination'
 import Motion from '../shared/Motion'
 
@@ -15,7 +15,7 @@ const Products = (): JSX.Element => {
           linkText="products"
           text="Add Products"
           buttonText
-          column={ProductTableHeadingData}
+          column={ProductFilterData}
         />
         <Table
           columnData={ProductTableHeadingData}
