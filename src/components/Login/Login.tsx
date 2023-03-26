@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Motion from '../shared/Motion'
 import { Navigate, useNavigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
@@ -46,6 +46,14 @@ const Login = (): JSX.Element => {
     email.includes(email[afterLastDot]) &&
     email.trim().length >= 12
   const checkEmailPassword = checkEmail && password !== ''
+
+  useEffect(() => {
+    document.title = 'Login | DrugStoc TPN Admin'
+  })
+
+  useEffect(() => {
+    document.title = 'Login | DrugStoc TPN Admin'
+  })
 
   if (loggedIn === true) {
     return <Navigate to="/" />
@@ -111,7 +119,7 @@ const Login = (): JSX.Element => {
                   onFocus={handleFocus}
                   onBlur={handleBlur}
                 />
-                {(showPasswordIcon === true) && password.trim().length > 0
+                {showPasswordIcon === true && password.trim().length > 0
                   ? eyeWatchIcon
                   : null}
               </Box>
