@@ -345,7 +345,7 @@ const AddProduct = ({ arrow }: any): JSX.Element => {
                         backgroundColor: 'rgb(217, 217, 217)',
                         width: '100%',
                         borderRadius: 4,
-                        border: '1px solid rgb(217, 217, 217)',
+                        border: '0.0625rem solid rgb(217, 217, 217)',
                         fontSize: 14,
                         cursor: 'pointer',
                         height: 52,
