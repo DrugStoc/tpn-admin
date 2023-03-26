@@ -16,7 +16,6 @@ const responsive = {
       display: 'block !important',
     },
   },
-
   '@media (max-width: 1088px)': {
     '.inputButton': {
       flexWrap: 'wrap',
@@ -52,8 +51,19 @@ const responsive = {
     '.tableSection': {
       top: '5.875rem',
     },
-    '.pagination': {
-      bottom: '-8.6875rem',
+    '.orderIdentity': {
+      w: 'full',
+    },
+    '.cardBody .overflow .row .rowBtw .rowFirst': {
+      w: '70%',
+      img: {
+        w: 'auto',
+      },
+    },
+  },
+  '@media (max-width: 1063px)': {
+    '.discount': {
+      w: '100% !important',
     },
   },
   '@media (max-width: 963px)': {
@@ -62,6 +72,11 @@ const responsive = {
       button: {
         w: '40% !important',
       },
+    },
+  },
+  '@media (max-width: 931px)': {
+    '.rowFirst': {
+      flexWrap: 'wrap',
     },
   },
   '@media (max-width: 785px)': {
@@ -174,7 +189,7 @@ const responsive = {
       p: '0.4375rem',
     },
     '.pagination': {
-      bottom: '-5.625rem',
+      top: 92,
     },
     html: {
       fontSize: '15px',
