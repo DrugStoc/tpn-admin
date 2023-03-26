@@ -17,11 +17,7 @@ const AddCustomer = ({ arrow }: any): JSX.Element => {
   return (
     <Motion>
       <div className="addCustomer">
-        <Navbar
-          nav="Customers"
-          arrow={arrow}
-          text="Add Customers"
-        />
+        <Navbar nav="Customers" arrow={arrow} text="Add Customers" />
         <section className="addCustomer-section">
           <Card className="card">
             <div className="cardBody">
@@ -123,6 +119,7 @@ const AddCustomer = ({ arrow }: any): JSX.Element => {
                           src={
                             'https://res.cloudinary.com/bizstak/image/upload/v1678674215/button-cancel_ywkq8e.svg'
                           }
+                          alt="cancel button icon"
                         />
                         <button>Cancel</button>
                       </div>
@@ -203,7 +200,7 @@ const AddCustomer = ({ arrow }: any): JSX.Element => {
                 <div style={{ marginTop: 70, marginBottom: 20 }}>
                   <Button
                     buttonWidth="100%"
-                    buttonHeight="52px"
+                    buttonHeight="3.25rem"
                     text="Add Customer"
                     linkText="customers"
                   />

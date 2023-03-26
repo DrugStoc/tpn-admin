@@ -36,6 +36,8 @@ const Sidebar = (): JSX.Element => {
               <Image
                 src="https://res.cloudinary.com/bizstak/image/upload/v1678572849/logo_feuavq.svg"
                 alt="drugstoc tpn logo"
+                w="6.875rem"
+                h="5rem"
               />
             </Link>
             <List spacing={3}>{sidbarTopItems}</List>
@@ -43,7 +45,9 @@ const Sidebar = (): JSX.Element => {
         </Box>
         <Box className="settingLogout" display="flex" mb={8}>
           {/* @ts-ignore */}
-          <List className='listItemBottom' spacing={3}>{sidearBottomItems}</List>
+          <List className="listItemBottom" spacing={3}>
+            {sidearBottomItems}
+          </List>
         </Box>
       </Box>
     </aside>

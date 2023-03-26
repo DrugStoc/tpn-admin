@@ -3,6 +3,7 @@ import Filter from '../Filter/Filter'
 import Navbar from '../Navbar/Navbar'
 import Table from '../Table/Table'
 import {
+  ShippingFilterData,
   ShippingsTableData,
   ShippingTableHeadingData,
 } from './ShippingsTableData'
@@ -18,7 +19,7 @@ const Shippings = (): JSX.Element => {
           linkText="shippings"
           text="Add Shippings"
           buttonText
-          column={ShippingTableHeadingData}
+          column={ShippingFilterData}
         />
         <Table
           columnData={ShippingTableHeadingData}

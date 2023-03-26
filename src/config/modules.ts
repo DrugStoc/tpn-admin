@@ -13,6 +13,7 @@ import input from './input'
 import login from './login'
 import navbar from './navbar'
 import orderDetails from './orderDetails'
+import orderIdentity from './orderIdentity'
 import overview from './overview'
 import pagination from './pagination'
 import responsive from './responsive'
@@ -43,6 +44,7 @@ const modules = {
   ...addShipping,
   ...error,
   ...orderDetails,
+  ...orderIdentity,
   ...responsive,
 }
 

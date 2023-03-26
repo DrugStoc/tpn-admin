@@ -8,11 +8,7 @@ const AddShipping = ({ arrow }: any): JSX.Element => {
   return (
     <Motion>
       <div className="addShipping">
-        <Navbar
-          nav="Shippings"
-          arrow={arrow}
-          text="Add Shippings"
-        />
+        <Navbar nav="Shippings" arrow={arrow} text="Add Shippings" />
         <section className="addShipping-section">
           <Card className="card">
             <div className="cardBody">
@@ -28,7 +24,7 @@ const AddShipping = ({ arrow }: any): JSX.Element => {
                   className="delete"
                   style={{
                     background: '#FDFDFD',
-                    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.05)',
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
                     borderRadius: 8,
                     width: 40,
                     height: 40,
@@ -41,6 +37,7 @@ const AddShipping = ({ arrow }: any): JSX.Element => {
                     src="https://res.cloudinary.com/bizstak/image/upload/v1678790407/delete_pya0qg.svg"
                     width={24}
                     height={24}
+                    alt="delete icon"
                   />
                 </div>
               </div>

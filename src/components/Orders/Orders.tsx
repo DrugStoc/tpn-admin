@@ -2,7 +2,11 @@ import React from 'react'
 import Filter from '../Filter/Filter'
 import Navbar from '../Navbar/Navbar'
 import Table from '../Table/Table'
-import { OrdersTableData, OrderTableHeadingData } from './OrdersTableData'
+import {
+  OrderFilterData,
+  OrdersTableData,
+  OrderTableHeadingData,
+} from './OrdersTableData'
 import Motion from '../shared/Motion'
 import Pagination from '../Pagination/Pagination'
 
@@ -15,12 +19,9 @@ const Orders = (): JSX.Element => {
           linkText="orders"
           text="Place Orders"
           buttonText
-          column={OrderTableHeadingData}
+          column={OrderFilterData}
         />
-          <Table
-            columnData={OrderTableHeadingData}
-            TableData={OrdersTableData}
-          />
+        <Table columnData={OrderTableHeadingData} TableData={OrdersTableData} />
         <Pagination />
       </div>
     </Motion>
