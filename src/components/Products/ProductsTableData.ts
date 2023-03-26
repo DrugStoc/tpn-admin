@@ -101,4 +101,12 @@ const ProductTableHeadingData = [
   'Available on TPN',
 ]
 
-export { ProductsTableData, ProductTableHeadingData }
+const ProductFilterData = [
+  'Recently Added',
+  'Toggled ON',
+  'Toggled OFF',
+  'Most Applied Vouchers',
+  'Most Applied Purchase',
+]
+
+export { ProductsTableData, ProductTableHeadingData, ProductFilterData }
