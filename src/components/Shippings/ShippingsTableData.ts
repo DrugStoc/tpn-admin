@@ -83,4 +83,6 @@ const ShippingTableHeadingData = [
   'Added',
 ]
 
-export { ShippingsTableData, ShippingTableHeadingData }
+const ShippingFilterData = ['Recently Added', 'Alphatetic order']
+
+export { ShippingsTableData, ShippingTableHeadingData, ShippingFilterData }
