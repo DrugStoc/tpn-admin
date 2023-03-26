@@ -59,6 +59,7 @@ const CustomersDetail = ({ arrow }: any): JSX.Element => {
                   alignItems: 'center',
                   position: 'relative',
                   top: 28,
+                  flexWrap: 'wrap',
                 }}>
                 <h2
                   style={{
@@ -73,6 +74,7 @@ const CustomersDetail = ({ arrow }: any): JSX.Element => {
                     justifyContent: 'space-between',
                     gap: 32,
                     alignItems: 'center',
+                    flexWrap: 'wrap',
                   }}>
                   <div style={{ display: 'flex', gap: 8, color: '#514F6D' }}>
                     <img
