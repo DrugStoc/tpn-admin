@@ -4,11 +4,11 @@ const orderDetails = {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
-      height: 50,
       '.ownerHeader': {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        flexWrap: 'wrap',
         h1: {
           span: { fontSize: '1rem', color: '#787579' },
         },
@@ -18,17 +18,19 @@ const orderDetails = {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
+      flexWrap: 'wrap',
+      mt: 4,
       '.ownerId': {
         color: '#787579',
         span: { color: '#1F1C19' },
       },
     },
     '.liner': {
-      borderBottom: '1px solid #E6E1E5',
-      marginBlock: '20px',
+      borderBottom: '0.0625rem solid #E6E1E5',
+      marginBlock: '1.25rem',
     },
     '.overflow': {
-      maxHeight: 500,
+      maxHeight: 600,
       overflow: 'auto',
       '&::-webkit-scrollbar': {
         display: 'none',
@@ -38,20 +40,20 @@ const orderDetails = {
         flexDirection: 'column',
         alignItems: 'space-between',
         justifyContent: 'center',
-        gap: '20px',
+        gap: '1.25rem',
         '.rowBtw': {
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
           '.rowFirst': {
             display: 'flex',
             justifyContent: 'space-between',
-            width: '65%',
+            width: '80%',
             alignItems: 'center',
             img: {
               backgroundColor: '#f9f9ff',
-              marginRight: '20px',
+              marginRight: '1.25rem',
               height: 116,
+              width: '25%',
             },
             '.productDetail': {
               display: 'flex',
@@ -66,12 +68,12 @@ const orderDetails = {
                 fontSize: 20,
               },
               '.productDescription': {
-                marginBlock: '5px',
-                fontSize: 14,
+                marginBlock: '0.3125rem',
+                fontSize: 12,
                 color: '#484649',
               },
               '.productComposition': {
-                fontSize: 16,
+                fontSize: 14,
                 color: '#484649',
                 fontWeight: 500,
               },
