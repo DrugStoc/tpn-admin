@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 const ProductsTableData = [
   {
     id: 1,
