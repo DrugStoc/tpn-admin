@@ -148,7 +148,7 @@ const Table = ({
 }
 
 Table.defaultProps = {
-  minWidth: '1065px',
+  minWidth: '66.5625rem',
 }
 
 export default Table
