@@ -116,4 +116,11 @@ const OrderTableHeadingData = [
   'Date/Time',
 ]
 
-export { OrdersTableData, OrderTableHeadingData }
+const OrderFilterData = [
+  'Most Recent',
+  '3 Days Ago',
+  '1 week Ago',
+  'Pick a date',
+]
+
+export { OrdersTableData, OrderTableHeadingData, OrderFilterData }
