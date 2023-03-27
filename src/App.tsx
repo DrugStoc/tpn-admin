@@ -33,8 +33,9 @@ function App(): JSX.Element {
             <Route path="/merchants/new" element={<AddMerchant />} />
             <Route path="/products/new" element={<AddProduct />} />
             <Route path="/shippings/new" element={<AddShipping />} />
-            <Route path="/customer/:id" element={<CustomerDetails />} />
-            <Route path="/order/:id" element={<OrderDetails />} />
+            <Route path="/customers/:id" element={<CustomerDetails />} />
+            <Route path="/orders/:id" element={<OrderDetails />} />
+            <Route path="/orders/new" element={<Error />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>
