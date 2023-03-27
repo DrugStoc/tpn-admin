@@ -10,6 +10,7 @@ import error from './error'
 import filter from './filter'
 import { general } from './general'
 import input from './input'
+import loading from './loading'
 import login from './login'
 import navbar from './navbar'
 import orderDetails from './orderDetails'
@@ -45,6 +46,7 @@ const modules = {
   ...error,
   ...orderDetails,
   ...orderIdentity,
+  ...loading,
   ...responsive,
 }
 
