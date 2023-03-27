@@ -1,12 +1,14 @@
 import React from 'react'
 import useSWR from 'swr'
 import Card from '../shared/Card'
+import { dflexCenter } from '../../config/general'
 
 interface Product {
   name: string
+  image: string
 }
 
-const fetcher = async (url: string): Promise<any> => {
+const fetcher = async (url: string): Promise<{ results: Product[] }> => {
   const res = await fetch(url)
   // eslint-disable-next-line @typescript-eslint/return-await
   return res.json()
@@ -25,9 +27,7 @@ const MostSearched = (): JSX.Element => {
         <div className="title">Most Searched Products</div>
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            ...dflexCenter,
           }}>
           An Error Occured
         </div>
@@ -39,47 +39,14 @@ const MostSearched = (): JSX.Element => {
   if (!products) {
     return (
       <Card className="searchProducts">
-        <style>{`
-          .loader {
-            width: 10px;
-            height: calc(100% - 57px);
-            background-color: #f0f0f0;
-            animation: loading 1s ease-in-out infinite;
-          }
-          
-          @keyframes loading {
-            0% {
-              transform: translateX(0);
-              position: absolute;
-              left: 0;
-              top: 55px;
-            }
-            // 50% {
-            //   transform: translateX(100%);
-            // }
-            100% {
-              transform: translateX(100%);
-              position: absolute;
-              left: 100%;
-              top: 55px;
-            }
-          }
-          
-          `}</style>
         <div className="title">Most Searched Products</div>
-        <div
-          className="loader"
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}></div>
+        <div className="most-searched-loader"></div>
       </Card>
     )
   }
 
   const productList = products?.results?.map(
-    ({ name }: Product, index: number) => {
+    ({ name, image }: Product, index: number) => {
       const productNameArr = name.split('')
       let productName: any
       if (productNameArr.length > 25) {
@@ -94,10 +61,14 @@ const MostSearched = (): JSX.Element => {
       return (
         <div className="productList" key={index}>
           <img
-            src="https://res.cloudinary.com/bizstak/image/upload/v1678603629/placeholder-image_wjnhxg.png"
+            src={image}
             width={48}
             height={48}
             alt=""
+            onError={(e) => {
+              e.currentTarget.src =
+                'https://res.cloudinary.com/bizstak/image/upload/v1678603629/placeholder-image_wjnhxg.png'
+            }}
           />
           <div title={name.length > 25 ? name : undefined}>{productName}</div>
           <img
