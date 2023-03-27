@@ -34,7 +34,7 @@ const searched = {
       'img:first-of-type': {
         w: '3rem',
         h: '3rem',
-        border: '0.0625 solid #d9d9d9',
+        border: '0.0625rem solid #d9d9d9',
         borderRadius: '50%',
         bgColor: 'brand.500',
         overflow: 'hidden',
