@@ -91,8 +91,11 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
           {nav}
         </h2>
         {slug === 'new' ||
-        pathArr[pathArr.length - 2] === 'order' ||
-        Boolean(pathArr.includes('customer')) ? (
+        pathArr[pathArr.length - 2] === 'orders' ||
+        pathArr[pathArr.length - 2] === 'merchants' ||
+        pathArr[pathArr.length - 2] === 'products' ||
+        pathArr[pathArr.length - 2] === 'shippings' ||
+        Boolean(pathArr.includes('customers')) ? (
           <img
             style={{
               marginInline: 10,
