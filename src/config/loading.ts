@@ -3,12 +3,14 @@ const loading = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    w: '10px',
-    h: 'calc(100% - 57px)',
-    bgColor: '#f0f0f0',
+    width: '5px',
+    height: 'calc(100% - 57px)',
+    backgroundColor: '#f0f0f0',
     animation: 'loading 1s ease-in-out infinite',
     position: 'absolute',
     top: '55px',
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+    borderRadius: '4px',
   },
 
   '@keyframes loading': {
