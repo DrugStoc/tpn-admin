@@ -79,8 +79,8 @@ const Table = ({
           <Link
             to={
               slug === 'customers'
-                ? `/customer/${tableItem.id}`
-                : `/order/${tableItem.id}`
+                ? `/customers/${tableItem.id}`
+                : `/orders/${tableItem.id}`
             }
             style={{ position: 'relative', display: 'block' }}>
             <img
