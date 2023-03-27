@@ -50,7 +50,7 @@ const MostSearched = (): JSX.Element => {
       const productNameArr = name.split('')
       let productName: string
       if (productNameArr.length > 25) {
-        productNameArr.splice(15, productNameArr.length - 15, '...')
+        productNameArr.splice(18, productNameArr.length - 15, '...')
         const productNameArrToString = productNameArr.join('')
         productName = productNameArrToString
           .replaceAll('-', ' ')
