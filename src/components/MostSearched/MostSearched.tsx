@@ -48,7 +48,7 @@ const MostSearched = (): JSX.Element => {
   const productList = products?.results?.map(
     ({ name, image }: Product, index: number) => {
       const productNameArr = name.split('')
-      let productName: any
+      let productName: string
       if (productNameArr.length > 25) {
         productNameArr.splice(15, productNameArr.length - 15, '...')
         const productNameArrToString = productNameArr.join('')
