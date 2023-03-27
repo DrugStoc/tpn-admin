@@ -5,11 +5,11 @@ const loading = {
     ...dflexCenter,
     w: '5px',
     h: 'calc(100% - 57px)',
-    bgColor: '#f0f0f0',
+    bgColor: '#f8f8f8',
     animation: 'loading 1s ease-in-out infinite',
     pos: 'absolute',
     top: '55px',
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.1)',
   },
 
   '@keyframes loading': {
