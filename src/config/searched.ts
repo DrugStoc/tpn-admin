@@ -1,11 +1,13 @@
-import { horizontalBtw } from "./general"
+import { horizontalBtw } from './general'
 
 const searched = {
   '.section .fillSearch .searchProducts': {
     w: '33%',
     mb: '3.125rem',
     h: '57.375rem',
+    position: 'relative',
     overflowY: 'auto',
+    overflowX: 'hidden',
     '&::-webkit-scrollbar': {
       display: 'none',
     },
