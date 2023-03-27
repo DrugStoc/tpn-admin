@@ -1,16 +1,15 @@
+import { dflexCenter } from './general'
+
 const loading = {
   '.most-searched-loader': {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '5px',
-    height: 'calc(100% - 57px)',
-    backgroundColor: '#f0f0f0',
+    ...dflexCenter,
+    w: '5px',
+    h: 'calc(100% - 57px)',
+    bgColor: '#f0f0f0',
     animation: 'loading 1s ease-in-out infinite',
-    position: 'absolute',
+    pos: 'absolute',
     top: '55px',
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
-    borderRadius: '4px',
   },
 
   '@keyframes loading': {
