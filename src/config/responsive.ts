@@ -149,8 +149,9 @@ const responsive = {
       boxShadow: 'none',
       p: '0 0.625rem',
     },
-    '.login-box': {
+    '.login-body .login-card .login-box': {
       h: '100vh',
+      w: 'full',
     },
   },
   '@media (max-width: 556px)': {

@@ -53,7 +53,7 @@ const Filter = ({
           text={text}
         />
           ) : (
-        <Button linkText={linkText} text="Create Customer" />
+        <Button linkText={linkText} text="Create" />
           )}
     </section>
   )

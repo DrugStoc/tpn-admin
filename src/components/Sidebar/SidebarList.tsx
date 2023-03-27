@@ -51,7 +51,7 @@ const SidebarList = ({ sidebarItem, pathArr }: sidebarType): JSX.Element => {
           className={
             textLowerCase === slug ||
             pathArr.includes(textLowerCase) ||
-            (textLowerCase === 'overview' && slug.length === 0)
+            (slug.length === 0 && textLowerCase === 'overview')
               ? 'active'
               : undefined
           }
