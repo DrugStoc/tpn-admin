@@ -15,7 +15,7 @@ const fetcher = async (url: string): Promise<{ results: Product[] }> => {
 }
 
 const MostSearched = (): JSX.Element => {
-  const { data: products, error } = useSWR<{ results: Product[] }>(
+  const { data: products, error, isLoading } = useSWR<{ results: Product[] }>(
     '/api/v2/tpn/most-searched',
     fetcher
   )
@@ -36,7 +36,7 @@ const MostSearched = (): JSX.Element => {
   }
 
   // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-  if (!products) {
+  if (isLoading || !products) {
     return (
       <Card className="searchProducts">
         <div className="title">Most Searched Products</div>
