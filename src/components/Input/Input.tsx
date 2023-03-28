@@ -9,6 +9,7 @@ interface Product {
   name: string
   image: string
   desc: string
+  quantity: string
 }
 
 const fetcher = async (url: string): Promise<{ results: Product[] }> => {
@@ -97,6 +98,17 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
                     <div className="text">
                       <h3>{result.name}</h3>
                       <p>{result.desc}</p>
+                      <p>
+                        {+result.quantity < 1 ? (
+                          <span style={{ color: 'red' }}>
+                            Out of Stock. Check back
+                          </span>
+                        ) : (
+                          <span style={{ color: 'green' }}>
+                            {result.quantity} items available
+                          </span>
+                        )}
+                      </p>
                     </div>
                   </div>
                 </div>
