@@ -67,6 +67,7 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
       <input
         className="inputSearch"
         autoComplete="off"
+        spellCheck={false}
         style={{ width: buttonText !== undefined ? '50%' : 'initial' }}
         id="text"
         type="search"
