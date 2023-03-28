@@ -14,7 +14,7 @@ const inputDropdown = {
       '.searchResultBtw': {
         display: 'flex',
         justifyContent: 'space-between',
-        my: '10px',
+        my: '20px',
         mx: '20px',
         bgColor: '#f9f9f9',
         cursor: 'pointer',
