@@ -3,7 +3,7 @@ const inputDropdown = {
     bgColor: '#fff',
     top: '3.5rem',
     zIndex: 2,
-    h: '200px',
+    h: '300px',
     overflow: 'auto',
     '&::-webkit-scrollbar': {
       display: 'none',
@@ -11,6 +11,7 @@ const inputDropdown = {
     boxShadow: '0 0 10px -5px rgba(0, 0, 0, 1)',
     '.searchBox': {
       width: '100%',
+      height: '200px',
       '.searchResultBtw': {
         display: 'flex',
         justifyContent: 'space-between',
