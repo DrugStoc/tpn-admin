@@ -8,6 +8,7 @@ const inputDropdown = {
       display: 'none',
     },
     boxShadow: '0 0 10px -5px rgba(0, 0, 0, 1)',
+    fontFamily: 'fontFamily',
     '.searchBox': {
       width: '100%',
       height: '200px',
