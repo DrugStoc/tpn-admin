@@ -2,6 +2,7 @@ import React from 'react'
 import useSWR from 'swr'
 import Card from '../shared/Card'
 import { dflexCenter } from '../../config/general'
+import { BASE_URL_V2 as V2 } from '../../config/baseURL'
 
 interface Product {
   name: string
@@ -15,10 +16,11 @@ const fetcher = async (url: string): Promise<{ results: Product[] }> => {
 }
 
 const MostSearched = (): JSX.Element => {
-  const { data: products, error } = useSWR<{ results: Product[] }>(
-    '/api/v2/tpn/most-searched',
-    fetcher
-  )
+  const {
+    data: products,
+    error,
+    isLoading,
+  } = useSWR<{ results: Product[] }>(`${V2}/tpn/most-searched`, fetcher)
 
   // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
   if (error) {
@@ -36,7 +38,7 @@ const MostSearched = (): JSX.Element => {
   }
 
   // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-  if (!products) {
+  if (isLoading || !products) {
     return (
       <Card className="searchProducts">
         <div className="title">Most Searched Products</div>
@@ -64,7 +66,7 @@ const MostSearched = (): JSX.Element => {
             src={image}
             width={48}
             height={48}
-            alt=""
+            alt={name}
             onError={(e) => {
               e.currentTarget.src =
                 'https://res.cloudinary.com/bizstak/image/upload/v1678603629/placeholder-image_wjnhxg.png'

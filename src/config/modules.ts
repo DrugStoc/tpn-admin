@@ -10,6 +10,7 @@ import error from './error'
 import filter from './filter'
 import { general } from './general'
 import input from './input'
+import inputDropdown from './inputDropdown'
 import loading from './loading'
 import login from './login'
 import navbar from './navbar'
@@ -47,6 +48,7 @@ const modules = {
   ...orderDetails,
   ...orderIdentity,
   ...loading,
+  ...inputDropdown,
   ...responsive,
 }
 

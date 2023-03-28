@@ -1,7 +1,7 @@
 import { dCenter, dflexCenter, horizontalBtw } from './general'
 
 const filter = {
-  '.inputButton': {
+  ':where(.inputButton)': {
     pos: 'absolute',
     top: '-1.25rem',
     ...horizontalBtw,
