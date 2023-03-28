@@ -1,7 +1,6 @@
 const inputDropdown = {
   '.searchResult': {
     bgColor: '#fff',
-    top: '3.5rem',
     zIndex: 2,
     h: '300px',
     overflow: 'auto',
@@ -20,6 +19,7 @@ const inputDropdown = {
         bgColor: '#f9f9f9',
         cursor: 'pointer',
         overflowY: 'auto',
+        height: '200px',
         '&:hover': {
           bgColor: '#f0f0f0',
         },
