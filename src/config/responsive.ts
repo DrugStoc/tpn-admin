@@ -146,7 +146,7 @@ const responsive = {
         w: '80% !important',
       },
     },
-    '.searchBox': {
+    '.searchResultBtw': {
       h: '300px',
     },
   },
