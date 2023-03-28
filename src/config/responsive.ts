@@ -17,7 +17,7 @@ const responsive = {
     },
   },
   '@media (max-width: 1088px)': {
-    '.inputButton': {
+    ':where(.inputButton)': {
       flexWrap: 'wrap',
       '.dropdown': {
         left: 'initial !important',
@@ -67,7 +67,7 @@ const responsive = {
     },
   },
   '@media (max-width: 963px)': {
-    '.inputButton': {
+    ':where(.inputButton)': {
       flexWrap: 'wrap',
       button: {
         w: '40% !important',
@@ -77,6 +77,11 @@ const responsive = {
   '@media (max-width: 931px)': {
     '.rowFirst': {
       flexWrap: 'wrap',
+    },
+  },
+  '@media (max-width: 800px)': {
+    '.searchResult .searchResultBtw img': {
+      w: '30%',
     },
   },
   '@media (max-width: 785px)': {
@@ -142,6 +147,11 @@ const responsive = {
       },
     },
   },
+  '@media (max-width: 576px)': {
+    '.searchResult .searchResultBtw img': {
+      w: '40%',
+    },
+  },
   '@media (max-width: 575px)': {
     '.login-card': {
       w: 'full',
@@ -171,6 +181,20 @@ const responsive = {
       pos: 'relative',
       top: '0',
     },
+    '.searchResult': {
+      top: '3.5rem !important',
+    },
+  },
+  '@media (max-width: 520px)': {
+    '.searchResultBtw': {
+      flexWrap: 'wrap',
+      '.text': {
+        mx: '20px',
+      },
+    },
+    '.searchResult .searchResultBtw img': {
+      w: '50%',
+    },
   },
   '@media (max-width: 505px)': {
     '.inputButton': {
@@ -180,6 +204,9 @@ const responsive = {
     },
   },
   '@media (max-width: 480px)': {
+    html: {
+      fontSize: '15px',
+    },
     '.sidebar': {
       w: '2.5rem',
     },
@@ -192,13 +219,19 @@ const responsive = {
     '.pagination': {
       top: 92,
     },
-    html: {
-      fontSize: '15px',
+
+    '.searchResult .searchResultBtw .text h3': {
+      fontSize: '1rem',
     },
   },
   '@media (max-width: 350px)': {
     '.pagination-button': {
       display: 'none !important',
+    },
+  },
+  '@media (max-width: 286px)': {
+    '.searchResult': {
+      right: '3px',
     },
   },
 }
