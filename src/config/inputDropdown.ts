@@ -3,7 +3,7 @@ const inputDropdown = {
     bgColor: '#fff',
     top: '3.5rem',
     zIndex: 2,
-    h: '300px',
+    h: '200px',
     overflow: 'auto',
     '&::-webkit-scrollbar': {
       display: 'none',
