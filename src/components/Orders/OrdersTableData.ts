@@ -55,7 +55,7 @@ const OrdersTableData = [
     id: 5,
     row: [
       { 'column 2': '#fmidf' },
-      { 'column 3': 'Bell Osagie' },
+      { 'column 3': 'Bello Osagie' },
       { 'column 4': 'belloosagie@gmail.com' },
       { 'column 5': '08143577878' },
       { 'column 6': 'Name of pharmacy' },
