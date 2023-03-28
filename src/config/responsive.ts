@@ -146,6 +146,9 @@ const responsive = {
         w: '80% !important',
       },
     },
+    '.searchResultBtw': {
+      h: '300px',
+    },
   },
   '@media (max-width: 576px)': {
     '.searchResult .searchResultBtw img': {
