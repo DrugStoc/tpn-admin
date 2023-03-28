@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { CardInterface } from './CardInterface'
 
-const Card = ({ children, className }: CardInterface): JSX.Element => {
-  const classes = `card ${className ?? ''}`
-  return <div className={classes}>{children}</div>
-}
+const Card = forwardRef<HTMLDivElement, CardInterface>((props, ref) => {
+  const { children, className } = props
+
+  return (
+    <div className={`card ${className ?? ''}`} ref={ref}>
+      {children}
+    </div>
+  )
+})
+Card.displayName = 'Card'
 
 export default Card
