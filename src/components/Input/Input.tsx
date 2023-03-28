@@ -105,7 +105,10 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
                           </span>
                         ) : (
                           <span style={{ color: 'green' }}>
-                            {result.quantity} items available
+                            {result.quantity}{' '}
+                            {+result.quantity === 1
+                              ? 'item available'
+                              : 'items available'}
                           </span>
                         )}
                       </p>
