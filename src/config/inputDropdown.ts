@@ -4,6 +4,7 @@ const inputDropdown = {
     zIndex: 2,
     h: '300px',
     overflow: 'auto',
+    width: '100%',
     '&::-webkit-scrollbar': {
       display: 'none',
     },
@@ -22,6 +23,9 @@ const inputDropdown = {
         cursor: 'pointer',
         overflowY: 'auto',
         height: '200px',
+        '&::-webkit-scrollbar': {
+          display: 'none',
+        },
         '&:hover': {
           bgColor: '#f0f0f0',
         },
