@@ -152,7 +152,7 @@ const responsive = {
   },
   '@media (max-width: 576px)': {
     '.searchResult .searchResultBtw img': {
-      w: '40%',
+      w: '40% !important',
     },
   },
   '@media (max-width: 575px)': {
@@ -185,7 +185,8 @@ const responsive = {
       top: '0',
     },
     '.searchResult': {
-      top: '3.5rem !important',
+      pos: 'relative',
+      top: '4.5rem',
     },
   },
   '@media (max-width: 520px)': {
