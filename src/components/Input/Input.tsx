@@ -4,6 +4,7 @@ import { intputInterface } from './InputInterface'
 import useSWR from 'swr'
 import { BASE_URL_V2 } from '../../config/baseURL'
 import Card from '../shared/Card'
+import { useLocation } from 'react-router-dom'
 
 interface Product {
   name: string
@@ -24,7 +25,16 @@ const fetcher = async (url: string): Promise<{ results: Product[] }> => {
 const Input = ({ buttonText }: intputInterface): JSX.Element => {
   const [query, setQuery] = useState<string>('')
   const [showDropdown, setShowDropdown] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const cardRef = useRef<HTMLDivElement>(null)
+  const { pathname } = useLocation()
+  const pathArr = pathname.split('/')
+  let slug = pathArr[pathArr.length - 1]
+  if (slug !== '' || slug.length !== 0) {
+    slug = ` ${slug[0].toUpperCase()}${slug.slice(1)}`
+  } else {
+    slug = ''
+  }
 
   const handleInputFocus = (): void => {
     setShowDropdown(true)
@@ -34,7 +44,11 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
     console.log(result)
   }
 
-  const { data: results, error } = useSWR<{ results: Product[] }>(
+  const {
+    data: results,
+    error,
+    isValidating,
+  } = useSWR<{ results: Product[] }>(
     query.length > 0 ? `${BASE_URL_V2}/search/${query}` : null,
     fetcher
   )
@@ -62,6 +76,10 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
     }
   }, [])
 
+  useEffect(() => {
+    setIsLoading(isValidating)
+  }, [isValidating])
+
   return (
     <>
       <input
@@ -74,13 +92,40 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
         value={query}
         onChange={(event) => setQuery(event.target.value)}
         onFocus={handleInputFocus}
-        placeholder="Search..."
+        placeholder={`Search${slug}...`}
       />
       {showDropdown && (
         <div className="inputButton" style={{ top: '3.5rem' }}>
           <Card className="searchResult" ref={cardRef}>
-            {error ? (
-              <div>{error.message}</div>
+            {isLoading ? (
+              [...Array(3)].map((_, index) => {
+                return (
+                  <div className="searchBox" key={index}>
+                    <div className="searchResultBtw">
+                      <img src="https://res.cloudinary.com/bizstak/image/upload/v1680047648/loading-spinner_vwylao.gif" />
+                      <div className="text">
+                        <h3>Loading product name...</h3>
+                        <p>Loading product description...</p>
+                        <p style={{ color: 'green' }}>
+                          Loading product quantity...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })
+            ) : error ? (
+              <div className="searchBox">
+                <div className="searchResultBtw">
+                  <img src="https://res.cloudinary.com/bizstak/image/upload/v1680047648/loading-spinner_vwylao.gif" />
+                  <div className="text">
+                    <h3>{error.message}</h3>
+                    <p style={{ color: '#f00' }}>
+                      Check your internet connection
+                    </p>
+                  </div>
+                </div>
+              </div>
             ) : (
               results?.results?.map((result: Product, index: number) => (
                 <div
@@ -89,7 +134,11 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
                   onClick={() => handleResultClick(result)}>
                   <div className="searchResultBtw">
                     <img
-                      src={result.image}
+                      src={
+                        isLoading
+                          ? 'https://res.cloudinary.com/bizstak/image/upload/v1680047648/loading-spinner_vwylao.gif'
+                          : result.image
+                      }
                       alt={result.name}
                       onError={(e) => {
                         e.currentTarget.src =
