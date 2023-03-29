@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ListItem } from '@chakra-ui/react'
+import LoginContext from '../../context/LoginContext'
 
 interface sidebarType {
   sidebarItem: string
@@ -9,13 +10,14 @@ interface sidebarType {
 }
 
 const SidebarList = ({ sidebarItem, pathArr }: sidebarType): JSX.Element => {
+  const { handleLogoutClick } = useContext(LoginContext)
   const navigate = useNavigate()
   const slug = pathArr[pathArr.length - 1]
   const textLowerCase: string = sidebarItem.toLowerCase()
   const altText = `${textLowerCase} Icon`
   const handleButtonClick = (): void => {
     if (textLowerCase === 'logout') {
-      navigate(`/login`)
+      handleLogoutClick()
     } else if (textLowerCase === 'overview') {
       navigate(`/`)
     } else {

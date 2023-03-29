@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 /* eslint-disable @typescript-eslint/prefer-ts-expect-error */
 import React, { useContext, useEffect } from 'react'
 import Motion from '../shared/Motion'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import LoginContext from '../../context/LoginContext'
 import {
   FormControl,
@@ -28,16 +29,10 @@ const Login = (): JSX.Element => {
     showPasswordIcon,
     handleFocus,
     handleBlur,
+    handleSubmit,
   } = useContext(LoginContext)
   const afterLastDot = email.lastIndexOf('.') + 2
-  const navigate = useNavigate()
-  const handleClick = (): void => {
-    if (email === '' || password === '') {
-      navigate('/login')
-    } else {
-      navigate('/')
-    }
-  }
+
   const supportsAutoComplete = 'autofill' in document.createElement('input')
   const autoCompleteValue = supportsAutoComplete ? 'new-password' : 'off'
   const checkEmail =
@@ -78,7 +73,7 @@ const Login = (): JSX.Element => {
               </Text>
             </Box>
 
-            <FormControl as="form">
+            <FormControl as="form" onSubmit={handleSubmit}>
               <FormLabel htmlFor="email" color="brand.300">
                 {email.length !== 0 && !checkEmail
                   ? 'Email is invalid'
@@ -123,7 +118,7 @@ const Login = (): JSX.Element => {
                   ? eyeWatchIcon
                   : null}
               </Box>
-              <Box onClick={checkEmailPassword ? handleClick : undefined}>
+              <Box>
                 {err !== '' ? (
                   <FormLabel sx={{ color: 'brand.300' }}>
                     Bad Request. Try again
