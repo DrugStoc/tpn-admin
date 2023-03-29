@@ -15,6 +15,7 @@ import AddShipping from './pages/AddShipping'
 import CustomerDetails from './pages/CustomerDetail'
 import Error from './pages/Error'
 import OrderDetails from './pages/OrderDetails'
+import PrivateRoutes from './utils/PrivateRoutes'
 
 function App(): JSX.Element {
   return (
@@ -22,21 +23,23 @@ function App(): JSX.Element {
       <BrowserRouter>
         <main style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/orders" element={<Orders />} />
-            <Route path="/customers" element={<Customers />} />
-            <Route path="/merchants" element={<Merchants />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/shippings" element={<Shippings />} />
-            <Route path="/customers/new" element={<AddCustomer />} />
-            <Route path="/merchants/new" element={<AddMerchant />} />
-            <Route path="/products/new" element={<AddProduct />} />
-            <Route path="/shippings/new" element={<AddShipping />} />
-            <Route path="/customers/:id" element={<CustomerDetails />} />
-            <Route path="/orders/:id" element={<OrderDetails />} />
-            <Route path="/orders/new" element={<Error />} />
-            <Route path="*" element={<Error />} />
+            <Route path="login" element={<Login />} />
+            <Route index element={<Home />} />
+            <Route element={<PrivateRoutes />}>
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/customers" element={<Customers />} />
+              <Route path="/merchants" element={<Merchants />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/shippings" element={<Shippings />} />
+              <Route path="/customers/new" element={<AddCustomer />} />
+              <Route path="/merchants/new" element={<AddMerchant />} />
+              <Route path="/products/new" element={<AddProduct />} />
+              <Route path="/shippings/new" element={<AddShipping />} />
+              <Route path="/customers/:id" element={<CustomerDetails />} />
+              <Route path="/orders/:id" element={<OrderDetails />} />
+              <Route path="/orders/new" element={<Error />} />
+              <Route path="*" element={<Error />} />{' '}
+            </Route>
           </Routes>
         </main>
       </BrowserRouter>
