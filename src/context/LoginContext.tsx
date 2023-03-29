@@ -6,6 +6,7 @@ import React, {
   useEffect,
 } from 'react'
 import { LoginContextInterface } from './LoginContextInterface'
+import { BASE_URL_V2 as V2 } from '../config/baseURL'
 
 const LoginContext = createContext<LoginContextInterface>({
   email: '',
@@ -42,7 +43,7 @@ const LoginProvider = ({
   const [err, setErr] = useState('')
   const [showPasswordIcon, setShowPasswordIcon] = useState<boolean>(false)
   const handleFocus = (): void => setShowPasswordIcon(true)
-  const handleBlur = (): void => setShowPasswordIcon(false)
+  const handleBlur = (): void => setShowTextPassword(false)
 
   useEffect(() => {
     if (err !== '') {
@@ -97,7 +98,7 @@ const LoginProvider = ({
         }
       }
 
-      const response = await fetch(`/api/v2/auth/login`, {
+      const response = await fetch(`${V2}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
