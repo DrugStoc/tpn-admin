@@ -46,6 +46,13 @@ const LoginProvider = ({
   const handleBlur = (): void => setShowTextPassword(false)
 
   useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token != null) {
+      setLoggedIn(true)
+    }
+  }, [])
+
+  useEffect(() => {
     if (err !== '') {
       const timeoutId = setTimeout(() => {
         setErr('')
