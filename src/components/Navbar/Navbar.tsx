@@ -85,11 +85,11 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
 
       let greeting: any
       if (hour < 12) {
-        greeting = `Good Morning ${lastName === '' ? '🌄 Welcome' : truncatedLastName}`
+        greeting = `Good Morning ${lastName === '' ? '🌄' : truncatedLastName}`
       } else if (hour < 18) {
-        greeting = `Good Afternoon ${lastName === '' ? '🌅 Welcome' : truncatedLastName}`
+        greeting = `Good Afternoon ${lastName === '' ? '🌅' : truncatedLastName}`
       } else {
-        greeting = `Good Evening ${lastName === '' ? '🌃 Welcome' : truncatedLastName}`
+        greeting = `Good Evening ${lastName === '' ? '🌃' : truncatedLastName}`
       }
       setGreeting(greeting)
     }, 1000)
