@@ -24,8 +24,8 @@ function App(): JSX.Element {
         <main style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Routes>
             <Route path="login" element={<Login />} />
-            <Route index element={<Home />} />
             <Route element={<PrivateRoutes />}>
+              <Route index element={<Home />} />
               <Route path="/orders" element={<Orders />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/merchants" element={<Merchants />} />

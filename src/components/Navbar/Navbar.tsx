@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { NavbarInterface } from './NavbarInterface'
+import { BASE_URL_V2 as V2 } from '../../config/baseURL'
 
 const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
   const navigate = useNavigate()
@@ -37,6 +38,37 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
   const [dateTime, setDateTime] = useState('')
   const [dateMonth, setDateMonth] = useState('')
 
+  const [lastName, setLastName] = useState<string>(() => {
+    const storedValue = localStorage.getItem('lastName')
+    return storedValue ?? ''
+  })
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token == null) {
+      setLastName('anonymous')
+      return
+    }
+
+    const fetchAPI = async (): Promise<void> => {
+      setLastName('Loading...')
+      const response = await fetch(`${V2}/account/profile`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `token ${token}`,
+        },
+      })
+      const data = await response.json()
+      setLastName(data?.last_name)
+      localStorage.setItem('lastName', data?.last_name)
+    }
+
+    void fetchAPI()
+  }, [])
+
+  const truncatedLastName =
+    lastName.length > 9 ? `${lastName.slice(0, 9)}...` : lastName
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       const date = new Date()
@@ -53,11 +85,11 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
 
       let greeting: any
       if (hour < 12) {
-        greeting = 'Good Morning Bello'
+        greeting = `Good Morning ${truncatedLastName}`
       } else if (hour < 18) {
-        greeting = 'Good Afternoon Bello'
+        greeting = `Good Afternoon ${truncatedLastName}`
       } else {
-        greeting = 'Good Evening Bello'
+        greeting = `Good Evening ${truncatedLastName}`
       }
       setGreeting(greeting)
     }, 1000)
@@ -113,6 +145,7 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
           />
             ) : null}
         <h2
+        title={lastName}
           style={{
             fontSize:
               slug !== 'new' && !(checkText ?? false) ? '1.5rem' : '1rem',

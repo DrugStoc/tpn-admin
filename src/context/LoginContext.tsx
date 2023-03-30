@@ -46,6 +46,19 @@ const LoginProvider = ({
   const handleBlur = (): void => setShowTextPassword(false)
 
   useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token != null) {
+      setLoggedIn(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.removeItem('token')
+    setLoggedIn(false)
+    window.history.pushState(null, '', '/login')
+  }, [window.location.href])
+
+  useEffect(() => {
     if (err !== '') {
       const timeoutId = setTimeout(() => {
         setErr('')
@@ -136,7 +149,12 @@ const LoginProvider = ({
   const handleLogoutClick = (): void => {
     localStorage.removeItem('token')
     setLoggedIn(false)
-    window.location.assign('/login')
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    if (window.history?.pushState) {
+      window.history.pushState(null, '', '/login')
+    } else {
+      window.location.assign('/login')
+    }
   }
 
   const eyeWatchIcon = (
