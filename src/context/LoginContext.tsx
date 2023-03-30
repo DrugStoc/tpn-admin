@@ -127,6 +127,7 @@ const LoginProvider = ({
 
       const data = await response.json()
       localStorage.setItem('token', data.token)
+      localStorage.setItem('chakra-ui-color-mode', 'light')
 
       if (data.token === undefined) {
         setLoggedIn(undefined)
