@@ -53,6 +53,12 @@ const LoginProvider = ({
   }, [])
 
   useEffect(() => {
+    localStorage.removeItem('token')
+    setLoggedIn(false)
+    window.history.pushState(null, '', '/login')
+  }, [window.location.href])
+
+  useEffect(() => {
     if (err !== '') {
       const timeoutId = setTimeout(() => {
         setErr('')
