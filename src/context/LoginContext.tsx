@@ -142,6 +142,7 @@ const LoginProvider = ({
 
   const handleLogoutClick = (): void => {
     localStorage.removeItem('token')
+    localStorage.removeItem('lastName')
     setLoggedIn(false)
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (window.history?.pushState) {
