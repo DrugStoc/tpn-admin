@@ -85,11 +85,11 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
 
       let greeting: any
       if (hour < 12) {
-        greeting = `Good Morning ${truncatedLastName}`
+        greeting = `Good Morning ${lastName === '' ? '🌄 Welcome' : truncatedLastName}`
       } else if (hour < 18) {
-        greeting = `Good Afternoon ${truncatedLastName}`
+        greeting = `Good Afternoon ${lastName === '' ? '🌅 Welcome' : truncatedLastName}`
       } else {
-        greeting = `Good Evening ${truncatedLastName}`
+        greeting = `Good Evening ${lastName === '' ? '🌃 Welcome' : truncatedLastName}`
       }
       setGreeting(greeting)
     }, 1000)
@@ -103,6 +103,8 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
   const checkText = textDesc?.includes('Details')
 
   const currentText = slug.length === 0 ? greet : text
+
+  console.log(lastName)
 
   return (
     <nav className="navbar">
