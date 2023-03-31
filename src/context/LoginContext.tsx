@@ -53,12 +53,6 @@ const LoginProvider = ({
   }, [])
 
   useEffect(() => {
-    localStorage.removeItem('token')
-    setLoggedIn(false)
-    window.history.pushState(null, '', '/login')
-  }, [window.location.href])
-
-  useEffect(() => {
     if (err !== '') {
       const timeoutId = setTimeout(() => {
         setErr('')
@@ -133,6 +127,7 @@ const LoginProvider = ({
 
       const data = await response.json()
       localStorage.setItem('token', data.token)
+      localStorage.setItem('chakra-ui-color-mode', 'light')
 
       if (data.token === undefined) {
         setLoggedIn(undefined)
@@ -148,6 +143,7 @@ const LoginProvider = ({
 
   const handleLogoutClick = (): void => {
     localStorage.removeItem('token')
+    localStorage.removeItem('lastName')
     setLoggedIn(false)
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (window.history?.pushState) {

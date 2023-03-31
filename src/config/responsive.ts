@@ -7,6 +7,30 @@ const responsive = {
     },
   },
 
+  '@media (min-width: 1280px)': {
+    '.plInput': {
+      pl: '9px !important',
+    },
+  },
+
+  '@media (max-width: 1279.9999px)': {
+    '.inputLabel': {
+      minW: '405.922px',
+    },
+    '.addMerchant .addMerchant-section': {
+      display: 'block',
+    },
+    '.addMerchant .addMerchant-merchant-detail': {
+      w: '100%',
+    },
+    '.formInput': {
+      flexDirection: 'column',
+    },
+    '.addMerchantIdentity': {
+      w: 'full',
+    },
+  },
+
   '@media (max-width: 1253px)': {
     '.inputLabel': { marginBottom: '36px', width: '100%' },
   },
@@ -226,6 +250,12 @@ const responsive = {
 
     '.searchResult .searchResultBtw .text h3': {
       fontSize: '1rem',
+    },
+    '.addMerchantDetail': {
+      padding: '10px',
+    },
+    '.addMerchantDetailChartLiner': {
+      marginLeft: '10px',
     },
   },
   '@media (max-width: 350px)': {
