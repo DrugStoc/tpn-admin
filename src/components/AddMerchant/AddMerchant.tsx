@@ -3,6 +3,18 @@ import Navbar from '../Navbar/Navbar'
 import Card from '../shared/Card'
 import Button from '../Button/Button'
 import Motion from '../shared/Motion'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js'
+import { Bar } from 'react-chartjs-2'
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const AddMerchant = ({ arrow }: any): JSX.Element => {
   const [state, setState] = useState<boolean>(false)
@@ -15,8 +27,73 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
     }
   }
 
+  const options: any = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Bar Chart',
+      },
+    },
+    scales: {
+      x: {
+        stacked: true,
+        display: false,
+      },
+      y: {
+        stacked: true,
+        display: false,
+      },
+    },
+    elements: {
+      bar: {
+        borderRadius: 100,
+      },
+    },
+  }
+
+  const labels = ['January', 'February', 'March']
+  
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: [1000, 3234, 1245],
+        backgroundColor: '#5EA3D6',
+        barThickness: 10,
+      },
+      {
+        label: 'Dataset 1',
+        data: [1235, 5521, 436],
+        backgroundColor: '#258CF4',
+        barThickness: 10,
+      },
+      {
+        label: 'Dataset 2',
+        data: [12253, 5456, 6587],
+        backgroundColor: '#556AB0',
+        barThickness: 10,
+      },
+    ],
+  }
+
+  console.log(options, data)
+
   return (
     <Motion>
+      <style>
+        {
+          `
+          .cardHeight {
+            min-height: 297px
+          }
+          `
+        }
+      </style>
       <div className="addMerchant">
         <Navbar nav="Merchants" arrow={arrow} text="Add Merchants" />
         <section className="addMerchant-section">
@@ -266,7 +343,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
             </Card>
           </div>
           <div className="addMerchantIdentity">
-            <Card>
+            <Card className='cardHeight'>
               <div className="addMerchantDetail">
                 <h2>
                   Purchase Made <br /> <span>from Sep 18 &mdash; Oct 18</span>
@@ -279,11 +356,13 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                 </ul>
               </div>
               <div className="addMerchantDetailChart">
-                <div className="addMerchantDetailChartLiner"></div>
+                <div className="addMerchantDetailChartLiner">
+                  <Bar options={options} data={data} />
+                </div>
               </div>
             </Card>
 
-            <Card>
+            <Card className='cardHeight'>
               <div className="addMerchantDetail">
                 <h2>
                   Voucher Redeemed <br />{' '}
@@ -297,7 +376,9 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                 </ul>
               </div>
               <div className="addMerchantDetailChart">
-                <div className="addMerchantDetailChartLiner"></div>
+                <div className="addMerchantDetailChartLiner">
+                  <Bar options={options} data={data} />
+                </div>
               </div>
             </Card>
           </div>
