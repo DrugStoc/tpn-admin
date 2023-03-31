@@ -32,9 +32,10 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
     plugins: {
       legend: {
         position: 'top',
+        display: false
       },
       title: {
-        display: true,
+        display: false,
         text: 'Chart.js Bar Chart',
       },
     },
