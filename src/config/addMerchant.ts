@@ -84,12 +84,12 @@ const addMerchant = {
     color: '#AEAAAE',
   },
   '.addMerchantDetailChart': {
-    height: '324.6px',
+    // height: '325px',
   },
   '.addMerchantDetailChartLiner': {
     borderLeft: '1px solid #939094',
     marginLeft: '25px',
-    height: '300px',
+    // height: 300,
   },
   '.addMerchant .addMerchant-section .cardBody form :where(.inputLabel), .addMerchant .addMerchant-section .cardBody .deliveryForm :where(.inputLabel)':
     {
