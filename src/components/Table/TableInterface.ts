@@ -2,6 +2,7 @@ interface TableInterface {
   columnData: any
   TableData: any
   minWidth: any
+  width: any
 }
 
 interface tableItemInterface {
