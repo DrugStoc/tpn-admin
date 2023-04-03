@@ -122,7 +122,6 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
             marginRight: nav !== undefined ? 3 : undefined,
             display: 'flex',
             cursor: 'pointer',
-            fontWeight: 600,
             fontSize:
               slug !== 'new' && !(checkText ?? false) ? '1.5rem' : '1rem',
             color:
