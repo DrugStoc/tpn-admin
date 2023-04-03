@@ -16,6 +16,7 @@ import CustomerDetails from './pages/CustomerDetail'
 import Error from './pages/Error'
 import OrderDetails from './pages/OrderDetails'
 import PrivateRoutes from './utils/PrivateRoutes'
+import VoucherHistory from './pages/VoucherHistory'
 
 function App(): JSX.Element {
   return (
@@ -24,6 +25,7 @@ function App(): JSX.Element {
         <main style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Routes>
             <Route path="login" element={<Login />} />
+            <Route path="*" element={<Error />} />
             <Route element={<PrivateRoutes />}>
               <Route index element={<Home />} />
               <Route path="/orders" element={<Orders />} />
@@ -38,7 +40,7 @@ function App(): JSX.Element {
               <Route path="/customers/:id" element={<CustomerDetails />} />
               <Route path="/orders/:id" element={<OrderDetails />} />
               <Route path="/orders/new" element={<Error />} />
-              <Route path="*" element={<Error />} />{' '}
+              <Route path="/customers/voucher/history" element={<VoucherHistory />} />
             </Route>
           </Routes>
         </main>
