@@ -5,7 +5,7 @@ import CustomerDetailMain from './CustomerDetailMain'
 import VoucherHistory from '../VoucherHistory/VoucherHistory'
 import CustomerDetailNav from './CustomerDetailNav'
 const CustomersDetail = ({ arrow }: any): JSX.Element => {
-  const [text, setText] = useState('')
+  const [text, setText] = useState('Customer Details')
   const handler = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>): void => {
     setText((e.target as HTMLSpanElement).innerText)
   }
