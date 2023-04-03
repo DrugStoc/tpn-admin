@@ -47,7 +47,7 @@ const LoginProvider = ({
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    if (token != null) {
+    if (token !== null) {
       setLoggedIn(true)
     }
   }, [])
@@ -144,6 +144,7 @@ const LoginProvider = ({
   const handleLogoutClick = (): void => {
     localStorage.removeItem('token')
     localStorage.removeItem('lastName')
+    localStorage.removeItem('firstName')
     setLoggedIn(false)
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (window.history?.pushState) {
