@@ -43,6 +43,11 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
     return storedValue ?? ''
   })
 
+  const [firstName, setFirstName] = useState<string>(() => {
+    const storedValue = localStorage.getItem('firstName')
+    return storedValue ?? ''
+  })
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token == null) {
@@ -60,7 +65,9 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
       })
       const data = await response.json()
       setLastName(data?.last_name)
+      setFirstName(data?.first_name)
       localStorage.setItem('lastName', data?.last_name)
+      localStorage.setItem('firstName', data?.first_name)
     }
 
     void fetchAPI()
@@ -87,7 +94,9 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
       if (hour < 12) {
         greeting = `Good Morning ${lastName === '' ? '☀️' : truncatedLastName}`
       } else if (hour < 18) {
-        greeting = `Good Afternoon ${lastName === '' ? '🌤️' : truncatedLastName}`
+        greeting = `Good Afternoon ${
+          lastName === '' ? '🌤️' : truncatedLastName
+        }`
       } else if (hour < 20) {
         greeting = `Good Evening ${lastName === '' ? '🌒' : truncatedLastName}`
       } else {
@@ -103,10 +112,7 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
 
   const textDesc = text?.split(' ')
   const checkText = textDesc?.includes('Details')
-
   const currentText = slug.length === 0 ? greet : text
-
-  console.log(lastName)
 
   return (
     <nav className="navbar">
@@ -116,22 +122,26 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
             marginRight: nav !== undefined ? 3 : undefined,
             display: 'flex',
             cursor: 'pointer',
+            fontWeight: 600,
             fontSize:
               slug !== 'new' && !(checkText ?? false) ? '1.5rem' : '1rem',
             color:
-              pathArr.includes('new') || (checkText ?? false)
+              pathArr.includes('new') ||
+              (checkText ?? false) ||
+              (pathArr.includes('customers') &&
+                pathArr[pathArr.length - 2] === 'customers')
                 ? '#787579'
                 : undefined,
+            font:
+              (nav === 'Customers' && text === 'Voucher History') ||
+              text === 'Purchase History'
+                ? '1rem "Be Vietnam Pro"'
+                : '1rem',
           }}
           onClick={handleButtonClick}>
-          {nav}
+          {nav === '' && slug === 'new' ? 'Back to Home' : nav}
         </h2>
-        {slug === 'new' ||
-        pathArr[pathArr.length - 2] === 'orders' ||
-        pathArr[pathArr.length - 2] === 'merchants' ||
-        pathArr[pathArr.length - 2] === 'products' ||
-        pathArr[pathArr.length - 2] === 'shippings' ||
-        Boolean(pathArr.includes('customers')) ? (
+        {slug.length > 0 || (typeof +slug === 'number' && slug !== '') ? (
           <img
             style={{
               marginInline: 10,
@@ -147,13 +157,18 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
             height={18}
             alt="person add icon"
           />
-            ) : null}
+        ) : null}
         <h2
-        title={lastName}
+          title={slug === '' ? `${lastName} ${firstName}` : undefined}
           style={{
             fontSize:
               slug !== 'new' && !(checkText ?? false) ? '1.5rem' : '1rem',
             cursor: slug !== 'new' ? 'default' : 'pointer',
+            font:
+              (nav === 'Customers' && text === 'Voucher History') ||
+              text === 'Purchase History'
+                ? '1rem "Be Vietnam Pro"'
+                : '1rem',
           }}>
           {text === undefined ? currentText : text}
         </h2>
