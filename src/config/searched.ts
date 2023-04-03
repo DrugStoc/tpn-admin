@@ -31,7 +31,7 @@ const searched = {
       fontSize: '0.875rem',
       my: '1.25rem',
       flexWrap: 'wrap',
-      'img:first-of-type': {
+      '.productListImage': {
         w: '3rem',
         h: '3rem',
         border: '0.0625rem solid #d9d9d9',
