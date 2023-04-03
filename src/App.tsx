@@ -16,7 +16,6 @@ import CustomerDetails from './pages/CustomerDetail'
 import Error from './pages/Error'
 import OrderDetails from './pages/OrderDetails'
 import PrivateRoutes from './utils/PrivateRoutes'
-import VoucherHistory from './pages/VoucherHistory'
 
 function App(): JSX.Element {
   return (
@@ -40,7 +39,6 @@ function App(): JSX.Element {
               <Route path="/customers/:id" element={<CustomerDetails />} />
               <Route path="/orders/:id" element={<OrderDetails />} />
               <Route path="/orders/new" element={<Error />} />
-              <Route path="/customers/voucher/history" element={<VoucherHistory />} />
             </Route>
           </Routes>
         </main>
