@@ -68,21 +68,19 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
         barThickness: 10,
       },
       {
-        label: 'Dataset 1',
+        label: 'Dataset 2',
         data: [1235, 5521, 436],
         backgroundColor: '#258CF4',
         barThickness: 10,
       },
       {
-        label: 'Dataset 2',
+        label: 'Dataset 3',
         data: [12253, 5456, 6587],
         backgroundColor: '#556AB0',
         barThickness: 10,
       },
     ],
   }
-
-  console.log(options, data)
 
   return (
     <Motion>

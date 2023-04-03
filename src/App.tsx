@@ -24,6 +24,7 @@ function App(): JSX.Element {
         <main style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Routes>
             <Route path="login" element={<Login />} />
+            <Route path="*" element={<Error />} />
             <Route element={<PrivateRoutes />}>
               <Route index element={<Home />} />
               <Route path="/orders" element={<Orders />} />
@@ -38,7 +39,6 @@ function App(): JSX.Element {
               <Route path="/customers/:id" element={<CustomerDetails />} />
               <Route path="/orders/:id" element={<OrderDetails />} />
               <Route path="/orders/new" element={<Error />} />
-              <Route path="*" element={<Error />} />{' '}
             </Route>
           </Routes>
         </main>

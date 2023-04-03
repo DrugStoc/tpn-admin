@@ -6,6 +6,7 @@ const Table = ({
   TableData,
   columnData,
   minWidth,
+  width,
 }: TableInterface): JSX.Element => {
   const [selectedId, setSelectedId] = useState(false)
   const [editedData, setEditedData] = useState<any>({})
@@ -132,7 +133,7 @@ const Table = ({
   })
 
   return (
-    <section className="tableSection">
+    <section className="tableSection" style={{ width }}>
       <div className="overflow">
         <table
           style={{ minWidth: slug !== 'customers' ? minWidth : '1133px' }}
@@ -149,6 +150,7 @@ const Table = ({
 
 Table.defaultProps = {
   minWidth: '66.5625rem',
+  width: '90%',
 }
 
 export default Table

@@ -61,7 +61,7 @@ const Chart = (): JSX.Element => {
     ],
   }
 
-  const options = {
+  const options: any = {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
@@ -73,6 +73,9 @@ const Chart = (): JSX.Element => {
         beginAtZero: false,
         display: true,
       },
+    },
+    plugins: {
+      legend: false,
     },
   }
 

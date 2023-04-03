@@ -62,17 +62,20 @@ const MostSearched = (): JSX.Element => {
       }
       return (
         <div className="productList" key={index}>
-          <img
-            src={image}
-            width={48}
-            height={48}
-            alt={name}
-            onError={(e) => {
-              e.currentTarget.src =
-                'https://res.cloudinary.com/bizstak/image/upload/v1678603629/placeholder-image_wjnhxg.png'
-            }}
-          />
-          <div title={name.length > 25 ? name : undefined}>{productName}</div>
+          <div style={{display: 'flex', flexWrap: 'wrap', gap: 16}}>
+            <img
+              className='productListImage'
+              src={image}
+              width={48}
+              height={48}
+              alt={name}
+              onError={(e) => {
+                e.currentTarget.src =
+                  'https://res.cloudinary.com/bizstak/image/upload/v1678603629/placeholder-image_wjnhxg.png'
+              }}
+            />
+            <div title={name.length > 25 ? name : undefined}>{productName}</div>
+          </div>
           <img
             src={
               index < 8
