@@ -94,7 +94,6 @@ const addMerchant = {
   '.addMerchant .addMerchant-section .cardBody form :where(.inputLabel), .addMerchant .addMerchant-section .cardBody .deliveryForm :where(.inputLabel)':
     {
       marginBottom: '30px',
-      // minWidth: '405.922px',
       position: 'relative',
     },
   '.addMerchant .addMerchant-section .cardBody form :where(.inputLabel) :where(img), .addMerchant .addMerchant-section .cardBody .deliveryForm :where(.inputLabel) :where(img)':
