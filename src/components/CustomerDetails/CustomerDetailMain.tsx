@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Card from '../shared/Card'
 import { useParams } from 'react-router-dom'
 import { CustomersTableData } from '../Customers/CustomersTableData'
+import Motion from '../shared/Motion'
 
 const CustomerDetailMain = (): JSX.Element => {
   const { id }: any = useParams()
@@ -36,196 +37,200 @@ const CustomerDetailMain = (): JSX.Element => {
   }
 
   return (
-    <Card className="card">
-      <div className="cardBody">
-        <h2
-          style={{
-            color: '#939094',
-            fontSize: 14,
-          }}>
-          Joined
-        </h2>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            position: 'relative',
-            top: 28,
-            flexWrap: 'wrap',
-          }}>
+    <Motion>
+      <Card className="card">
+        <div className="cardBody">
           <h2
             style={{
-              color: '#484649',
-              fontSize: 16,
+              color: '#939094',
+              fontSize: 14,
             }}>
-            {findId.row[4]['column 6']}
+            Joined
           </h2>
           <div
             style={{
               display: 'flex',
               justifyContent: 'space-between',
-              gap: 32,
               alignItems: 'center',
+              position: 'relative',
+              top: 28,
               flexWrap: 'wrap',
             }}>
-            <div style={{ display: 'flex', gap: 8, color: '#514F6D' }}>
-              <img
-                src="https://res.cloudinary.com/bizstak/image/upload/v1678792113/pencil-edit_d0647v.svg"
-                width={24}
-                height={24}
-                alt="pencil edit icon"
-              />
-              <span>Edit</span>
-            </div>
-            <span style={{ color: '#939094' }}>Save Changes</span>
-          </div>
-        </div>
-        <div
-          style={{
-            borderBottom: '1px solid #AEAAAE',
-            marginBlock: 30,
-            position: 'relative',
-            top: 18,
-          }}></div>
-        <form>
-          <div className="form">
-            <div className="inputLabel">
-              <label htmlFor="fname">Enter your First Name</label>
-              <input
-                type="text"
-                placeholder="Ex. Nick"
-                id="fname"
-                value={firstName}
-                onChange={handleFirstNameChange}
-              />
-              <img
-                src="https://res.cloudinary.com/bizstak/image/upload/v1678673980/input-person_swmij3.svg"
-                alt="person icon"
-              />
-            </div>
-            <div className="inputLabel">
-              <label htmlFor="lname">Enter your Last Name</label>
-              <input
-                type="text"
-                placeholder="Ex. Jason"
-                id="lname"
-                onChange={handleLastNameChange}
-                value={lastNameName}
-              />
-              <img
-                src="https://res.cloudinary.com/bizstak/image/upload/v1678673980/input-person_swmij3.svg"
-                alt="person icon"
-              />
-            </div>
-            <div className="inputLabel">
-              <label htmlFor="pnumber">Enter your Phone Number</label>
-              <input
-                type="text"
-                placeholder="+234 0000000000"
-                id="pnumber"
-                onChange={handlePhoneNumberChange}
-                value={phoneNumber}
-              />
-              <img
-                style={{ top: 58 }}
-                src="https://res.cloudinary.com/bizstak/image/upload/v1678674044/nigeria-flag_fbmag1.svg"
-                alt="nigeria icon"
-              />
-            </div>
-            <div className="inputLabel">
-              <label htmlFor="eaddress">Enter your email address</label>
-              <input
-                type="email"
-                placeholder="example@mail.com"
-                id="eaddress"
-                alt="email icon"
-                onChange={handleEmailChange}
-                value={email}
-              />
-              <img
-                src="https://res.cloudinary.com/bizstak/image/upload/v1678674085/input-mail_tvwwz3.svg"
-                alt="email icon"
-              />
+            <h2
+              style={{
+                color: '#484649',
+                fontSize: 16,
+              }}>
+              {findId.row[4]['column 6']}
+            </h2>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                gap: 32,
+                alignItems: 'center',
+                flexWrap: 'wrap',
+              }}> 
+              <div style={{ display: 'flex', gap: 8, color: '#514F6D' }}>
+                <img
+                  src="https://res.cloudinary.com/bizstak/image/upload/v1678792113/pencil-edit_d0647v.svg"
+                  width={24}
+                  height={24}
+                  alt="pencil edit icon"
+                />
+                <span>Edit</span>
+              </div>
+              <span style={{ color: '#939094' }}>Save Changes</span>
             </div>
           </div>
-          <div className="addDelivery">
-            <div style={{ color: '#484649' }}>
-              <p style={{ marginBlock: 20, fontWeight: 300 }}>
-                N/B: optional if not provided
-              </p>
+          <div
+            style={{
+              borderBottom: '1px solid #AEAAAE',
+              marginBlock: 30,
+              position: 'relative',
+              top: 18,
+            }}></div>
+          <form>
+            <div className="form">
+              <div className="inputLabel">
+                <label htmlFor="fname">Enter your First Name</label>
+                <input
+                  type="text"
+                  placeholder="Ex. Nick"
+                  id="fname"
+                  value={firstName}
+                  onChange={handleFirstNameChange}
+                />
+                <img
+                  src="https://res.cloudinary.com/bizstak/image/upload/v1678673980/input-person_swmij3.svg"
+                  alt="person icon"
+                />
+              </div>
+              <div className="inputLabel">
+                <label htmlFor="lname">Enter your Last Name</label>
+                <input
+                  type="text"
+                  placeholder="Ex. Jason"
+                  id="lname"
+                  onChange={handleLastNameChange}
+                  value={lastNameName}
+                />
+                <img
+                  src="https://res.cloudinary.com/bizstak/image/upload/v1678673980/input-person_swmij3.svg"
+                  alt="person icon"
+                />
+              </div>
+              <div className="inputLabel">
+                <label htmlFor="pnumber">Enter your Phone Number</label>
+                <input
+                  type="text"
+                  placeholder="+234 0000000000"
+                  id="pnumber"
+                  onChange={handlePhoneNumberChange}
+                  value={phoneNumber}
+                />
+                <img
+                  style={{ top: 58 }}
+                  src="https://res.cloudinary.com/bizstak/image/upload/v1678674044/nigeria-flag_fbmag1.svg"
+                  alt="nigeria icon"
+                />
+              </div>
+              <div className="inputLabel">
+                <label htmlFor="eaddress">Enter your email address</label>
+                <input
+                  type="email"
+                  placeholder="example@mail.com"
+                  id="eaddress"
+                  alt="email icon"
+                  onChange={handleEmailChange}
+                  value={email}
+                />
+                <img
+                  src="https://res.cloudinary.com/bizstak/image/upload/v1678674085/input-mail_tvwwz3.svg"
+                  alt="email icon"
+                />
+              </div>
             </div>
-          </div>
+            <div className="addDelivery">
+              <div style={{ color: '#484649' }}>
+                <p style={{ marginBlock: 20, fontWeight: 300 }}>
+                  N/B: optional if not provided
+                </p>
+              </div>
+            </div>
 
-          <>
-            <div className="buttonHeading">
-              <h1>Delivery Location</h1>
-              {/* <div
+            <>
+              <div className="buttonHeading">
+                <h1>Delivery Location</h1>
+                {/* <div
                       className='buttonImage'
                       onClick={handleButtonClick}>
                       <img src={buttonCancel} />
                       <button>Cancel</button>
                     </div> */}
-            </div>
-            <p style={{ marginBlock: 20, fontWeight: 300 }}>
-              N/B: optional if not provided
-            </p>
+              </div>
+              <p style={{ marginBlock: 20, fontWeight: 300 }}>
+                N/B: optional if not provided
+              </p>
 
-            <div className="deliveryForm">
-              <div className="form">
-                <div className="inputLabel">
-                  <label htmlFor="state">Select a state</label>
-                  <input
-                    className="inputDelivery"
-                    type="text"
-                    placeholder="Select State"
-                    id="state"
-                  />
-                  <img
-                    className="arrow"
-                    src="https://res.cloudinary.com/bizstak/image/upload/v1678674269/arrow-dropdown_bpoc6g.svg"
-                    alt="person icon"
-                  />
-                </div>
-                <div className="inputLabel">
-                  <label htmlFor="lga">Select your LAG</label>
-                  <input
-                    className="inputDelivery"
-                    type="text"
-                    placeholder="Ex. Jason"
-                    id="lga"
-                  />
-                  <img
-                    className="arrow"
-                    src="https://res.cloudinary.com/bizstak/image/upload/v1678674269/arrow-dropdown_bpoc6g.svg"
-                    alt="person icon"
-                  />
-                </div>
-                <div className="inputLabel">
-                  <label htmlFor="address1">Address &mdash; 1</label>
-                  <input
-                    className="inputDelivery"
-                    type="text"
-                    placeholder="Ex. No9, Street name"
-                    id="address1"
-                  />
-                </div>
-                <div className="inputLabel">
-                  <label htmlFor="address2">Address &mdash; 2 (optional)</label>
-                  <input
-                    className="inputDelivery"
-                    type="text"
-                    placeholder="Ex. No9, Street name"
-                    id="address2"
-                    alt="email icon"
-                  />
+              <div className="deliveryForm">
+                <div className="form">
+                  <div className="inputLabel">
+                    <label htmlFor="state">Select a state</label>
+                    <input
+                      className="inputDelivery"
+                      type="text"
+                      placeholder="Select State"
+                      id="state"
+                    />
+                    <img
+                      className="arrow"
+                      src="https://res.cloudinary.com/bizstak/image/upload/v1678674269/arrow-dropdown_bpoc6g.svg"
+                      alt="person icon"
+                    />
+                  </div>
+                  <div className="inputLabel">
+                    <label htmlFor="lga">Select your LAG</label>
+                    <input
+                      className="inputDelivery"
+                      type="text"
+                      placeholder="Ex. Jason"
+                      id="lga"
+                    />
+                    <img
+                      className="arrow"
+                      src="https://res.cloudinary.com/bizstak/image/upload/v1678674269/arrow-dropdown_bpoc6g.svg"
+                      alt="person icon"
+                    />
+                  </div>
+                  <div className="inputLabel">
+                    <label htmlFor="address1">Address &mdash; 1</label>
+                    <input
+                      className="inputDelivery"
+                      type="text"
+                      placeholder="Ex. No9, Street name"
+                      id="address1"
+                    />
+                  </div>
+                  <div className="inputLabel">
+                    <label htmlFor="address2">
+                      Address &mdash; 2 (optional)
+                    </label>
+                    <input
+                      className="inputDelivery"
+                      type="text"
+                      placeholder="Ex. No9, Street name"
+                      id="address2"
+                      alt="email icon"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </>
-        </form>
-      </div>
-    </Card>
+            </>
+          </form>
+        </div>
+      </Card>
+    </Motion>
   )
 }
 

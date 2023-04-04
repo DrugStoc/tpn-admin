@@ -5,6 +5,7 @@ import addShipping from './addShipping'
 import button from './button'
 import card from './card'
 import chart from './chart'
+import customerDetails from './customersDetail'
 import dropdown from './dropdown'
 import error from './error'
 import filter from './filter'
@@ -49,6 +50,7 @@ const modules = {
   ...orderIdentity,
   ...loading,
   ...inputDropdown,
+  ...customerDetails,
   ...responsive,
 }
 
