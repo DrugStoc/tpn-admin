@@ -11,7 +11,7 @@ const customerDetails = {
       display: 'flex',
       justifyContent: 'space-between',
       cursor: 'pointer',
-      gap: 20,
+      gap: 10,
       fontSize: '14px',
     },
     '.customerPrint': {

@@ -109,7 +109,6 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
       clearInterval(intervalId)
     }
   }, [])
-
   const textDesc = text?.split(' ')
   const checkText = textDesc?.includes('Details')
   const currentText = slug.length === 0 ? greet : text
@@ -141,21 +140,28 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
           {nav === '' && slug === 'new' ? 'Back to Home' : nav}
         </h2>
         {slug.length > 0 || (typeof +slug === 'number' && slug !== '') ? (
-          <img
-            style={{
-              marginInline: 10,
-              display:
-                currentText !== undefined
-                  ? 'inline-block'
-                  : currentText === 'Order List'
+          (slug === 'new' && nav === '') ||
+          nav === 'Merchants' ||
+          nav === 'Customers' ||
+          nav === 'Products' ||
+          nav === 'Orders' ||
+          nav === 'Shippings' ? (
+            <img
+              style={{
+                marginInline: 10,
+                display:
+                  currentText !== undefined
                     ? 'inline-block'
-                    : 'none',
-            }}
-            src="https://res.cloudinary.com/bizstak/image/upload/v1678568018/arrow-forward_jqsrtt.svg"
-            width={18}
-            height={18}
-            alt="person add icon"
-          />
+                    : currentText === 'Order List'
+                      ? 'inline-block'
+                      : 'none',
+              }}
+              src="https://res.cloudinary.com/bizstak/image/upload/v1678568018/arrow-forward_jqsrtt.svg"
+              width={18}
+              height={18}
+              alt="person add icon"
+            />
+              ) : null
         ) : null}
         <h2
           title={slug === '' ? `${lastName} ${firstName}` : undefined}
@@ -180,6 +186,11 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
       </div>
     </nav>
   )
+}
+
+Navbar.defaultProps = {
+  nav: undefined,
+  arrow: undefined,
 }
 
 export default Navbar

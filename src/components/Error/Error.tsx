@@ -13,9 +13,9 @@ const Error = (): JSX.Element => {
   return (
     <Motion>
       <div className="mainSection">
-        <Navbar arrow="" nav="" text="Oh Snap!" />
+        <Navbar nav="" arrow="" text="Oh Snap!" />
         <Card className="error">
-          <h1>Opps...</h1>
+          <h1>Oops...</h1>
           <img
             src="https://res.cloudinary.com/bizstak/image/upload/v1678666116/404_lsr5ja.jpg"
             alt="404 error page"
