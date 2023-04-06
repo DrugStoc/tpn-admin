@@ -108,7 +108,7 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
     return () => {
       clearInterval(intervalId)
     }
-  }, [])
+  }, [lastName, truncatedLastName])
   const textDesc = text?.split(' ')
   const checkText = textDesc?.includes('Details')
   const currentText = slug.length === 0 ? greet : text

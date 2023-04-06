@@ -13,10 +13,12 @@ import {
   Legend,
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
+import NavbarAddMerchant from '../Navbar/NavbarSub'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const AddMerchant = ({ arrow }: any): JSX.Element => {
+  const text = 'Merchant Details'
   const [state, setState] = useState<boolean>(false)
 
   const handleButtonClick = (): any => {
@@ -32,7 +34,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
     plugins: {
       legend: {
         position: 'top',
-        display: false
+        display: false,
       },
       title: {
         display: false,
@@ -57,7 +59,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
   }
 
   const labels = ['January', 'February', 'March']
-  
+
   const data = {
     labels,
     datasets: [
@@ -85,17 +87,21 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
   return (
     <Motion>
       <style>
-        {
-          `
+        {`
           .cardHeight {
             min-height: 297px
           }
-          `
-        }
+          `}
       </style>
       <div className="addMerchant">
         <Navbar nav="Merchants" arrow={arrow} text="Add Merchants" />
         <section className="addMerchant-section">
+          <NavbarAddMerchant
+            firstItem={text}
+            forthItem="Deactivate Merchant"
+            fifthItem="Delete Merchant"
+            text={text}
+          />
           <div className="addMerchant-merchant-detail">
             <Card className="card">
               <div className="cardBody">
@@ -250,6 +256,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                             src={
                               'https://res.cloudinary.com/bizstak/image/upload/v1678674215/button-cancel_ywkq8e.svg'
                             }
+                            alt="cancel button"
                           />
                           <button>Cancel</button>
                         </div>
@@ -342,7 +349,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
             </Card>
           </div>
           <div className="addMerchantIdentity">
-            <Card className='cardHeight'>
+            <Card className="cardHeight">
               <div className="addMerchantDetail">
                 <h2>
                   Purchase Made <br /> <span>from Sep 18 &mdash; Oct 18</span>
@@ -361,7 +368,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
               </div>
             </Card>
 
-            <Card className='cardHeight'>
+            <Card className="cardHeight">
               <div className="addMerchantDetail">
                 <h2>
                   Voucher Redeemed <br />{' '}
