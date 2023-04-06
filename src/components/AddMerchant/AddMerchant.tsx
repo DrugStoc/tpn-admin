@@ -256,6 +256,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                             src={
                               'https://res.cloudinary.com/bizstak/image/upload/v1678674215/button-cancel_ywkq8e.svg'
                             }
+                            alt="cancel button"
                           />
                           <button>Cancel</button>
                         </div>
