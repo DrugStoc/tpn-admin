@@ -31,13 +31,6 @@ const SidebarList = ({ sidebarItem, pathArr }: sidebarType): JSX.Element => {
         {`
             .listItem {
               position: relative !important;
-              &::after {
-                position: absolute !important;
-                left: 0 !important;
-                content: 'Overview' !important;
-                background-color: #000 !important;
-                color: #fff !important;
-              }
           }
           @media (min-width: 701px) {
             .listItemBottom {
