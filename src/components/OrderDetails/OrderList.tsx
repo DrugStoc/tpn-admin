@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../shared/Card'
 
 const OrderList = ({ pharmacist, orderId, orderQty }: any): JSX.Element => {
+  const amount = 700 * orderQty
   return (
     <>
       <style>
@@ -67,7 +68,7 @@ const OrderList = ({ pharmacist, orderId, orderQty }: any): JSX.Element => {
             <div className="liner"></div>
             <div className="rowAmount">
               <div className="amount">Total Amount:</div>
-              <div className="sum">NGN {700 * orderQty}</div>
+              <div className="sum">NGN {amount.toLocaleString()}</div>
             </div>
           </div>
         </Card>
