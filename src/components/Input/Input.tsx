@@ -102,7 +102,10 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
                 return (
                   <div className="searchBox" key={index}>
                     <div className="searchResultBtw">
-                      <img src="https://res.cloudinary.com/bizstak/image/upload/v1680047648/loading-spinner_vwylao.gif" />
+                      <img
+                        src="https://res.cloudinary.com/bizstak/image/upload/v1680047648/loading-spinner_vwylao.gif"
+                        alt="spinner rolling"
+                      />
                       <div className="text">
                         <h3>Loading product name...</h3>
                         <p>Loading product description...</p>
@@ -117,7 +120,10 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
             ) : error ? (
               <div className="searchBox">
                 <div className="searchResultBtw">
-                  <img src="https://res.cloudinary.com/bizstak/image/upload/v1680047648/loading-spinner_vwylao.gif" />
+                  <img
+                    src="https://res.cloudinary.com/bizstak/image/upload/v1680047648/loading-spinner_vwylao.gif"
+                    alt="spinner rolling"
+                  />
                   <div className="text">
                     <h3>{error.message}</h3>
                     <p style={{ color: '#f00' }}>
