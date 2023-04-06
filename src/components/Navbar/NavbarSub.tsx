@@ -108,7 +108,7 @@ const NavbarSub = ({
               alignItems: 'center',
               padding: '5px 20px',
               gap: 8,
-              cursor: 'pointer'
+              cursor: 'pointer',
             }}>
             <img
               src="https://res.cloudinary.com/bizstak/image/upload/v1678790407/delete_pya0qg.svg"
