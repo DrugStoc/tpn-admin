@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Card from '../shared/Card'
 import { useLocation } from 'react-router-dom'
+import Modal from '../Modal/Modal'
 
 const NavbarSub = ({
   text,
@@ -21,6 +22,25 @@ const NavbarSub = ({
   const [isOpen, setIsOpen] = useState(false)
   const handleMenu = (): void => {
     setIsOpen(!isOpen)
+  }
+  const paraText = ''
+
+  const [showModal, setShowModal] = useState(false)
+
+  const toggleModal = (): void => {
+    if (!showModal) {
+      setShowModal(true)
+    }
+  }
+
+  const closeModal = (
+    e:
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+      | React.MouseEvent<HTMLDivElement, MouseEvent>
+  ): void => {
+    if (e.target === e.currentTarget) {
+      setShowModal(false)
+    }
   }
 
   return (
@@ -162,7 +182,7 @@ const NavbarSub = ({
               />
             )}
           </li>
-          <li>{fifthItem}</li>
+          <li onClick={toggleModal}>{fifthItem}</li>
         </ul>
       )}
       <div className="customerNav">
@@ -256,6 +276,7 @@ const NavbarSub = ({
             </div>
             <div
               className="navlistItem"
+              onClick={toggleModal}
               style={{
                 backgroundColor: '#fff',
                 borderRadius: 4,
@@ -274,6 +295,7 @@ const NavbarSub = ({
               />
               <span className="navlistItem">{fifthItem}</span>
             </div>
+            {showModal && <Modal paraText={paraText} closeModal={closeModal} />}
           </div>
         ) : null}
       </div>
