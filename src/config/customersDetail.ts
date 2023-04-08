@@ -39,7 +39,7 @@ const customerDetails = {
   },
   '@media (max-width: 1111px)': {
     '.navlistItem': {
-      display: 'none',
+      display: 'none !important',
     },
   },
 }
