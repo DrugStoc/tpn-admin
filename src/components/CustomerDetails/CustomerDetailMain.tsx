@@ -70,8 +70,14 @@ const CustomerDetailMain = (): JSX.Element => {
                 gap: 32,
                 alignItems: 'center',
                 flexWrap: 'wrap',
-              }}> 
-              <div style={{ display: 'flex', gap: 8, color: '#514F6D' }}>
+              }}>
+              <div
+                style={{
+                  display: 'flex',
+                  gap: 8,
+                  color: '#514F6D',
+                  cursor: 'pointer',
+                }}>
                 <img
                   src="https://res.cloudinary.com/bizstak/image/upload/v1678792113/pencil-edit_d0647v.svg"
                   width={24}
@@ -80,7 +86,9 @@ const CustomerDetailMain = (): JSX.Element => {
                 />
                 <span>Edit</span>
               </div>
-              <span style={{ color: '#939094' }}>Save Changes</span>
+              <span style={{ color: '#939094', cursor: 'pointer' }}>
+                Save Changes
+              </span>
             </div>
           </div>
           <div
