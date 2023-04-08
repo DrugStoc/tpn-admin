@@ -13,7 +13,10 @@ const Table = ({
   const { pathname } = useLocation()
   const pathArr = pathname.split('/')
   const slug = pathArr[pathArr.length - 1]
-
+  console.log(
+    typeof +slug === 'number',
+    pathArr[pathArr.length - 2] === 'customers'
+  )
   const columnItems: any = columnData?.map((item: any) => {
     return <th key={item}>{item}</th>
   })
@@ -133,23 +136,30 @@ const Table = ({
   })
 
   return (
-    <section
-      className="tableSection"
-      style={{
-        width,
-        top: pathArr[pathArr.length - 2] === 'customers' ? 0 : undefined,
-      }}>
-      <div className="overflow">
-        <table
-          style={{ minWidth: slug !== 'customers' ? minWidth : '1133px' }}
-          className="table">
-          <thead>
-            <tr>{columnItems}</tr>
-          </thead>
-          <tbody>{tableRow}</tbody>
-        </table>
-      </div>
-    </section>
+    <>
+      <section
+        className="tableSection"
+        style={{
+          width,
+          top:
+            typeof +slug === 'number' &&
+            pathArr[pathArr.length - 2] === 'customers'
+              ? // 1088 -> 58, 533 -> 80
+              '80px'
+              : undefined,
+        }}>
+        <div className="overflow">
+          <table
+            style={{ minWidth: slug !== 'customers' ? minWidth : '1133px' }}
+            className="table">
+            <thead>
+              <tr>{columnItems}</tr>
+            </thead>
+            <tbody>{tableRow}</tbody>
+          </table>
+        </div>
+      </section>
+    </>
   )
 }
 
