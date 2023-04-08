@@ -133,7 +133,12 @@ const Table = ({
   })
 
   return (
-    <section className="tableSection" style={{ width }}>
+    <section
+      className="tableSection"
+      style={{
+        width,
+        top: pathArr[pathArr.length - 2] === 'customers' ? 0 : undefined,
+      }}>
       <div className="overflow">
         <table
           style={{ minWidth: slug !== 'customers' ? minWidth : '1133px' }}
