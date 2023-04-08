@@ -1,196 +1,202 @@
-import React, { useState } from 'react'
-import Card from '../shared/Card'
-import { useLocation } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { NavbarInterface } from './NavbarInterface'
+import { BASE_URL_V2 as V2 } from '../../config/baseURL'
 
-const NavbarSub = ({
-  text,
-  handler,
-  handlePrint,
-  firstItem,
-  secondItem,
-  thirdItem,
-  forthItem,
-  fifthItem,
-}: any): JSX.Element => {
-  const [isOn, setIsOn] = useState(false)
+const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
+  const navigate = useNavigate()
+  const [greet, setGreeting] = useState()
   const { pathname } = useLocation()
   const pathArr = pathname.split('/')
-  const handleClick = (): void => {
-    setIsOn(!isOn)
+  const slug = pathArr[pathArr.length - 1]
+  const handleButtonClick: any = () => {
+    if (nav !== undefined) {
+      navigate(`/${nav?.toLowerCase()}`)
+    } else {
+      navigate('/')
+    }
   }
-  const [isOpen, setIsOpen] = useState(false)
-  const handleMenu = (): void => {
-    setIsOpen(!isOpen)
-  }
+  const initialUpperCase = pathArr.map((path: string) => {
+    let firstWord: string = path[0]
+    if (firstWord !== undefined) {
+      firstWord = firstWord.toUpperCase()
+    } else {
+      firstWord = ''
+    }
+    return `${firstWord}${path.slice(1)}`
+  })
+  const title = initialUpperCase.join(' ')
+
+  useEffect(() => {
+    if (title.trim().length === 0) {
+      document.title = 'DrugStoc TPN Admin | Home'
+    } else {
+      document.title = `${title} | DrugStoc TPN Admin`
+    }
+  }, [pathname, title])
+
+  const [dateTime, setDateTime] = useState('')
+  const [dateMonth, setDateMonth] = useState('')
+
+  const [lastName, setLastName] = useState<string>(() => {
+    const storedValue = localStorage.getItem('lastName')
+    return storedValue ?? ''
+  })
+
+  const [firstName, setFirstName] = useState<string>(() => {
+    const storedValue = localStorage.getItem('firstName')
+    return storedValue ?? ''
+  })
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token == null) {
+      setLastName('anonymous')
+      return
+    }
+
+    const fetchAPI = async (): Promise<void> => {
+      setLastName('Loading...')
+      const response = await fetch(`${V2}/account/profile`, {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `token ${token}`,
+        },
+      })
+      const data = await response.json()
+      setLastName(data?.last_name)
+      setFirstName(data?.first_name)
+      localStorage.setItem('lastName', data?.last_name)
+      localStorage.setItem('firstName', data?.first_name)
+    }
+
+    void fetchAPI()
+  }, [])
+
+  const truncatedLastName =
+    lastName.length > 9 ? `${lastName.slice(0, 9)}...` : lastName
+  const [dayGreet, setDayGreet] = useState('')
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const date = new Date()
+      const day = date.toLocaleDateString('en-US', { weekday: 'short' })
+      const dateNum = date.getDate()
+      const month = date.toLocaleDateString('en-US', { month: 'short' })
+      const hour = date.getHours()
+      const minute = date.getMinutes()
+      const ampm = hour >= 12 ? 'PM' : 'AM'
+      const hour12 = hour % 12 !== 0 ? hour % 12 : 12
+      const time = `${hour12}:${minute.toString().padStart(2, '0')} ${ampm}`
+      setDateTime(`${day} ${dateNum} ${month}`)
+      setDateMonth(time)
+
+      let greeting: any
+      if (hour < 12) {
+        greeting = `Good Morning ${lastName === '' ? '☀️' : truncatedLastName}`
+        setDayGreet(`Good Morning ☀️ ${lastName} ${firstName}`)
+      } else if (hour < 18) {
+        greeting = `Good Afternoon ${
+          lastName === '' ? '🌤️' : truncatedLastName
+        }`
+        setDayGreet(`Good Afternoon 🌤️ ${lastName} ${firstName}`)
+      } else if (hour < 20) {
+        greeting = `Good Evening ${lastName === '' ? '🌒' : truncatedLastName}`
+        setDayGreet(`Good Evening 🌒 ${lastName} ${firstName}`)
+      } else {
+        greeting = `Good Night ${lastName === '' ? '🌑' : truncatedLastName}`
+        setDayGreet(`Good Night 🌑 ${lastName} ${firstName}`)
+      }
+      setGreeting(greeting)
+    }, 1000)
+
+    return () => {
+      clearInterval(intervalId)
+    }
+  }, [firstName, lastName, truncatedLastName])
+
+  const textDesc = text?.split(' ')
+  const checkText = textDesc?.includes('Details')
+  const currentText = slug.length === 0 ? greet : text
+
   return (
-    <>
-      <style>
-        {`
-                @media (min-width: 1110px) {
-                    .detailMenu, .menuItem {
-                        display: none ;
-                    }
-                }
-                .detailMenu {
-                    list-style-type: none;
-                    position: absolute;
-                    top: 0px;
-                    z-index: 1;
-                    background-color: #fff;
-                    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
-                    border-radius: 4px;
-                    width: 40%;
-                }
-                .detailMenu li:first-of-type:hover {
-                    border-top-right-radius: 4px;
-                    border-top-left-radius: 4px
-                }
-                .detailMenu li:last-of-type:hover {
-                    border-bottom-right-radius: 4px;
-                    border-bottom-left-radius: 4px
-                }
-                .detailMenu li {
-                    padding: 10px;
-                }
-                .detailMenu li:hover {
-                    background-color: #f5f5f5;
-                }
-            `}
-      </style>
-      <div
-        className="menuItem"
-        onClick={handleMenu}
-        style={{
-          position: 'absolute',
-          top: '-50px',
-          zIndex: 20,
-          cursor: 'pointer',
-          backgroundColor: '#fff',
-          padding: '10px',
-          width: '15%',
-          textAlign: 'center',
-        }}>
-        Menu
-      </div>
-
-      {isOpen && (
-        <ul className="detailMenu">
-          <li onClick={handler}>{firstItem}</li>
-          <li onClick={handler}>{secondItem}</li>
-          <li onClick={handler}>{thirdItem}</li>
-          <li onClick={handler}>{forthItem}</li>
-          <li onClick={handler}>{fifthItem}</li>
-        </ul>
-      )}
-      <div className="customerNav" style={{ position: 'relative' }}>
-        <div className="customerLinks">
-          <span
-            className="navlistItem"
-            onClick={handler}
-            style={{
-              color: text === firstItem ? '#556AB0' : '#484649',
-              textDecoration: text === firstItem ? 'underline' : undefined,
-            }}>
-            {firstItem}
-          </span>
-          <span
-            className="navlistItem"
-            onClick={handler}
-            style={{
-              color: text === secondItem ? '#556AB0' : '#484649',
-              textDecoration: text === secondItem ? 'underline' : undefined,
-            }}>
-            {secondItem}
-          </span>
-          <span
-            className="navlistItem"
-            onClick={handler}
-            style={{
-              color: text === thirdItem ? '#556AB0' : '#484649',
-              textDecoration: text === thirdItem ? 'underline' : undefined,
-            }}>
-            {thirdItem}
-          </span>
-        </div>
-        {(text === secondItem || text === thirdItem) &&
-          pathArr.includes('customers') && (
-            <Card className="customerPrint" onClick={handlePrint}>
-              <img
-                src="https://res.cloudinary.com/bizstak/image/upload/v1680539746/print_hhcgkk.png"
-                width={20}
-                height={20}
-                alt="printer icon"
-              />
-              <span>Print File</span>
-            </Card>
-        )}
-        {text === firstItem ? (
-          <div
-            style={{
-              gap: 40,
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              fontSize: '14px',
-              position: 'relative',
-              top: -7,
-            }}>
-            <div
-              onClick={handleClick}
+    <nav className="navbar">
+      <div className="navbar-split">
+        <h2
+          style={{
+            marginRight: nav !== undefined ? 3 : undefined,
+            display: 'flex',
+            cursor: 'pointer',
+            fontSize:
+              slug !== 'new' && !(checkText ?? false) ? '1.5rem' : '1rem',
+            color:
+              pathArr.includes('new') ||
+              (checkText ?? false) ||
+              (pathArr.includes('customers') &&
+                pathArr[pathArr.length - 2] === 'customers')
+                ? '#787579'
+                : undefined,
+            font:
+              (nav === 'Customers' && text === 'Voucher History') ||
+              text === 'Purchase History'
+                ? '1rem "Be Vietnam Pro"'
+                : '1rem',
+          }}
+          onClick={handleButtonClick}>
+          {nav === '' && slug === 'new' ? 'Back to Home' : nav}
+        </h2>
+        {slug.length > 0 || (typeof +slug === 'number' && slug !== '') ? (
+          (slug === 'new' && nav === '') ||
+          nav === 'Merchants' ||
+          nav === 'Customers' ||
+          nav === 'Products' ||
+          nav === 'Orders' ||
+          nav === 'Shippings' ? (
+            <img
               style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                gap: 8,
-                cursor: 'pointer',
-              }}>
-              {isOn ? (
-                <img
-                  src="https://res.cloudinary.com/bizstak/image/upload/v1678576466/toggle-on_yjtyea.svg"
-                  width={30}
-                  height={30}
-                  alt="toggle on button icon"
-                />
-              ) : (
-                <img
-                  src="https://res.cloudinary.com/bizstak/image/upload/v1678576482/toggle-off_trg38c.svg"
-                  width={30}
-                  height={30}
-                  alt="toggle off button icon"
-                />
-              )}
-
-              <span className="navlistItem">{forthItem}</span>
-              <img
-                src="https://res.cloudinary.com/bizstak/image/upload/v1680690573/info_nf6eom.svg"
-                width={13.33}
-                height={13.33}
-                alt="info icon"
-              />
-            </div>
-            <div
-              style={{
-                backgroundColor: '#fff',
-                borderRadius: 4,
-                display: 'flex',
-                alignItems: 'center',
-                padding: '5px 20px',
-                gap: 8,
-                cursor: 'pointer',
-              }}>
-              <img
-                src="https://res.cloudinary.com/bizstak/image/upload/v1678790407/delete_pya0qg.svg"
-                width={20}
-                height={20}
-                alt="delete icon"
-              />
-              <span className="navlistItem">{fifthItem}</span>
-            </div>
-          </div>
+                marginInline: 10,
+                display:
+                  currentText !== undefined
+                    ? 'inline-block'
+                    : currentText === 'Order List'
+                      ? 'inline-block'
+                      : 'none',
+              }}
+              src="https://res.cloudinary.com/bizstak/image/upload/v1678568018/arrow-forward_jqsrtt.svg"
+              width={18}
+              height={18}
+              alt="person add icon"
+            />
+              ) : null
         ) : null}
+        <h2
+          title={slug === '' ? `${dayGreet}` : undefined}
+          style={{
+            fontSize:
+              slug !== 'new' && !(checkText ?? false) ? '1.5rem' : '1rem',
+            cursor: slug !== 'new' ? 'default' : 'pointer',
+            font:
+              (nav === 'Customers' && text === 'Voucher History') ||
+              text === 'Purchase History'
+                ? '1rem "Be Vietnam Pro"'
+                : '1rem',
+          }}>
+          {text === undefined ? currentText : text}
+        </h2>
       </div>
-    </>
+      <div
+        className="clock"
+        style={{ fontWeight: 700, color: '#787579', gap: 12, display: 'flex' }}>
+        <span>{dateTime}</span>
+        <span>{dateMonth}</span>
+      </div>
+    </nav>
   )
 }
 
-export default NavbarSub
+Navbar.defaultProps = {
+  nav: undefined,
+  arrow: undefined,
+}
+
+export default Navbar
