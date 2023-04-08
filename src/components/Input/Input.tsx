@@ -55,7 +55,12 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent): void => {
-      if (event.key === 'Escape') {
+      if (
+        event.key === 'Escape' ||
+        event.code === 'Escape' ||
+        event.which === 27 ||
+        event.keyCode === 27
+      ) {
         setShowDropdown(false)
         document.body.focus()
       }
