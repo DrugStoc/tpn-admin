@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '../shared/Card'
 import { useLocation } from 'react-router-dom'
 import Modal from '../Modal/Modal'
@@ -32,6 +32,7 @@ const NavbarSub = ({
       setShowModal(true)
     }
   }
+  const openModal = (): void => setShowModal(true)
 
   const closeModal = (
     e:
@@ -42,6 +43,30 @@ const NavbarSub = ({
       setShowModal(false)
     }
   }
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent): void => {
+      if (
+        (event.ctrlKey ||
+          event.key === 'Control' ||
+          event.code === 'ControlLeft' ||
+          event.which === 17 ||
+          event.keyCode === 17) &&
+        (event.code === 'Delete' ||
+          event.key === 'Delete' ||
+          event.keyCode === 46 ||
+          event.which === 46)
+      ) {
+        openModal()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
 
   return (
     <>
