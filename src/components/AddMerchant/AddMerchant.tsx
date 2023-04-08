@@ -86,13 +86,6 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
 
   return (
     <Motion>
-      <style>
-        {`
-          .cardHeight {
-            min-height: 297px
-          }
-          `}
-      </style>
       <div className="addMerchant">
         <Navbar nav="Merchants" arrow={arrow} text="Add Merchants" />
         <section className="addMerchant-section">
