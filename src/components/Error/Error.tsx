@@ -12,6 +12,16 @@ const Error = (): JSX.Element => {
 
   return (
     <Motion>
+      <style>
+        {`
+            @media (max-width: 438px) {
+              .error {
+                position: relative;
+                top: 10px;
+              }
+            }
+          `}
+      </style>
       <div className="mainSection">
         <Navbar nav="" arrow="" text="Oh Snap!" />
         <Card className="error">
