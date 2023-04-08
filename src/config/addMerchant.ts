@@ -84,7 +84,7 @@ const addMerchant = {
     color: '#AEAAAE',
   },
   '.addMerchantDetailChart': {
-    // height: '325px',
+    paddingBottom: '25px',
   },
   '.addMerchantDetailChartLiner': {
     borderLeft: '1px solid #939094',
