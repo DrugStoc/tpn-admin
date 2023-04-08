@@ -164,7 +164,7 @@ const NavbarSub = ({
           <li>{fifthItem}</li>
         </ul>
       )}
-      <div className="customerNav" style={{ position: 'relative' }}>
+      <div className="customerNav">
         <div className="customerLinks">
           <span
             className="navlistItem"
