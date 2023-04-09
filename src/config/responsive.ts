@@ -214,10 +214,6 @@ const responsive = {
       pos: "relative",
       top: "0",
     },
-    ".searchResult": {
-      pos: "relative",
-      top: "4.5rem",
-    },
   },
   "@media (max-width: 520px)": {
     ".searchResultBtw": {
