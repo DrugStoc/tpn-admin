@@ -139,6 +139,14 @@ const LoginProvider = ({
         setError('Email or Password is Incorrect')
       }
     }
+    localStorage.setItem('loginTime', `${Date.now()}`)
+    const loginTime = localStorage.getItem('loginTime')
+    const oneMonthInMs = 2592000000
+    if (loginTime != null && Date.now() - Number(loginTime) > oneMonthInMs) {
+      localStorage.removeItem('loginTime')
+      localStorage.removeItem('token')
+      setLoggedIn(false)
+    }
   }
 
   const handleLogoutClick = (): void => {
