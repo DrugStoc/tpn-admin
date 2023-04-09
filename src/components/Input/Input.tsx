@@ -100,7 +100,7 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
         placeholder={`Search${slug}...`}
       />
       {showDropdown && (
-        <div className="inputButton" style={{ top: '3.5rem' }}>
+        <div className="navbar" style={{ top: '-2.5rem', width: '100%', display: query.length === 0 ? 'none' : undefined }} >
           <Card className="searchResult" ref={cardRef}>
             {isLoading ? (
               [...Array(3)].map((_, index) => {
