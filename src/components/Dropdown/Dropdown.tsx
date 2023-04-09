@@ -10,7 +10,7 @@ const Dropdown = ({ column }: dropdownInterface): JSX.Element => {
     })
   }
 
-  const dropdownList = column?.map((item: any) => {
+  const dropdownList: any = column?.map((item: any) => {
     return showList ? (
       <li style={{ display: item !== 'empty' ? 'block' : 'none' }} key={item}>
         {item}
