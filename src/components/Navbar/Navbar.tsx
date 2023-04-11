@@ -51,12 +51,13 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token == null) {
-      setLastName('anonymous')
+      setLastName('Anonymous')
+      setFirstName('Person')
       return
     }
 
     const fetchAPI = async (): Promise<void> => {
-      setLastName('Loading...')
+      setLastName('Anonymous')
       const response = await fetch(`${V2}/account/profile`, {
         headers: {
           'Content-Type': 'application/json',
