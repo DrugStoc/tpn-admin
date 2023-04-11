@@ -286,7 +286,7 @@ const Table = ({
 }
 
 Table.defaultProps = {
-  minWidth: '66.5625rem',
+  minWidth: '69.5625rem',
   width: '90%',
 }
 
