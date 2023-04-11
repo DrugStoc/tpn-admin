@@ -12,6 +12,8 @@ const NavbarSub = ({
   thirdItem,
   forthItem,
   fifthItem,
+  PurchaseHistoryTableData,
+  VoucherHistoryTableData,
 }: any): JSX.Element => {
   const [isOn, setIsOn] = useState(false)
   const { pathname } = useLocation()
@@ -87,6 +89,7 @@ const NavbarSub = ({
                     border-radius: 4px;
                     width: 100%;
                     overflow: hidden;
+                    z-index: 22;
                 }
                 .detailMenu li:first-of-type:hover {
                     border-top-right-radius: 4px;
@@ -244,7 +247,7 @@ const NavbarSub = ({
           pathArr.includes('customers') && (
             <Card className="customerPrint" onClick={handlePrint}>
               <img
-                src="https://res.cloudinary.com/bizstak/image/upload/v1680539746/print_hhcgkk.png"
+                src="https://res.cloudinary.com/bizstak/image/upload/v1681080619/printer_jlvuwo.png"
                 width={20}
                 height={20}
                 alt="printer icon"
