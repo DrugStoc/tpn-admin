@@ -67,12 +67,14 @@ const addCustomer = {
   '.addCustomer input': {
     bgColor: '#f9f9fc',
     borderRadius: '4px',
-    border: '1px solid #f9f9fc',
     mt: '20px',
     h: '30px',
     w: '100%',
-    outline: 'none',
     p: '20px',
+  },
+  '.addCustomer .inputItem': {
+    mt: 'initial',
+    p: 'initial',
   },
   '.addCustomer .addDelivery': { marginTop: '45px' },
   '.addCustomer .addDelivery button': {
