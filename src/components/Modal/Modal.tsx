@@ -1,6 +1,12 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 const Modal = ({ paraText, closeModal }: any): JSX.Element => {
-  paraText = 'Are you sure you want to delete user?'
+  const { pathname } = useLocation()
+  const pathArr = pathname.split('/')
+  paraText =
+    pathArr[pathArr.length - 2] !== 'shippings'
+      ? 'Are you sure you want to delete user?'
+      : "Are you sure you want to delete user's location?"
   return (
     <div>
       <div className="modal-overlay" onClick={closeModal}>
