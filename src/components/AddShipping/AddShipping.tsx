@@ -1,12 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import Card from '../shared/Card'
 import Button from '../Button/Button'
 import Motion from '../shared/Motion'
+import Modal from '../Modal/Modal'
 
 const AddShipping = ({ arrow }: any): JSX.Element => {
+  const paraText = ''
+  const [showModal, setShowModal] = useState(false)
+  const toggleModal = (): void => {
+    if (!showModal) {
+      setShowModal(true)
+    }
+  }
+  const openModal = (): void => setShowModal(true)
+  const closeModal = (
+    e:
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+      | React.MouseEvent<HTMLDivElement, MouseEvent>
+  ): void => {
+    if (e.target === e.currentTarget) {
+      setShowModal(false)
+    }
+  }
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent): void => {
+      if (
+        (event.ctrlKey ||
+          event.key === 'Control' ||
+          event.code === 'ControlLeft' ||
+          event.which === 17 ||
+          event.keyCode === 17) &&
+        (event.code === 'Delete' ||
+          event.key === 'Delete' ||
+          event.keyCode === 46 ||
+          event.which === 46)
+      ) {
+        openModal()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
   return (
     <Motion>
+      {showModal && <Modal paraText={paraText} closeModal={closeModal} />}
       <div className="addShipping">
         <Navbar nav="Shippings" arrow={arrow} text="Add Shippings" />
         <section className="addShipping-section">
@@ -21,6 +64,7 @@ const AddShipping = ({ arrow }: any): JSX.Element => {
                 }}>
                 <h1>Add New Shipping Location</h1>
                 <div
+                  onClick={toggleModal}
                   className="delete"
                   style={{
                     background: '#FDFDFD',
