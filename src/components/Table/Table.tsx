@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { TableInterface, tableItemInterface } from './TableInterface'
 import { Link, useLocation } from 'react-router-dom'
+import Modal from '../Modal/Modal'
 
 const Table = ({
   TableData,
@@ -8,6 +9,23 @@ const Table = ({
   minWidth,
   width,
 }: TableInterface): JSX.Element => {
+  const paraText = 'Are you sure you want to Delete Item'
+  const [showModal, setShowModal] = useState(false)
+  const toggleModal = (id: any): void => {
+    if (!showModal) {
+      setShowModal(true)
+    }
+  }
+  const closeModal = (
+    e:
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+      | React.MouseEvent<HTMLDivElement, MouseEvent>
+  ): void => {
+    if (e.target === e.currentTarget) {
+      setShowModal(false)
+    }
+  }
+
   const [selectedId, setSelectedId] = useState(false)
   const [isEditMode, setIsEditMode] = useState<null | boolean>(null)
   const [editedData, setEditedData] = useState<any>({})
@@ -17,6 +35,7 @@ const Table = ({
   const columnItems: any = columnData?.map((item: any) => {
     return <th key={item}>{item}</th>
   })
+  const [showDropdown, setShowDropdown] = useState<any>({})
 
   let message: string | null
   const handleBoxClick = (id: any): void => {
@@ -45,12 +64,20 @@ const Table = ({
     setEditedData(newEditedData)
   }
 
-  const handleMenuClick = (id: any): any => {
-    const findIndex = TableData.find((item: any) => {
-      return item.id === id
-    })
-
-    return findIndex
+  const handleMenuClick = (id: any): void => {
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    if (showDropdown[id]) {
+      setShowDropdown({ ...showDropdown, [id]: false })
+    } else {
+      const updatedShowDropdown = Object.keys(showDropdown).reduce(
+        (acc: any, current) => {
+          acc[current] = false
+          return acc
+        },
+        {}
+      )
+      setShowDropdown({ ...updatedShowDropdown, [id]: true })
+    }
   }
 
   const tableRow = TableData.map((tableItem: tableItemInterface) => {
@@ -67,6 +94,35 @@ const Table = ({
             alt="toggle off button icon"
           />
         )
+      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+      } else if (column['column 2']) {
+        return (isEditMode ?? false) ? (
+          <td key={index}>
+            <input
+              className="inputItem"
+              style={{ backgroundColor: '#F9F9FC', color: '#514f6d' }}
+              type="text"
+              defaultValue={column[`column ${index + 2}`]}
+              onChange={(event) => handleInputChange(event, index)}
+            />
+          </td>
+        ) : (
+          <td key={index}>
+            <Link
+              style={{ display: 'block' }}
+              to={
+                slug === 'customers'
+                  ? `/customers/${tableItem.id}`
+                  : slug === 'orders'
+                    ? `/orders/${tableItem.id}`
+                    : slug === 'merchants'
+                      ? `/merchants/${tableItem.id}`
+                      : '/'
+              }>
+              {column[`column ${index + 2}`]}
+            </Link>
+          </td>
+        )
       } else if (column['column 7'] === 1 && slug === 'products') {
         column['column 7'] = (
           <img
@@ -76,17 +132,19 @@ const Table = ({
           />
         )
       } else if (
-        (column['column 9'] === 0 && slug === 'customers') ||
-        slug === 'orders'
+        slug === 'customers' ||
+        slug === 'orders' ||
+        slug === 'merchants'
       ) {
         column['column 9'] = (
-          <Link
-            to={
-              slug === 'customers'
-                ? `/customers/${tableItem.id}`
-                : `/orders/${tableItem.id}`
-            }
-            style={{ position: 'relative', display: 'block' }}>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <style>
+              {`
+                  .tableButtonDropdown:hover  {
+                      background-color: #f5f5f5
+                  }
+                `}
+            </style>
             <img
               src="https://res.cloudinary.com/bizstak/image/upload/v1678576503/vertical-menu_t5swd1.svg"
               style={{
@@ -96,7 +154,101 @@ const Table = ({
               alt="vertical menu icon"
               onClick={() => handleMenuClick(tableItem.id)}
             />
-          </Link>
+            {(Boolean(showDropdown[tableItem.id])) && (
+              <div
+                style={{
+                  position: 'relative',
+                }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    height: 'auto',
+                    top: -20,
+                    right: 20,
+                    backgroundColor: '#fff',
+                    boxShadow:
+                      '0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    width: '200px',
+                    border: '1px solid #fff',
+                    borderRadius: 4,
+                  }}>
+                  <div
+                    className="tableButtonDropdown"
+                    style={{
+                      display: 'flex',
+                      gap: 10,
+                      cursor: 'pointer',
+                      alignItems: 'center',
+                      height: 30,
+                      paddingInline: '10px',
+                    }}>
+                    <img
+                      width={20}
+                      height={20}
+                      src="https://res.cloudinary.com/bizstak/image/upload/v1681258589/eye_tpyrwa.png"
+                      alt="eye icon"
+                    />
+                    <Link
+                      onClick={() => toggleModal(tableItem.id)}
+                      style={{ display: 'block' }}
+                      to={
+                        slug === 'customers'
+                          ? `/customers/${tableItem.id}`
+                          : slug === 'orders'
+                            ? `/orders/${tableItem.id}`
+                            : slug === 'merchants'
+                              ? `/merchants/${tableItem.id}`
+                              : '/'
+                      }>
+                      View Detail
+                    </Link>{' '}
+                  </div>
+                  <div
+                    className="tableButtonDropdown"
+                    style={{
+                      display: 'flex',
+                      gap: 10,
+                      cursor: 'pointer',
+                      alignItems: 'center',
+                      height: 30,
+                      paddingInline: '10px',
+                    }}>
+                    <img
+                      width={20}
+                      height={20}
+                      src="https://res.cloudinary.com/bizstak/image/upload/v1681258589/trash_tlyzmk.svg"
+                      alt="eye icon"
+                    />
+                    <span style={{ display: 'block' }}>Delete</span>{' '}
+                  </div>
+
+                  {/* <div
+                    onClick={() => handleBoxClick(tableItem.id)}
+                    className="tableButtonDropdown"
+                    style={{
+                      display: "flex",
+                      gap: 10,
+                      cursor: "pointer",
+                      alignItems: "center",
+                      height: 30,
+                      paddingInline: "10px",
+                    }}
+                  >
+                    <img
+                      width={20}
+                      height={20}
+                      src="https://res.cloudinary.com/bizstak/image/upload/v1681258589/edit-row_qcaei3.png"
+                      alt="eye icon"
+                    />
+                    <span style={{ display: "block" }}>Edit</span>
+                  </div> */}
+                </div>
+              </div>
+            )}
+          </div>
         )
       } else if (column['column 4'] === 'open') {
         return (
@@ -154,14 +306,10 @@ const Table = ({
               height={16}
               alt="purchase icon"
             />
-            <span>{column[`column ${index + 2}`]}</span>
+            <span className="user">{column[`column ${index + 2}`]}</span>
           </div>
         )
-        return (
-          <td key={index}>
-            {column[`column ${index + 2}`]}
-          </td>
-        )
+        return <td key={index}>{column[`column ${index + 2}`]}</td>
       } else if (
         column['column 4'] === 'Voucher' &&
         columnItems[3].key === 'Purchase Nature'
@@ -183,11 +331,7 @@ const Table = ({
             <span>{column[`column ${index + 2}`]}</span>
           </div>
         )
-        return (
-          <td key={index}>
-            {column[`column ${index + 2}`]}
-          </td>
-        )
+        return <td key={index}>{column[`column ${index + 2}`]}</td>
       }
 
       if (isSelected) {
@@ -274,6 +418,7 @@ const Table = ({
           <table
             style={{ minWidth: slug !== 'customers' ? minWidth : '1133px' }}
             className="table">
+            {showModal && <Modal paraText={paraText} closeModal={closeModal} />}
             <thead>
               <tr>{columnItems}</tr>
             </thead>

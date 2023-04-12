@@ -21,7 +21,7 @@ const summaryData = [
   },
   {
     icon: 'https://res.cloudinary.com/bizstak/image/upload/v1678603679/products_t9sv4u.svg',
-    title: 'Total Products on TPN',
+    title: 'Total Products',
     trend: '5%',
     trendIcon:
       'https://res.cloudinary.com/bizstak/image/upload/v1678603544/trending-up_lobgdn.svg',
