@@ -23,8 +23,6 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
   const { pathname } = useLocation()
   const pathArr = pathname.split('/')
   const slug = pathArr[pathArr.length - 1]
-  console.log(slug)
-  console.log(MerchantsTableData)
   const merchatDetails = MerchantsTableData.find((item: any) => {
     return item.id === +slug
   })
@@ -32,7 +30,6 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
   const [lastName, setLastName] = useState('Obichukwu')
   const [phoneNumber, setPhoneNumber] = useState('+234 8143577878')
   const [email, setEmail] = useState('example@mail.com')
-  console.log(merchatDetails)
   const [brandName, setBrandName] = useState(merchatDetails?.row[0]['column 2'])
 
   const text = 'Merchant Details'
