@@ -1,101 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import Card from '../shared/Card'
 import Button from '../Button/Button'
 import Motion from '../shared/Motion'
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js'
-import { Bar } from 'react-chartjs-2'
-import NavbarAddMerchant from '../Navbar/NavbarSub'
-
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const AddMerchant = ({ arrow }: any): JSX.Element => {
-  const text = 'Merchant Details'
-  const [state, setState] = useState<boolean>(false)
-
-  const handleButtonClick = (): any => {
-    if (!state) {
-      setState(true)
-    } else {
-      setState(false)
-    }
-  }
-
-  const options: any = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-        display: false,
-      },
-      title: {
-        display: false,
-        text: 'Chart.js Bar Chart',
-      },
-    },
-    scales: {
-      x: {
-        stacked: true,
-        display: false,
-      },
-      y: {
-        stacked: true,
-        display: false,
-      },
-    },
-    elements: {
-      bar: {
-        borderRadius: 100,
-      },
-    },
-  }
-
-  const labels = ['January', 'February', 'March']
-
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: 'Dataset 1',
-        data: [1000, 3234, 1245],
-        backgroundColor: '#5EA3D6',
-        barThickness: 10,
-      },
-      {
-        label: 'Dataset 2',
-        data: [1235, 5521, 436],
-        backgroundColor: '#258CF4',
-        barThickness: 10,
-      },
-      {
-        label: 'Dataset 3',
-        data: [12253, 5456, 6587],
-        backgroundColor: '#556AB0',
-        barThickness: 10,
-      },
-    ],
-  }
-
   return (
     <Motion>
       <div className="addMerchant">
         <Navbar nav="Merchants" arrow={arrow} text="Add Merchants" />
         <section className="addMerchant-section">
-          <NavbarAddMerchant
-            firstItem={text}
-            forthItem="Deactivate Merchant"
-            fifthItem="Delete Merchant"
-            text={text}
-          />
-          <div className="addMerchant-merchant-detail">
+          <div
+            className="addMerchant-merchant-detail"
+            style={{ width: '100%' }}>
             <Card className="card">
               <div className="cardBody">
                 <h1>Add New Merchant</h1>
@@ -111,7 +28,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                 <form>
                   <div className="form">
                     <div className="formInput">
-                      <div className="inputLabel">
+                      <div className="inputLabel" style={{ width: '47%' }}>
                         <label htmlFor="fname" style={{ display: 'block' }}>
                           Enter your First Name
                         </label>
@@ -129,7 +46,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                           alt="person icon"
                         />
                       </div>
-                      <div className="inputLabel">
+                      <div className="inputLabel" style={{ width: '47%' }}>
                         <label htmlFor="lname" style={{ display: 'block' }}>
                           Enter your Last Name
                         </label>
@@ -149,7 +66,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                       </div>
                     </div>
                     <div className="formInput">
-                      <div className="inputLabel">
+                      <div className="inputLabel" style={{ width: '47%' }}>
                         <label htmlFor="pnumber">Enter your Phone Number</label>
                         <input
                           className="addMerchantInput"
@@ -166,7 +83,9 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                           alt="nigeria icon"
                         />
                       </div>
-                      <div className="inputLabel plInput">
+                      <div
+                        className="inputLabel plInput"
+                        style={{ width: '47%' }}>
                         <label htmlFor="eaddress">
                           Enter your email address
                         </label>
@@ -197,7 +116,7 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                     }}>
                     Pharmacy Details{' '}
                   </h2>
-                  <div className="inputLabel">
+                  <div className="inputLabel" style={{ width: '47%' }}>
                     <label htmlFor="brand">Enter Brand Name</label>
                     <input
                       autoComplete="off"
@@ -213,122 +132,81 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                     />
                   </div>
 
-                  {!state ? (
-                    <div className="addDelivery">
-                      <button onClick={handleButtonClick}>
-                        <img
-                          src={
-                            'https://res.cloudinary.com/bizstak/image/upload/v1678674138/button-plus_aernbb.svg'
-                          }
-                          alt="button plus icon"
-                        />
-                        <span>Add Delivery Address</span>
-                      </button>
-                      <div style={{ color: '#484649' }}>
-                        {/* <p style={{ marginBlock: 20, fontWeight: 300 }}>
-                        N/B: optional if not provided
-                      </p> */}
-                        <p style={{ marginTop: 20 }}>
-                          If user provides an address for delivery kindly add
-                          address.
-                        </p>
-                        <p style={{ marginTop: 10 }}>
-                          This address will be set a default delivery address
-                          for easier delivery.
-                        </p>
-                      </div>
-                    </div>
-                  ) : (
-                    <>
-                      <div className="buttonHeading">
-                        <h1>Delivery Location</h1>
-                        <div
-                          className="buttonImage"
-                          onClick={handleButtonClick}>
-                          <img
-                            src={
-                              'https://res.cloudinary.com/bizstak/image/upload/v1678674215/button-cancel_ywkq8e.svg'
-                            }
-                            alt="cancel button"
-                          />
-                          <button>Cancel</button>
-                        </div>
-                      </div>
-                      <h2
-                        style={{
-                          color: '#939094',
-                          fontSize: 22,
-                          position: 'relative',
-                          top: 30,
-                        }}>
-                        Merchants Location
-                      </h2>
-                      {/* <p style={{ marginBlock: 20, fontWeight: 300 }}>
+                  <>
+                    <h2
+                      style={{
+                        color: '#939094',
+                        fontSize: 22,
+                        position: 'relative',
+                        top: 30,
+                      }}>
+                      Merchants Location
+                    </h2>
+                    {/* <p style={{ marginBlock: 20, fontWeight: 300 }}>
                       N/B: optional if not provided
                     </p> */}
-                      <div className="deliveryForm">
-                        <div className="form">
-                          <div className="inputLabel">
-                            <label htmlFor="state">Select a state</label>
-                            <input
-                              autoComplete="off"
-                              className="inputDelivery"
-                              type="text"
-                              placeholder="Select State"
-                              id="state"
-                            />
-                            <img
-                              className="arrow"
-                              src={
-                                'https://res.cloudinary.com/bizstak/image/upload/v1678674269/arrow-dropdown_bpoc6g.svg'
-                              }
-                              alt="person icon"
-                            />
-                          </div>
-                          <div className="inputLabel">
-                            <label htmlFor="lga">Select your LAG</label>
-                            <input
-                              autoComplete="off"
-                              className="inputDelivery"
-                              type="text"
-                              placeholder="Ex. Jason"
-                              id="lga"
-                            />
-                            <img
-                              className="arrow"
-                              src={
-                                'https://res.cloudinary.com/bizstak/image/upload/v1678674269/arrow-dropdown_bpoc6g.svg'
-                              }
-                              alt="person icon"
-                            />
-                          </div>
-                          <div className="inputLabel">
-                            <label htmlFor="address1">Address &mdash; 1</label>
-                            <input
-                              autoComplete="off"
-                              className="inputDelivery"
-                              type="text"
-                              placeholder="Ex. No9, Street name"
-                              id="address1"
-                            />
-                          </div>
-                          <div className="inputLabel">
-                            <label htmlFor="address2">
-                              Address &mdash; 2 (optional)
-                            </label>
-                            <input
-                              autoComplete="off"
-                              className="inputDelivery"
-                              type="text"
-                              placeholder="Ex. No9, Street name"
-                              id="address2"
-                              alt="email icon"
-                            />
-                          </div>
+                    <div className="deliveryForm">
+                      <div className="form">
+                        <div className="inputLabel" style={{ width: '47%' }}>
+                          <label htmlFor="state">Select a state</label>
+                          <input
+                            autoComplete="off"
+                            className="inputDelivery"
+                            type="text"
+                            placeholder="Select State"
+                            id="state"
+                          />
+                          <img
+                            className="arrow"
+                            src={
+                              'https://res.cloudinary.com/bizstak/image/upload/v1678674269/arrow-dropdown_bpoc6g.svg'
+                            }
+                            alt="person icon"
+                          />
+                        </div>
+                        <div className="inputLabel" style={{ width: '47%' }}>
+                          <label htmlFor="lga">Select your LAG</label>
+                          <input
+                            autoComplete="off"
+                            className="inputDelivery"
+                            type="text"
+                            placeholder="Ex. Jason"
+                            id="lga"
+                          />
+                          <img
+                            className="arrow"
+                            src={
+                              'https://res.cloudinary.com/bizstak/image/upload/v1678674269/arrow-dropdown_bpoc6g.svg'
+                            }
+                            alt="person icon"
+                          />
+                        </div>
+                        <div className="inputLabel" style={{ width: '47%' }}>
+                          <label htmlFor="address1">Address &mdash; 1</label>
+                          <input
+                            autoComplete="off"
+                            className="inputDelivery"
+                            type="text"
+                            placeholder="Ex. No9, Street name"
+                            id="address1"
+                          />
+                        </div>
+                        <div className="inputLabel" style={{ width: '47%' }}>
+                          <label htmlFor="address2">
+                            Address &mdash; 2 (optional)
+                          </label>
+                          <input
+                            autoComplete="off"
+                            className="inputDelivery"
+                            type="text"
+                            placeholder="Ex. No9, Street name"
+                            id="address2"
+                            alt="email icon"
+                          />
                         </div>
                       </div>
-                    </>
-                  )}
+                    </div>
+                  </>
                   <div style={{ marginTop: 70, marginBottom: 20 }}>
                     <Button
                       buttonWidth="100%"
@@ -338,46 +216,6 @@ const AddMerchant = ({ arrow }: any): JSX.Element => {
                     />
                   </div>
                 </form>
-              </div>
-            </Card>
-          </div>
-          <div className="addMerchantIdentity">
-            <Card className="cardHeight">
-              <div className="addMerchantDetail">
-                <h2>
-                  Purchase Made <br /> <span>from Sep 18 &mdash; Oct 18</span>
-                </h2>
-                <ul>
-                  <li>1m</li>
-                  <li>3m</li>
-                  <li>6m</li>
-                  <li>1yr</li>
-                </ul>
-              </div>
-              <div className="addMerchantDetailChart">
-                <div className="addMerchantDetailChartLiner">
-                  <Bar options={options} data={data} />
-                </div>
-              </div>
-            </Card>
-
-            <Card className="cardHeight">
-              <div className="addMerchantDetail">
-                <h2>
-                  Voucher Redeemed <br />{' '}
-                  <span>from Sep 18 &mdash; Oct 18</span>
-                </h2>
-                <ul>
-                  <li>1m</li>
-                  <li>3m</li>
-                  <li>6m</li>
-                  <li>1yr</li>
-                </ul>
-              </div>
-              <div className="addMerchantDetailChart">
-                <div className="addMerchantDetailChartLiner">
-                  <Bar options={options} data={data} />
-                </div>
               </div>
             </Card>
           </div>
