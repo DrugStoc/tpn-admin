@@ -97,7 +97,17 @@ const Table = ({
         )
       // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
       } else if (column['column 2']) {
-        return (
+        return (isEditMode ?? false) ? (
+          <td key={index}>
+            <input
+              className="inputItem"
+              style={{ backgroundColor: '#F9F9FC', color: '#514f6d' }}
+              type="text"
+              defaultValue={column[`column ${index + 2}`]}
+              onChange={(event) => handleInputChange(event, index)}
+            />
+          </td>
+        ) : (
           <td key={index}>
             <Link
               style={{ display: 'block' }}
