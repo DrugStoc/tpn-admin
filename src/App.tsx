@@ -16,6 +16,7 @@ import CustomerDetails from './pages/CustomerDetail'
 import Error from './pages/Error'
 import OrderDetails from './pages/OrderDetails'
 import PrivateRoutes from './utils/PrivateRoutes'
+import MerchantDetails from './pages/MerchantDetails'
 
 function App(): JSX.Element {
   return (
@@ -39,6 +40,7 @@ function App(): JSX.Element {
               <Route path="/customers/:id" element={<CustomerDetails />} />
               <Route path="/orders/:id" element={<OrderDetails />} />
               <Route path="/orders/new" element={<Error />} />
+              <Route path="/merchants/:id" element={<MerchantDetails />} />
             </Route>
           </Routes>
         </main>
