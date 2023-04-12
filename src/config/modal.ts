@@ -5,7 +5,7 @@ const modal = {
     left: '200px',
     right: 0,
     bottom: 0,
-    zIndex: 21,
+    zIndex: 22,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
