@@ -86,7 +86,6 @@ const Table = ({
       backgroundColor: isSelected ? '#F9F9FC' : null,
     }
     const tableRowContent = tableItem.row.map((column: any, index: number) => {
-      console.log(column['column 2'])
       if (column['column 7'] === 0 && slug === 'products') {
         column['column 7'] = (
           <img
