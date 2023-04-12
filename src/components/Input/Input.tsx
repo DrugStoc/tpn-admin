@@ -55,7 +55,12 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent): void => {
-      if (event.key === 'Escape') {
+      if (
+        event.key === 'Escape' ||
+        event.code === 'Escape' ||
+        event.which === 27 ||
+        event.keyCode === 27
+      ) {
         setShowDropdown(false)
         document.body.focus()
       }
@@ -95,7 +100,7 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
         placeholder={`Search${slug}...`}
       />
       {showDropdown && (
-        <div className="inputButton" style={{ top: '3.5rem' }}>
+        <div className="navbar" style={{ top: '-2.5rem', width: '100%', display: query.length === 0 ? 'none' : undefined }} >
           <Card className="searchResult" ref={cardRef}>
             {isLoading ? (
               [...Array(3)].map((_, index) => {

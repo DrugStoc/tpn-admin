@@ -5,6 +5,8 @@ import CustomerDetailMain from './CustomerDetailMain'
 import VoucherHistory from '../VoucherHistory/VoucherHistory'
 import PurchaseHistory from '../PurchaseHistory/PurchaseHistory'
 import NavbarSub from '../Navbar/NavbarSub'
+import { VoucherHistoryTableData } from '../VoucherHistory/VoucherHistoryTableData'
+import { PurchaseHistoryTableData } from '../PurchaseHistory/PurchaseHistoryTableData'
 const CustomersDetails = ({ arrow }: any): JSX.Element => {
   const [text, setText] = useState('Customer Details')
   const handler = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>): void => {
@@ -68,6 +70,8 @@ const CustomersDetails = ({ arrow }: any): JSX.Element => {
             forthItem="Suspend User"
             fifthItem="Delete Customer"
             handlePrint={handlePrint}
+            VoucherHistoryTableData={VoucherHistoryTableData}
+            PurchaseHistoryTableData={PurchaseHistoryTableData}
             text={text}
             handler={handler}
           />

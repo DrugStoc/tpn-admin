@@ -62,9 +62,9 @@ const MostSearched = (): JSX.Element => {
       }
       return (
         <div className="productList" key={index}>
-          <div style={{display: 'flex', flexWrap: 'wrap', gap: 16}}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16 }}>
             <img
-              className='productListImage'
+              className="productListImage"
               src={image}
               width={48}
               height={48}
@@ -93,7 +93,11 @@ const MostSearched = (): JSX.Element => {
 
   return (
     <Card className="searchProducts">
-      <div className="title">Most Searched Products</div>
+      <div
+        className="title"
+        style={{ position: 'sticky', top: 0, backgroundColor: '#fff' }}>
+        Most Searched Products
+      </div>
       {productList}
     </Card>
   )

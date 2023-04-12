@@ -1,4 +1,4 @@
-import { dflexCenter } from "./general"
+import { dflexCenter } from './general'
 
 const table = {
   '.tableSection': {
@@ -59,6 +59,33 @@ const table = {
                 h: '1rem',
                 cursor: 'pointer',
               },
+            },
+            '.used': {
+              bgColor: '#EAF4E8',
+              color: '#21A560',
+              textAlign: 'center',
+              display: 'block',
+              width: '70.094px',
+              borderRadius: '100px',
+              py: '3px',
+            },
+            '.open': {
+              bgColor: '#FEF8E7;',
+              color: '#BE992D',
+              textAlign: 'center',
+              display: 'block',
+              width: '70.094px',
+              borderRadius: '100px',
+              py: '3px',
+            },
+            '.failed': {
+              bgColor: '#F9DEDC',
+              color: '#AC1E1A',
+              textAlign: 'center',
+              display: 'block',
+              width: '70.094px',
+              borderRadius: '100px',
+              py: '3px',
             },
           },
         },

@@ -51,12 +51,13 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token == null) {
-      setLastName('anonymous')
+      setLastName('Anonymous')
+      setFirstName('Person')
       return
     }
 
     const fetchAPI = async (): Promise<void> => {
-      setLastName('Loading...')
+      setLastName('Anonymous')
       const response = await fetch(`${V2}/account/profile`, {
         headers: {
           'Content-Type': 'application/json',
@@ -75,6 +76,7 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
 
   const truncatedLastName =
     lastName.length > 9 ? `${lastName.slice(0, 9)}...` : lastName
+  const [dayGreet, setDayGreet] = useState('')
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -93,14 +95,18 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
       let greeting: any
       if (hour < 12) {
         greeting = `Good Morning ${lastName === '' ? '☀️' : truncatedLastName}`
+        setDayGreet(`Good Morning ☀️ ${lastName} ${firstName}`)
       } else if (hour < 18) {
         greeting = `Good Afternoon ${
           lastName === '' ? '🌤️' : truncatedLastName
         }`
+        setDayGreet(`Good Afternoon 🌤️ ${lastName} ${firstName}`)
       } else if (hour < 20) {
         greeting = `Good Evening ${lastName === '' ? '🌒' : truncatedLastName}`
+        setDayGreet(`Good Evening 🌒 ${lastName} ${firstName}`)
       } else {
         greeting = `Good Night ${lastName === '' ? '🌑' : truncatedLastName}`
+        setDayGreet(`Good Night 🌑 ${lastName} ${firstName}`)
       }
       setGreeting(greeting)
     }, 1000)
@@ -108,7 +114,8 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
     return () => {
       clearInterval(intervalId)
     }
-  }, [lastName, truncatedLastName])
+  }, [firstName, lastName, truncatedLastName])
+
   const textDesc = text?.split(' ')
   const checkText = textDesc?.includes('Details')
   const currentText = slug.length === 0 ? greet : text
@@ -164,7 +171,7 @@ const Navbar = ({ nav, text }: NavbarInterface): JSX.Element => {
               ) : null
         ) : null}
         <h2
-          title={slug === '' ? `${lastName} ${firstName}` : undefined}
+          title={slug === '' ? `${dayGreet}` : undefined}
           style={{
             fontSize:
               slug !== 'new' && !(checkText ?? false) ? '1.5rem' : '1rem',

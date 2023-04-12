@@ -14,6 +14,7 @@ import input from './input'
 import inputDropdown from './inputDropdown'
 import loading from './loading'
 import login from './login'
+import modal from './modal'
 import navbar from './navbar'
 import orderDetails from './orderDetails'
 import orderIdentity from './orderIdentity'
@@ -51,6 +52,7 @@ const modules = {
   ...loading,
   ...inputDropdown,
   ...customerDetails,
+  ...modal,
   ...responsive,
 }
 

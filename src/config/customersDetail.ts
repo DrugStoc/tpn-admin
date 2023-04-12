@@ -34,6 +34,14 @@ const customerDetails = {
   '.print-table': {
     width: '100%',
   },
+  span: {
+    whiteSpace: 'nowrap',
+  },
+  '@media (max-width: 1111px)': {
+    '.navlistItem': {
+      display: 'none !important',
+    },
+  },
 }
 
 export default customerDetails

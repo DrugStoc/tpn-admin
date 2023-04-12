@@ -8,7 +8,7 @@ const loading = {
     bgColor: '#f8f8f8',
     animation: 'loading 1s ease-in-out infinite',
     pos: 'absolute',
-    top: '55px',
+    top: '65px',
     boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.1)',
   },
 
