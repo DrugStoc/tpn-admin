@@ -25,7 +25,6 @@ const Table = ({
       setShowModal(false)
     }
   }
-
   const [selectedId, setSelectedId] = useState(false)
   const [isEditMode, setIsEditMode] = useState<null | boolean>(null)
   const [editedData, setEditedData] = useState<any>({})
@@ -85,6 +84,7 @@ const Table = ({
     const tableRowstyles: any = {
       backgroundColor: isSelected ? '#F9F9FC' : null,
     }
+    // eslint-disable-next-line array-callback-return
     const tableRowContent = tableItem.row.map((column: any, index: number) => {
       if (column['column 7'] === 0 && slug === 'products') {
         column['column 7'] = (
@@ -94,35 +94,7 @@ const Table = ({
             alt="toggle off button icon"
           />
         )
-      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-      } else if (column['column 2']) {
-        return (isEditMode ?? false) ? (
-          <td key={index}>
-            <input
-              className="inputItem"
-              style={{ backgroundColor: '#F9F9FC', color: '#514f6d' }}
-              type="text"
-              defaultValue={column[`column ${index + 2}`]}
-              onChange={(event) => handleInputChange(event, index)}
-            />
-          </td>
-        ) : (
-          <td key={index}>
-            <Link
-              style={{ display: 'block' }}
-              to={
-                slug === 'customers'
-                  ? `/customers/${tableItem.id}`
-                  : slug === 'orders'
-                    ? `/orders/${tableItem.id}`
-                    : slug === 'merchants'
-                      ? `/merchants/${tableItem.id}`
-                      : '/'
-              }>
-              {column[`column ${index + 2}`]}
-            </Link>
-          </td>
-        )
+        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
       } else if (column['column 7'] === 1 && slug === 'products') {
         column['column 7'] = (
           <img
@@ -154,7 +126,7 @@ const Table = ({
               alt="vertical menu icon"
               onClick={() => handleMenuClick(tableItem.id)}
             />
-            {(Boolean(showDropdown[tableItem.id])) && (
+            {Boolean(showDropdown[tableItem.id]) && (
               <div
                 style={{
                   position: 'relative',
@@ -175,7 +147,16 @@ const Table = ({
                     border: '1px solid #fff',
                     borderRadius: 4,
                   }}>
-                  <div
+                  <Link
+                    to={
+                      slug === 'customers'
+                        ? `/customers/${tableItem.id}`
+                        : slug === 'orders'
+                          ? `/orders/${tableItem.id}`
+                          : slug === 'merchants'
+                            ? `/merchants/${tableItem.id}`
+                            : '/'
+                    }
                     className="tableButtonDropdown"
                     style={{
                       display: 'flex',
@@ -191,22 +172,10 @@ const Table = ({
                       src="https://res.cloudinary.com/bizstak/image/upload/v1681258589/eye_tpyrwa.png"
                       alt="eye icon"
                     />
-                    <Link
-                      onClick={() => toggleModal(tableItem.id)}
-                      style={{ display: 'block' }}
-                      to={
-                        slug === 'customers'
-                          ? `/customers/${tableItem.id}`
-                          : slug === 'orders'
-                            ? `/orders/${tableItem.id}`
-                            : slug === 'merchants'
-                              ? `/merchants/${tableItem.id}`
-                              : '/'
-                      }>
-                      View Detail
-                    </Link>{' '}
-                  </div>
+                    <span style={{ display: 'block' }}>View Detail</span>{' '}
+                  </Link>
                   <div
+                    onClick={() => toggleModal(tableItem.id)}
                     className="tableButtonDropdown"
                     style={{
                       display: 'flex',
@@ -224,27 +193,6 @@ const Table = ({
                     />
                     <span style={{ display: 'block' }}>Delete</span>{' '}
                   </div>
-
-                  {/* <div
-                    onClick={() => handleBoxClick(tableItem.id)}
-                    className="tableButtonDropdown"
-                    style={{
-                      display: "flex",
-                      gap: 10,
-                      cursor: "pointer",
-                      alignItems: "center",
-                      height: 30,
-                      paddingInline: "10px",
-                    }}
-                  >
-                    <img
-                      width={20}
-                      height={20}
-                      src="https://res.cloudinary.com/bizstak/image/upload/v1681258589/edit-row_qcaei3.png"
-                      alt="eye icon"
-                    />
-                    <span style={{ display: "block" }}>Edit</span>
-                  </div> */}
                 </div>
               </div>
             )}
@@ -346,7 +294,32 @@ const Table = ({
             />
           </td>
         )
-      } else {
+      } else if (
+        column[`column ${index + 2}`] !==
+        column[`column ${tableItem.row.length + 1}`]
+      ) {
+        return (
+          <td key={index}>
+            <Link
+              style={{ display: 'block' }}
+              to={
+                slug === 'customers'
+                  ? `/customers/${tableItem.id}`
+                  : slug === 'orders'
+                    ? `/orders/${tableItem.id}`
+                    : slug === 'merchants'
+                      ? `/merchants/${tableItem.id}`
+                      : '/'
+              }>
+              {column[`column ${index + 2}`]}
+            </Link>
+          </td>
+        )
+      } else if (
+        column[`column ${index + 2}`] ===
+        column[`column ${tableItem.row.length + 1}`]
+      ) {
+        // eslint-disable-next-line react/jsx-key
         return <td key={index}>{column[`column ${index + 2}`]}</td>
       }
     })
