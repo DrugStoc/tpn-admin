@@ -17,6 +17,8 @@ import Error from './pages/Error'
 import OrderDetails from './pages/OrderDetails'
 import PrivateRoutes from './utils/PrivateRoutes'
 import MerchantDetails from './pages/MerchantDetails'
+import ProductDetails from './pages/ProductDetails'
+import ShippingDetails from './pages/ShippingDetails'
 
 function App(): JSX.Element {
   return (
@@ -41,6 +43,8 @@ function App(): JSX.Element {
               <Route path="/orders/:id" element={<OrderDetails />} />
               <Route path="/orders/new" element={<Error />} />
               <Route path="/merchants/:id" element={<MerchantDetails />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="/shippings/:id" element={<ShippingDetails />} />
             </Route>
           </Routes>
         </main>
