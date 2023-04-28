@@ -107,7 +107,7 @@ const OrdersTableData = [
 
 const OrderTableHeadingData = [
   'empty',
-  'Order ID',
+  'ID',
   'Customers Name',
   'Customers Email',
   'Phone Number',
