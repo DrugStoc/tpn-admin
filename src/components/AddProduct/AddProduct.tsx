@@ -3,7 +3,6 @@ import Navbar from '../Navbar/Navbar'
 import Card from '../shared/Card'
 import Button from '../Button/Button'
 import Motion from '../shared/Motion'
-import NavbarAddProduct from '../Navbar/NavbarSub'
 
 const AddProduct = ({ arrow }: any): JSX.Element => {
   const [isFalse, setIsFalse] = useState<boolean>(false)
@@ -14,7 +13,6 @@ const AddProduct = ({ arrow }: any): JSX.Element => {
   const [discount, setDiscount] = useState('')
   const [state, setState] = useState('')
   const [sideEffect, setSideEffect] = useState('')
-  const text = 'Product Details'
 
   const handleProductNameChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -77,12 +75,6 @@ const AddProduct = ({ arrow }: any): JSX.Element => {
       <div className="addProduct">
         <Navbar nav="Products" arrow={arrow} text="Add Products" />
         <section className="addProduct-section">
-          <NavbarAddProduct
-            firstItem={text}
-            forthItem="Not available"
-            fifthItem="Delete Product"
-            text={text}
-          />
           <Card className="card">
             <div className="cardBody">
               <div className="dot">
