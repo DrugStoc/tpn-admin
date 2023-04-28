@@ -106,9 +106,12 @@ const Table = ({
       } else if (
         slug === 'customers' ||
         slug === 'orders' ||
-        slug === 'merchants'
+        slug === 'merchants' ||
+        slug === 'products' ||
+        slug === 'shippings'
       ) {
-        column['column 9'] = (
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, @typescript-eslint/restrict-plus-operands
+        column[`column ${tableItem.row.length + 1}`] = (
           <div style={{ position: 'relative', display: 'inline-block' }}>
             <style>
               {`
@@ -148,15 +151,7 @@ const Table = ({
                     borderRadius: 4,
                   }}>
                   <Link
-                    to={
-                      slug === 'customers'
-                        ? `/customers/${tableItem.id}`
-                        : slug === 'orders'
-                          ? `/orders/${tableItem.id}`
-                          : slug === 'merchants'
-                            ? `/merchants/${tableItem.id}`
-                            : '/'
-                    }
+                    to={`/${slug}/${tableItem.id}`}
                     className="tableButtonDropdown"
                     style={{
                       display: 'flex',
@@ -290,7 +285,14 @@ const Table = ({
               style={{ backgroundColor: '#F9F9FC', color: '#514f6d' }}
               type="text"
               defaultValue={column[`column ${index + 2}`]}
-              onChange={(event) => handleInputChange(event, index)}
+              onChange={(event) => {
+                const inputValue = event.target.value
+                const isObject =
+                  typeof inputValue === 'object' && inputValue !== null
+                if (!isObject) {
+                  handleInputChange(event, index)
+                }
+              }}
             />
           </td>
         )
@@ -300,19 +302,17 @@ const Table = ({
       ) {
         return (
           <td key={index}>
-            <Link
-              style={{ display: 'block' }}
-              to={
-                slug === 'customers'
-                  ? `/customers/${tableItem.id}`
-                  : slug === 'orders'
-                    ? `/orders/${tableItem.id}`
-                    : slug === 'merchants'
-                      ? `/merchants/${tableItem.id}`
-                      : '/'
-              }>
-              {column[`column ${index + 2}`]}
-            </Link>
+            {column['column 7']?.type === 'img' ? (
+              <div style={{ display: 'block' }}>
+                {column[`column ${index + 2}`]}
+              </div>
+            ) : (
+              <Link
+                style={{ display: 'block' }}
+                to={`${pathname}/${tableItem.id}`}>
+                {column[`column ${index + 2}`]}
+              </Link>
+            )}
           </td>
         )
       } else if (
