@@ -42,6 +42,7 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
 
   const handleResultClick = (result: Product): void => {
     console.log(result)
+    setQuery(result.name)
   }
 
   const {
@@ -100,7 +101,13 @@ const Input = ({ buttonText }: intputInterface): JSX.Element => {
         placeholder={`Search${slug}...`}
       />
       {showDropdown && (
-        <div className="navbar" style={{ top: '-2.5rem', width: '100%', display: query.length === 0 ? 'none' : undefined }} >
+        <div
+          className="navbar"
+          style={{
+            top: '-2.5rem',
+            width: '100%',
+            display: query.length === 0 ? 'none' : undefined,
+          }}>
           <Card className="searchResult" ref={cardRef}>
             {isLoading ? (
               [...Array(3)].map((_, index) => {

@@ -3,16 +3,26 @@ import Navbar from '../Navbar/Navbar'
 import Card from '../shared/Card'
 import Button from '../Button/Button'
 import Motion from '../shared/Motion'
+import NavbarAddProduct from '../Navbar/NavbarSub'
+import { ProductsTableData } from './ProductsTableData'
+import { useParams } from 'react-router-dom'
 
-const AddProduct = ({ arrow }: any): JSX.Element => {
+const ProductDetails = ({ arrow }: any): JSX.Element => {
+  const { id }: any = useParams()
   const [isFalse, setIsFalse] = useState<boolean>(false)
-  const [productName, setProductName] = useState('')
+  const productDetails = ProductsTableData.find((item: any) => {
+    return item.id === +id
+  })
+  const name = productDetails?.row[0]['column 2']
+  const price: any = productDetails?.row[1]['column 3']
+  const [productName, setProductName] = useState(name)
   const [composition, setComposition] = useState('')
   const [formItem, setFormItem] = useState('')
-  const [retailPrice, setRetailPrice] = useState('')
+  const [retailPrice, setRetailPrice] = useState(+price)
   const [discount, setDiscount] = useState('')
   const [state, setState] = useState('')
   const [sideEffect, setSideEffect] = useState('')
+  const text = 'Product Details'
 
   const handleProductNameChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -35,7 +45,7 @@ const AddProduct = ({ arrow }: any): JSX.Element => {
   const handleRetailPriceChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    setRetailPrice(event.target.value)
+    setRetailPrice(+event.target.value)
   }
 
   const handleDiscountChange = (
@@ -73,12 +83,24 @@ const AddProduct = ({ arrow }: any): JSX.Element => {
   return (
     <Motion>
       <div className="addProduct">
-        <Navbar nav="Products" arrow={arrow} text="Add Products" />
+        <Navbar nav="Products" arrow={arrow} text="Product Details" />
         <section className="addProduct-section">
+          <NavbarAddProduct
+            firstItem={text}
+            forthItem="Not available"
+            fifthItem="Delete Product"
+            text={text}
+          />
           <Card className="card">
             <div className="cardBody">
               <div className="dot">
-                <h1>Add New Product</h1>
+                <div>
+                  <span
+                    style={{ fontSize: 14, color: '#787579', fontWeight: 500 }}>
+                    Product Added by
+                  </span>
+                  : <span style={{ color: '#484649' }}>You</span>
+                </div>
                 <div className="dots">
                   <div
                     onClick={handleFirstButton}
@@ -88,6 +110,39 @@ const AddProduct = ({ arrow }: any): JSX.Element => {
                     className={!isFalse ? 'inactive' : 'active'}></div>
                 </div>
               </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  margin: '20px 0 15px',
+                }}>
+                <div>
+                  <span style={{ color: '#787579', fontWeight: 500 }}>
+                    Added:
+                  </span>{' '}
+                  <strong>Fri 7 Oct, 15:18</strong>
+                </div>
+                <div
+                  style={{
+                    color: '#514F6D',
+                    fontSize: 14,
+                    fontWeight: 500,
+                    cursor: 'pointer',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: 8,
+                    alignItems: 'center',
+                  }}>
+                  <img
+                    src="https://res.cloudinary.com/bizstak/image/upload/v1678792113/pencil-edit_d0647v.svg"
+                    alt="oencil icon"
+                  />
+                  <span>Edit</span>
+                </div>
+              </div>
+              <hr />
               {!isFalse ? (
                 <div>
                   <Motion>
@@ -372,7 +427,7 @@ const AddProduct = ({ arrow }: any): JSX.Element => {
                     <Button
                       buttonWidth="100%"
                       buttonHeight="52px"
-                      text="Add Product"
+                      text="Save Changes"
                       linkText="products"
                     />
                   )}
@@ -386,4 +441,4 @@ const AddProduct = ({ arrow }: any): JSX.Element => {
   )
 }
 
-export default AddProduct
+export default ProductDetails

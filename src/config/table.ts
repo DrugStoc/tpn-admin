@@ -41,6 +41,9 @@ const table = {
           tr: {
             borderBottom: '0.0625rem solid #f0f0f0',
             h: '3.75rem',
+            '&:hover': {
+              bgColor: '#f5f5f5',
+            },
             '&:last-child': {
               borderBottom: 'none',
             },
